@@ -1,0 +1,121 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Box Content</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>ContentID</mat-label>
+                      <input matInput formControlName="ContentID"/>
+                      </mat-form-field>
+                    
+                      <mat-form-field appearance="outline">
+                       <mat-label>Status</mat-label>
+                       <input matInput formControlName="Status"/>
+                       </mat-form-field>
+                    
+                       <mat-form-field appearance="outline">
+                        <mat-label>Unbundled</mat-label>
+                        <input matInput formControlName="Unbundled"/>
+                        </mat-form-field>
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Bundle</mat-label>
+                       <input matInput formControlName="Bundle"/>
+                       </mat-form-field>
+                       
+                      <mat-form-field appearance="outline">
+                        <mat-label>Sequence</mat-label>
+                       <input matInput formControlName="Sequence"/>
+                       </mat-form-field>
+  
+                         
+                      <mat-form-field appearance="outline">
+                        <mat-label>Bundles</mat-label>
+                       <input matInput formControlName="Bundles"/>
+                       </mat-form-field>
+                     </div>
+                     <div class="col">
+                              
+                      <mat-form-field appearance="outline">
+                        <mat-label>Count</mat-label>
+                       <input matInput formControlName="Count"/>
+                       </mat-form-field>
+                     </div>
+                   
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Content">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Content
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Content }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Identifier">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Identifier
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Identifier }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Seg">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              Seg
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Seg }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="RecordSource">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              RecordSource
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.RecordSource }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="AgeCls">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              AgeCls
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.AgeCls }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Bundle">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              Bundle
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Bundle }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="Sts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              Sts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Sts }}</td>
+          </ng-container>
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+     

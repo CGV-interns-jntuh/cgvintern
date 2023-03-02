@@ -1,0 +1,48 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Map Cross Reference Maintenance</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> B </mat-label>
+            <input matInput formControlName="B" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> F </mat-label>
+            <input matInput formControlName="F" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> A </mat-label>
+            <input matInput formControlName="A" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> S </mat-label>
+            <input matInput formControlName="S" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>X-Reference</mat-label> &nbsp;
+
+            <input matInput formControlName="XReference" />
+          </mat-form-field>
+        </div>
+        <button
+          class="buttons addButton"
+          mat-raised-button
+          (click)="maplocationsref()"
+        >
+          Ref
+        </button>
+        <br /><br />
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

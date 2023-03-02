@@ -1,0 +1,67 @@
+.mat-card-title{
+    padding-top: 10px;;
+    color: white;
+    text-align:center ;
+  }
+  
+  .mat-icon{
+    float:left;
+    padding-top: 5px;
+  }
+  
+  .mat-card-header{    
+    background-color: rgb(0, 76, 139);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .mat-form-field{
+    padding-right: 20px;
+  }
+  
+  .addButton {
+    background-color: #4cbb17;
+    color: white;
+    float: right;
+  }
+  
+  .formDiv{
+    margin-top: 30px;
+  }
+  
+  .mat-select {
+    padding: 10px;
+  }
+  
+  .mat-icon {
+    margin-right: 8px;
+  }
+  
+  table {
+    width: 100%;
+    display: table;
+  }
+ .green {
+    background-color: #4cbb17;
+
+  }
+  
+  .mat-row:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .mat-row:hover > .mat-cell {
+    color: #2a52be;
+  }
+  
+  .mat-header-cell {
+    background-color: #2a52be;
+    color: white;
+  }
+  .closeicon {
+    float: right; 
+  }
+  .mat-cell{
+    
+  }

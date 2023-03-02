@@ -1,0 +1,92 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+  <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With System Comments</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="buttons">
+        <button mat-button (click)="addComment()" class="addButton">
+          <mat-icon>add</mat-icon>
+          <span>New Comment</span>
+        </button>
+      </div>
+
+      <form [formGroup]="form">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>File Id</mat-label>
+            <input matInput formControlName="FileId"/>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Key</mat-label>
+            <input matInput formControlName="Name"/>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Sub Type</mat-label>
+            <input matInput formControlName="SubType"/>
+          </mat-form-field>
+        </div>     
+      </form>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="ID">
+          <th mat-header-cell *matHeaderCellDef width="20%">Id</th>
+          <td matcell *matCellDef="let element">{{element.Id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Key">
+          <th mat-header-cell *matHeaderCellDef width="20%">Key</th>
+          <td matcell *matCellDef="let element">{{element.Key}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tp">
+          <th mat-header-cell *matHeaderCellDef width="20%">Tp</th>
+          <td matcell *matCellDef="let element">{{element.Tp}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Seq">
+          <th mat-header-cell *matHeaderCellDef width="20%">Seq</th>
+          <td matcell *matCellDef="let element">{{element.Seq}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Comment">
+          <th mat-header-cell *matHeaderCellDef width="20%">Comment</th>
+          <td matcell *matCellDef="let element">{{element.Comment}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef width="20%">Actions</th>
+          <td matcell *matCellDef="let element">
+            <mat-select placeholder="select Option">
+              <mat-option>
+                <button mat-icon-button (click)="consigneeCUpdateForm(element)" >           
+                  <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                  <mat-label>Edit</mat-label>
+                </button>
+
+                <button mat-icon-button (click)="consigneeCDeleteForm(element)" >           
+                  <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                  <mat-label>Edit</mat-label>
+                </button>
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+      </table>
+   
+    </mat-card-content>
+  </mat-card>

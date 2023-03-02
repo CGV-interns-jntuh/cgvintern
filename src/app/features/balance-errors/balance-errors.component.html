@@ -1,0 +1,162 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Balance Errors</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Storer</mat-label>
+                      <input matInput formControlName="Storer"/>
+                      </mat-form-field>
+  
+                      <mat-form-field appearance="outline">
+                        <mat-label>Item</mat-label>
+                       <input matInput formControlName="Item"/>
+                       </mat-form-field>
+  
+                    
+                     </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="StorerNumber">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            StorerNumber
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.StorerNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Item">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Item
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Item }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Location">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Location
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Location }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="ErrorMessage">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                ErrorMessage
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ErrorMessage }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="DateWritten">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                DateWritten
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.DateWritten }}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+              <mat-option>
+                <button mat-icon-button (click)="BalanceErrorsLotStatusForm(element)">
+                  <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                  <mat-label>Lot-Status</mat-label>
+                </button>
+            
+              </mat-option>
+              
+         <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsItemStatusForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Inquiry Status</mat-label>
+            </button>
+        
+          </mat-option>
+        
+         
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsStkActivityInquiryForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Stk Act Inquiry</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsOrders(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Orders</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsOrders(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Orders</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsAdjustments(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Adjustments</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsAdjustments(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Adjustments</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsBalances(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Balances</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsItemLocations(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Item-Locations</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsReceivers(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Receivers</mat-label>
+            </button>
+        
+          </mat-option>
+  
+         
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

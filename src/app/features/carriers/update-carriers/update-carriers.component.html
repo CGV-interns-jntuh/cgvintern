@@ -1,0 +1,117 @@
+<p>update-carriers works!</p>
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <button mat-button></button>
+      <mat-card-title>Maintain Carriers</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Carrier Code </mat-label>
+            <input matInput formControlName="carrierCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Carrier Name</mat-label>
+            <input matInput maxlength="1" formControlName="carrierName" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Carrier Address 1</mat-label>
+            <input matInput formControlName="address1" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Carrier Address 2</mat-label>
+            <input matInput formControlName="address2" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Zip Code</mat-label>
+            <input matInput formControlName="zipcode" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Suffix</mat-label>
+
+            <input matInput formControlName="suffix" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Carrier SCAC Code</mat-label>
+            <input matInput formControlName="carrierSCACCode" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Hazardous Materials? </mat-label>
+            <mat-select formControlName="hazmat">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Pallet Exchange? </mat-label>
+            <mat-select formControlName="pallet">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+            <input matInput formControlName="pallet" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Billing Frequency </mat-label>
+            <mat-select formControlName="billingFrequency">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Loading Allowance </mat-label>
+            <input matInput formControlName="loadingAllowance" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Hundred Weight % </mat-label>
+            <input matInput formControlName="weight" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Mininmum Amount </mat-label>
+            <input matInput formControlName="minAmount" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Maximum Amount </mat-label>
+            <input matInput formControlName="maxAmount" />
+          </mat-form-field>
+          <button
+            mat-button
+            class="buttons addButton"
+            (click)="carrierUpdate()"
+          >
+            <mat-label>Update</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

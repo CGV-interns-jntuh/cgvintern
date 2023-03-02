@@ -1,0 +1,205 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Box Content Inquiry</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                     
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> boxNumber: </mat-label> 
+                                <input matInput formControlName="boxNumber" />
+                              </mat-form-field>
+                              
+                              <mat-form-field appearance="outline">  <mat-label> Location : </mat-label> 
+                                <input matInput formControlName="location" />
+                              </mat-form-field>
+                        </div>
+                        <div class="col">
+                           
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> Customer: </mat-label> 
+                                <input matInput formControlName="customer" />
+                              </mat-form-field>
+                              
+                              <mat-form-field appearance="outline">  <mat-label> Bundles : </mat-label> 
+                                <input matInput formControlName="bundle" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> Content Count : </mat-label> 
+                                <input matInput formControlName="contentCount" />
+                              </mat-form-field>
+                        </div>
+
+                        <hr/>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> Bundle: </mat-label> 
+                                <input matInput formControlName="bundle" />
+                              </mat-form-field>
+                              
+                              <mat-form-field appearance="outline">  <mat-label> Sequence : </mat-label> 
+                                <input matInput formControlName="sequence" />
+                              </mat-form-field>
+
+                             
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> Content Id: </mat-label> 
+                                <input matInput formControlName="contentId" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> Segment: </mat-label> 
+                                <input matInput formControlName="segment" />
+                              </mat-form-field>
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> X Ref: </mat-label> 
+                                <input matInput formControlName="xRef" />
+                              </mat-form-field>
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> Major Description: </mat-label> 
+                                <input matInput formControlName="majorDesc" />
+                              </mat-form-field>
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Documant Dates: </mat-label> 
+                                <input matInput formControlName="docDates" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> First In: </mat-label> 
+                                <input type="date" matInput formControlName="firstIn" />
+                              </mat-form-field>
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Age Class: </mat-label> 
+                                <input matInput formControlName="ageClass" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> File Type: </mat-label> 
+                                <input matInput formControlName="fileType" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> Retention Code: </mat-label> 
+                                <input matInput formControlName="retentionCode" />
+                              </mat-form-field>
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Scheduled Destruction: </mat-label> 
+                                <input matInput formControlName="scheduledDestruction" />
+                              </mat-form-field>
+
+                         </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Client Id: </mat-label> 
+                                <input matInput formControlName="clientId" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> Client Group: </mat-label> 
+                                <input matInput formControlName="clientGroup" />
+                              </mat-form-field>
+
+                              
+                         </div>
+                        
+                    </div>
+                 
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Asset: </mat-label> 
+                                <input matInput formControlName="asset" />
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline">  <mat-label> Record Source: </mat-label> 
+                                <input matInput formControlName="recordSource" />
+                              </mat-form-field>
+
+                              
+                         </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label>  Status: </mat-label> 
+                                <input matInput formControlName="status" />
+                              </mat-form-field>
+
+                         </div>
+                        
+                    </div>
+                 
+                        <!-- <div class="row">
+
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>reference:</mat-label>
+                                  <input matInput formControlName="reference:"/>
+                              </mat-form-field>
+                              </div>
+
+                        </div>
+                        -->
+  
+                        <mat-form-field appearance="outline">
+                          <mat-label> comment:</mat-label>
+                          <textarea matInput placeholder="Comment" formControlName="comment:"></textarea>
+                      </mat-form-field>
+                            <div >
+                              <!-- <button mat-button class="buttonCss" (click)="attributes()">HOLD</button> -->
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  
+  
+  
+

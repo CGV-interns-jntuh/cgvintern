@@ -1,0 +1,46 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Load an Order onto Movement Queue</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+
+        <div class="row">
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="Storer" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Bill Number</mat-label>
+                    <input matInput formControlName="BillNumber" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">            
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Priority</mat-label>
+                    <input matInput formControlName="Priority" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Staging/Door Location</mat-label>
+                    <input matInput formControlName="doorLocation" />
+                </mat-form-field>
+               
+            </div>
+        </div>
+     
+    </form>
+
+
+</mat-card-content>
+

@@ -1,0 +1,28 @@
+.mat-form-field{
+    padding: 10px;
+}
+.mat-card-content{
+    padding-top: 20px;
+}
+
+.cancelB{
+
+    background-color: #fd0303;
+    color: white;
+    float: left;
+}
+
+.deShipB{
+
+    background-color: #2271f2;
+    color: white;
+    float: right;
+}
+
+.closeIcon{
+    float: right;
+}
+
+.mat-icon{
+    padding-right: 5px;
+}

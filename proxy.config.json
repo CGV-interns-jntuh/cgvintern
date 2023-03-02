@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "http://170.249.89.98:5200",
+    "secure": false,
+    "logLevel": "info"
+  }
+}

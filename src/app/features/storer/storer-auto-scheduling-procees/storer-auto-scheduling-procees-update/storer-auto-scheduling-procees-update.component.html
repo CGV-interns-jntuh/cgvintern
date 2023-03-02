@@ -1,0 +1,84 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(145, 128, 32)"
+                    >Maintain Scheduling Processing</mat-card-title>
+                  
+                </mat-card-header>
+                <div>
+                  
+                </div>
+                <mat-card-content> 
+  
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field  appearance="outline"><mat-label> Storer : </mat-label> 
+                              <input matInput formControlName="Storer" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">  <mat-label> Process: </mat-label> 
+                              <input matInput formControlName="Process" />
+                            </mat-form-field>
+                              
+                      </div>
+                      <div class="col">
+                          <mat-form-field appearance="outline">  <mat-label> Processing_Program: </mat-label> 
+                              <input matInput formControlName="Processing_Program" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">  <mat-label> Job_Queue: </mat-label> 
+                              <input matInput formControlName="Job_Queue" />
+                            </mat-form-field>
+                          
+                      </div>
+                             
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Active_Currently: </mat-label> 
+                            <input matInput formControlName="Active_Currently" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">  <mat-label> Last_Run: </mat-label> 
+                            <input matInput formControlName="Last_Run" />
+                          </mat-form-field>
+                    </div>
+  
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Start_Time: </mat-label> 
+                            <input matInput formControlName="Start_Time" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">  <mat-label> End_Time: </mat-label> 
+                            <input matInput formControlName="End_Time" />
+                          </mat-form-field>
+                    </div>
+  
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Interval_Minutes: </mat-label> 
+                            <input matInput formControlName="Interval_Minutes" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">  <mat-label> Offset_Interval: </mat-label> 
+                            <input matInput formControlName="Offset_Interval" />
+                          </mat-form-field>
+                    </div>
+  
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Auto_Processing: </mat-label> 
+                            <input matInput formControlName="Auto_Processing" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">  <mat-label> Status: </mat-label> 
+                            <input matInput formControlName="Status" />
+                          </mat-form-field>
+                    </div>
+                 
+                      </div>
+                 <div >
+                  <button mat-button class="buttonCss" (click)="update()">UPDATE</button>
+              </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

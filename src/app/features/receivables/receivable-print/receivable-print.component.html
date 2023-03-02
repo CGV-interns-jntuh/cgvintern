@@ -1,0 +1,55 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Receivable Print</mat-card-title>
+        
+      </mat-card-header>
+      
+      <mat-card-content> 
+
+        <div class="col">
+
+            <mat-form-field  appearance="outline"><mat-label> Invoice Number : </mat-label> 
+                <input matInput formControlName="invoiceNumber" />
+              </mat-form-field>
+
+
+            <mat-form-field  appearance="outline"><mat-label> Report_Type : </mat-label> 
+                <input matInput formControlName="Report_Type" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> File_Extension: </mat-label> 
+                <input matInput formControlName="File_Extension" />
+              </mat-form-field>
+
+        </div>
+
+            <div class="col">
+                
+            <mat-form-field appearance="outline">  <mat-label> Email: </mat-label> 
+            <input matInput formControlName="Email"
+                  style="text-transform: uppercase" />
+                  </mat-form-field>
+                </div>
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label></mat-label>
+                  <textarea matInput placeholder="Comment" formControlName=""></textarea>
+              </mat-form-field>
+              </div>
+                  <div >
+                    <button mat-button class="buttonCss" (click)="number()">Number</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  

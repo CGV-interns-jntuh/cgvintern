@@ -1,0 +1,57 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Remove Preservation Hold</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Box Number: </mat-label> 
+                          <input matInput formControlName="BoxNumber" />
+                        </mat-form-field>
+
+                   </div>
+                   <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label>Content Identifier: </mat-label> 
+                        <input matInput formControlName="ContentIdentifier" />
+                      </mat-form-field>
+
+                  
+                 </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label>Reference: </mat-label> 
+                        <input matInput formControlName="Reference" />
+                      </mat-form-field>
+
+                  
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label>Comment: </mat-label> 
+                        <input matInput formControlName="Comment" />
+                      </mat-form-field>
+
+                 </div>
+                 <hr>
+                 <hr>
+                 <hr>
+                 <hr>
+                 
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Hold</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

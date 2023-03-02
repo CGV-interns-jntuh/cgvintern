@@ -1,0 +1,69 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form" fxLayoutAlign="center">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Consolidate Carriers</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+   
+      
+      <div class="row">
+       
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Carrier Code</mat-label>
+          <input matInput required formControlName="carrierCode" />
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+         <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Carrier Name</mat-label>
+          <input matInput formControlName="carrierName" />
+        </mat-form-field>
+      </div>
+      
+      <div class="row">
+         <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Carrier Address </mat-label>
+          <input matInput required formControlName="address1" />
+        </mat-form-field>
+        
+      </div>
+      
+      <div class="row">
+        
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Carrier Address 2 </mat-label>
+          <input matInput required formControlName="address2" />
+        </mat-form-field>
+      </div>
+      
+      <div class="row">
+        
+
+        <mat-form-field appearance="outline"  class="full-width">
+          <mat-label>Carrier SCAC Code </mat-label>
+          <input matInput required formControlName="carrierSCACCode" />
+        </mat-form-field>
+      </div>
+      
+      <div class="row">
+       
+        <mat-form-field appearance="outline"  class="full-width">
+          <mat-label>Consolidate References to Carrier</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        
+      </div>
+      <br />
+      <button mat-button class="buttons removeButton" (click)="deleteCarrier()">
+        <mat-label>Delete</mat-label>
+      </button>
+      <br /><br />
+   
+  </mat-card-content>
+</mat-card>
+</form>

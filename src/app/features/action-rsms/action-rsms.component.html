@@ -1,0 +1,103 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work with Actions</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <div class="buttons">
+                 <button mat-button (click)="actionRsmsAddForm()"  class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>Actions</span>
+                     </button>
+                    </div>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Action</mat-label>
+                      <input matInput formControlName="Action"/>
+                      </mat-form-field>
+
+                    
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Action">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Action
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Action }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Description">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Description
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="LV">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                LV
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.LV }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ReqEVt">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                ReqEVt
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ReqEVt }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="Evt">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Evt
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Evt }}</td>
+          </ng-container>
+          
+
+          <ng-container matColumnDef="Sts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Sts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Sts }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="actionRsmsChangeForm(element)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+        
+          </mat-option>
+        
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

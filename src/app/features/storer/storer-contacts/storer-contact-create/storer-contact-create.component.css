@@ -1,0 +1,10 @@
+.mat-form-field{
+    padding-left: 15px;;
+}
+
+.addButton {
+    background-color: #308b06;
+    color: white;
+    padding: 5px;
+    float: right;
+  }

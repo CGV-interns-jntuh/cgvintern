@@ -1,0 +1,47 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain Box Status</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+                          <input matInput formControlName="Description" />
+                        </mat-form-field>
+                  </div>
+                  
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> SecondaryDescription: </mat-label> 
+                    <input matInput formControlName="SecondaryDescription" />
+                  </mat-form-field>
+            </div>
+                     
+      <div class="col">
+        <mat-form-field appearance="outline">  <mat-label> CurrentLocation: </mat-label> 
+            <input matInput formControlName="CurrentLocation" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> BoxStatus: </mat-label> 
+                <input matInput formControlName="BoxStatus" />
+              </mat-form-field>
+  </div>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Status</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

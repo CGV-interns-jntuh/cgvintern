@@ -1,0 +1,190 @@
+<mat-card>
+  <div class="buttons">
+    <button mat-button (click)="itemCreate()" class="addButton">
+      <mat-icon>add</mat-icon>
+      <span>Create Item</span>
+    </button>
+  </div>
+  <div></div>
+
+  
+    <form [formGroup]="form">
+      <mat-card-header>
+      <mat-card-title 
+        >Work With Items</mat-card-title
+      >
+     </mat-card-header>
+     <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label>Storer</mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"
+            ><mat-label>Item Code</mat-label>
+            <input matInput formControlName="itemCode" />
+          </mat-form-field>
+          <mat-form-field appearance="outline"
+            ><mat-label>Only Active</mat-label>
+            <input matInput maxlength="1" formControlName="onlyActive" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label>Product</mat-label>
+            <input matInput maxlength="1" formControlName="product" />
+          </mat-form-field>
+          <mat-form-field appearance="outline"
+            ><mat-label>Description</mat-label>
+            <input matInput maxlength="1" formControlName="description" />
+          </mat-form-field>
+          <mat-form-field appearance="outline"
+            ><mat-label>Inventory</mat-label>
+            <input matInput maxlength="1" formControlName="inventory" />
+          </mat-form-field>
+          &nbsp;
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    
+  </mat-card-content></form>
+
+  <table [dataSource]="dataSource" mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="AD">
+      <th mat-header-cell *matHeaderCellDef>AD</th>
+      <td mat-cell *matCellDef="let element">{{ element.AD }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ItemCode">
+      <th mat-header-cell *matHeaderCellDef>Item Code</th>
+      <td mat-cell *matCellDef="let element">{{ element.ItemCode }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Lot">
+      <th mat-header-cell *matHeaderCellDef>Lot</th>
+      <td mat-cell *matCellDef="let element">{{ element.Lot }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Bld">
+      <th mat-header-cell *matHeaderCellDef>Bld</th>
+      <td mat-cell *matCellDef="let element">{{ element.Bld }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="UPC">
+      <th mat-header-cell *matHeaderCellDef>UPC</th>
+      <td mat-cell *matCellDef="let element">{{ element.UPC }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Tail">
+      <th mat-header-cell *matHeaderCellDef>Tail</th>
+      <td mat-cell *matCellDef="let element">{{ element.Tail }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="250px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <mat-option>
+            <button mat-icon-button (click)="itemUpdate(element)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemDelete(element)">
+              <mat-icon mat-icon-button color="secondary">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="itemComment(element)">
+              <mat-icon mat-icon-button color="primary">message</mat-icon>
+              <mat-label>Comment</mat-label>
+            </button></mat-option
+          >
+          <!-- <mat-option>
+            <button mat-icon-button (click)="itemLocation()">
+              <mat-icon mat-icon-button color="primary">place</mat-icon>
+              <mat-label>Item Location</mat-label>
+            </button></mat-option
+          > -->
+
+          <mat-option>
+            <button mat-icon-button (click)="itemBalance(element)">
+              <mat-icon mat-icon-button color="warn">money</mat-icon>
+              <mat-label>Balance</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="itemCrossRef(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>X-Reference</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemLots(element)">
+              <mat-icon mat-icon-button color="secondary">store</mat-icon>
+              <mat-label>Item Lots</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemTally(element)">
+              <mat-icon mat-icon-button color="secondary">store</mat-icon>
+              <mat-label>Item Tally Work With</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemAdjustment(element)">
+              <mat-icon mat-icon-button color="secondary">store</mat-icon>
+              <mat-label>Item Adjustment</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemInventoryAdjustment(element)">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Inventory Adjustment</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="itemLocation(element)">
+              <mat-icon mat-icon-button color="primary">place</mat-icon>
+              <mat-label>Item Location</mat-label>
+            </button></mat-option
+          >
+
+          
+        </mat-select>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

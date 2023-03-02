@@ -1,0 +1,95 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+  
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Maintain Printer Routing Information</mat-card-title
+        >
+        &nbsp;
+      </mat-card-header>
+      <mat-card-content>
+          <div class="row">
+              <div class="col">
+                
+                  <mat-form-field  appearance="outline">
+                      <mat-label> Storer : </mat-label> 
+                      <input matInput formControlName="storer" style="text-transform: uppercase"/>
+                  </mat-form-field>
+             
+               
+                   
+              </div>
+              <div class="col">
+               
+                   <mat-form-field appearance="outline" >   
+                      <mat-label> B/L Printer : </mat-label>
+                      <input matInput formControlName="blPrinter"/>
+                  </mat-form-field>
+           
+                  
+              </div>
+              <div class="col">
+                 
+                   <mat-form-field appearance="outline" >
+                       <mat-label>Pick Sheet Printer : </mat-label>
+                      <input matInput formControlName="pickSheetPrinter"/>
+                  </mat-form-field>
+
+                  
+                  
+              </div>
+             
+              <div class="col">
+                 
+                   <mat-form-field appearance="outline"> 
+                      <mat-label>W/R Printer : </mat-label>
+                      <input matInput formControlName="wrPrinter" style="text-transform: uppercase"/>
+                  </mat-form-field>
+
+            </div>
+
+              <div class="col">
+              <mat-form-field appearance="outline" >    
+                      <mat-label>Storage Invoice Printer : </mat-label>
+                      <input matInput formControlName="storageIvcPrinter" style="text-transform: uppercase"/>
+                  </mat-form-field>
+            </div>
+            
+            <div class="col">
+                <mat-form-field appearance="outline" >    
+                        <mat-label>General Invoice Printer : </mat-label>
+                        <input matInput formControlName="generalIvcPrinter" style="text-transform: uppercase"/>
+                    </mat-form-field>
+              </div>
+
+              <div class="col">
+                <mat-form-field appearance="outline" >    
+                        <mat-label>Edit Report Printer : </mat-label>
+                        <input matInput formControlName="ediReportPrinter" style="text-transform: uppercase"/>
+                    </mat-form-field>
+              </div>
+
+              <div class="col">
+                <mat-form-field appearance="outline" >    
+                        <mat-label>AccessOriral Invoice Printer : </mat-label>
+                        <input matInput formControlName="accessOrialIvcPrinter" style="text-transform: uppercase"/>
+                    </mat-form-field>
+              </div>
+
+              <div class="col">
+                <mat-form-field appearance="outline" >    
+                        <mat-label>Frieght Bill Printer : </mat-label>
+                        <input matInput formControlName="frieghtBillPrinter" style="text-transform: uppercase"/>
+                    </mat-form-field>
+              </div>
+          
+            </div>
+      </mat-card-content>
+     
+    </mat-card>
+  </form> 
+
+
+

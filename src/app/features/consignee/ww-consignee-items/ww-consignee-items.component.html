@@ -1,0 +1,105 @@
+<!-- Form No : 668 -->
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Consignee Items</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Storer:</mat-label>
+                      <input matInput formControlName="Storer"/>
+                     </mat-form-field>
+
+                     <mat-form-field appearance="outline">
+                        <mat-label>Item:</mat-label>
+                       <input matInput formControlName="Item"/>
+                      </mat-form-field>
+                     </div>
+                     <div class="col">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Consignee:</mat-label>
+                         <input matInput formControlName="Consignee"/>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Buyer Item:</mat-label>
+                           <input matInput formControlName="BuyerItem"/>
+                          </mat-form-field>
+                        </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Storer">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Storer
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Storer }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Consignee">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Consignee
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Consignee }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="StorerItemCode">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Storer Item Code
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.StorerItemCode }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="BuyerItemCode">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Buyer Item Code
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.BuyerItemCode }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="St">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                St
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.St }}</td>
+          </ng-container>
+          
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+                <mat-option>
+                    <button mat-icon-button (click)="ConsigneeItemsAddForm()">
+                      <mat-icon mat-icon-button color="primary">add</mat-icon>
+                      <mat-label>Add</mat-label>
+                    </button>
+                  </mat-option>  
+        
+           <mat-option>
+            <button mat-icon-button (click)="ConsigneeItemChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>CHANGE</mat-label>
+            </button>
+          </mat-option> 
+          
+          
+           
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

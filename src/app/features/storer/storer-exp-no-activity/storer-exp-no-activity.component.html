@@ -1,0 +1,53 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Copy a Storer to a New Library (No Activity)</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" >
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="Storer" />
+                </mat-form-field> 
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>FromLibrary</mat-label>
+                    <input matInput formControlName="FromLibrary" />
+                </mat-form-field> 
+
+                <mat-form-field appearance="outline">
+                    <mat-label>ToLibrary</mat-label>
+                    <input matInput formControlName="ToLibrary" />
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">  
+                    <mat-label> Submit To Batch </mat-label> 
+                
+                    <mat-select matNativeControl required>
+                        <mat-option value="Y">Yes</mat-option>
+                        <mat-option value="N">No</mat-option>
+                    </mat-select>
+                    <input matInput formControlName="SubmitToBatch" />
+                  </mat-form-field>
+            </div>
+
+            <div class="col"> 
+                <button mat-button (click)="continue()" class="conButton">
+                  <span>Continue</span>
+                </button>
+
+                <p>Continue to confirm the copy of this storer, all inbound and outbound orders, inventory and balances to the new library</p>
+            </div>
+
+          
+        </div>     
+    </form>
+</mat-card-content>

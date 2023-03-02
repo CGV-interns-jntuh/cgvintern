@@ -1,0 +1,43 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Book</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Book Header </mat-label>
+            <input matInput formControlName="BookHeader" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Book Description</mat-label>
+            <input matInput formControlName="BookDescription" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Frm Tag# </mat-label>
+            <input matInput formControlName="FrmTag" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> To Tag# </mat-label>
+            <input matInput formControlName="ToTag" />
+          </mat-form-field>
+          <button mat-button class="buttons addButton" (click)="change()">
+            <mat-label>Change</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

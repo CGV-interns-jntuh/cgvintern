@@ -1,0 +1,40 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Item Status Inquiry</mat-card-title>
+        
+      </mat-card-header>
+      <div>
+        
+      </div>
+      <mat-card-content> 
+
+        <div class="col">
+            <mat-form-field  appearance="outline"><mat-label> Storer : </mat-label> 
+                <input matInput formControlName="Storer" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Item_Code: </mat-label> 
+                <input matInput formControlName="Item_Code" />
+              </mat-form-field>
+
+        </div>
+
+                  <div >
+                    <button mat-button class="buttonCss" (click)="inquiry()">Inquiry</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  
+
+

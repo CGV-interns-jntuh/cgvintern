@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <img class="imageCss" src="assets/images/logo.png" />
+    <!-- <span routerLink="/">SC CodeWorks</span> -->
+  </mat-toolbar>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="accountSelelctionForm" (ngSubmit)="submit()">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>Account Selection</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              <mat-form-field style="width: 250px" class="full-width">
+                <mat-label>Building Number</mat-label>
+                <mat-select  formControlName="building">
+                  <mat-option *ngFor="let opt of element" [value]="opt" >
+                  Building: {{ opt.buildingNumber }}, Storer: {{ opt.storerNumber }}
+                  </mat-option>
+                  <!-- <mat-error
+                  *ngIf="accountSelelctionForm.controls['building'].hasError('required')"
+                >
+                  Username is <strong>required</strong>
+                </mat-error> -->
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fxFlex></div>
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+  

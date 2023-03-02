@@ -1,0 +1,58 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Book To physical Count Listing</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                    <div class="row">    
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> showLotBreakouts  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="y">Y</mat-option>
+                        <mat-option value="n">N</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div></div>
+
+             
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> sort  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="Item">I </mat-option>
+                        <mat-option value="Deviation">D</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                
+
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> minDevianceToShow: </mat-label> 
+                        <input matInput formControlName="minDevianceToShow" />
+                      </mat-form-field>
+                </div>
+                
+                
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Email: </mat-label> 
+                        <input matInput formControlName="Email" />
+                      </mat-form-field>
+                </div>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">WorkSheet</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

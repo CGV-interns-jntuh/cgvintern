@@ -1,0 +1,163 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+           
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Order-Shipment-Confirm</mat-card-title
+        >
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+            <mat-form-field  appearance="outline"><mat-label> Bill Number : </mat-label> 
+              <input matInput formControlName="billNo" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">  <mat-label> Storer  </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="storer"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+              
+            <mat-form-field appearance="outline">  <mat-label> Consignee </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="consignee"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Pro Number: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="proNum"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Carrier </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Carrier"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> shipType </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="shipType"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Ship Date and Time </mat-label> 
+            
+
+                <input type="date"
+                  matInput
+                  formControlName="shipDateTime"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Ship Date Change Code </mat-label> 
+                <input
+                  matInput
+                  formControlName="shipDateChCode"
+                  style="text-transform: uppercase"
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label>Load Code </mat-label> 
+                <input
+                  matInput
+                  formControlName="loadCode"
+                  style="text-transform: uppercase"
+                />
+             </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Load Quantity </mat-label> 
+                <input
+                  matInput
+                  formControlName="loadQuantity"
+                  style="text-transform: uppercase"
+                />
+            </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Chep Pallet Quantity </mat-label> 
+                <input
+                  matInput
+                  formControlName="chepPalletQuantity"
+                  style="text-transform: uppercase"
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Manifest No: </mat-label> 
+                <input
+                  matInput
+                  formControlName="manifestNo"
+                  style="text-transform: uppercase"
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Equipment No: </mat-label> 
+                <input
+                  matInput
+                  formControlName="equipmentNo"
+                  style="text-transform: uppercase"
+                />
+            </mat-form-field>
+
+                 <mat-form-field appearance="outline">  <mat-label> Seals </mat-label> 
+                    <input
+                  matInput
+                  formControlName="seals"
+                  style="text-transform: uppercase"
+                />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">  <mat-label> Fright Change </mat-label> 
+                    <input
+                  matInput
+                  formControlName="freightChg"
+                  style="text-transform: uppercase"
+                />
+                </mat-form-field>
+
+
+              
+            
+              
+               
+                <button mat-button class="create"(click)="confirmShip()">Create</button>
+             
+
+      </mat-card-content>
+    </mat-card>
+  </form>  
+

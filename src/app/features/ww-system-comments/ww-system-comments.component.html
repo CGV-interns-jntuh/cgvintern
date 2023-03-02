@@ -1,0 +1,118 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With System Comments</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>FileID:</mat-label>
+                      <input matInput formControlName="FileID"/>
+                      </mat-form-field>  
+                      
+                      <mat-form-field appearance="outline">
+                        <mat-label>Key:</mat-label>
+                       <input matInput formControlName="Key"/>
+                       </mat-form-field> 
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>SubType:</mat-label>
+                       <input matInput formControlName="SubType"/>
+                       </mat-form-field> 
+                     </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="ID">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            ID
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.ID }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Key">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Key
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Key }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Tp">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Tp
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Tp }}
+                
+            </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Seq">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Seq
+            </th> 
+            <td mat-cell *matCellDef="let element" >{{ element.Seq }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Comments">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Comments
+            </th> 
+            <td mat-cell *matCellDef="let element" >{{ element.Comments }}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+                <mat-option>
+                    <button mat-icon-button (click)="systemCommentsAddForm(element)">
+                      <mat-icon mat-icon-button color="primary">add</mat-icon>
+                      <mat-label>Add</mat-label>
+                    </button>
+                
+                  </mat-option>
+
+                <mat-option>
+                    <button mat-icon-button (click)="systemCommnetsChangeForm(element)">
+                      <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                      <mat-label>Change</mat-label>
+                    </button>
+                
+                  </mat-option>
+              
+           <mat-option>
+            <button mat-icon-button (click)="systemCommentsChangeSetForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Change Set</mat-label>
+            </button>
+        
+          </mat-option>
+
+              
+          <mat-option>
+            <button mat-icon-button (click)="systemCommentsDeleteForm(element)">
+              <mat-icon mat-icon-button color="delete">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+        
+          </mat-option>
+        
+        
+
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+      </table>

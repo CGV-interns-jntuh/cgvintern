@@ -1,0 +1,75 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(145, 128, 32)"
+                    >Maintain Actions</mat-card-title>
+                  
+                </mat-card-header>
+                <div>
+                  
+                </div>
+                <mat-card-content> 
+  
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field  appearance="outline"><mat-label> Action : </mat-label> 
+                              <input matInput formControlName="Action" />
+                            </mat-form-field>    
+                      </div>
+                      <div class="col"><mat-form-field appearance="outline">  <mat-label> Action_Description: </mat-label> 
+                        <input matInput formControlName="Action_Description" />
+                      </mat-form-field></div>
+                      </div>
+                 <div >
+                    <div class="col"><mat-form-field appearance="outline"><mat-label> Short_Description:  </mat-label> 
+                        <input matInput formControlName="Short_Description" />
+                      </mat-form-field></div>
+                      </div>
+                 <div >
+                    <div class="col">
+                        <mat-form-field appearance="outline"><mat-label>Destination_Box: : </mat-label> 
+                        <input matInput formControlName="Destination_Box" />
+                      </mat-form-field>
+                    </div>
+                      </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline"><mat-label>Delivery_Location : </mat-label> 
+                        <input matInput formControlName="Delivery_Location" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline"><mat-label> processing_Program: </mat-label> 
+                        <input matInput formControlName="processing_Program" />
+                      </mat-form-field>
+                 </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline"><mat-label> Action_Level: </mat-label> 
+                        <input matInput formControlName="Action_Level" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline"><mat-label> Event_Code: </mat-label> 
+                        <input matInput formControlName="Event_Code" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline"><mat-label>Request_Event : </mat-label> 
+                        <input matInput formControlName="Request_Event" />
+                      </mat-form-field>
+                 </div>
+
+                 <div >
+            
+                  <button mat-button class="buttonCss" (click)="attributes()">Change</button>
+              </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  
+  

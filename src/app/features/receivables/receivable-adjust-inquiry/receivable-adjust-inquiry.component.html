@@ -1,0 +1,104 @@
+<!-- Form No : 288 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >Invoice Adjustment Inquiry</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        
+
+        <div class="formDiv">
+            <form [formGroup]="form">
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Invoice</mat-label>
+                  <input matInput formControlName="Invoice"/>
+                </mat-form-field>
+        
+                <mat-form-field appearance="outline">
+                  <mat-label>Customer</mat-label>
+                  <input matInput formControlName="Customer"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input matInput formControlName="Date"/>
+                  </mat-form-field>
+              </div>    
+              
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Bill To</mat-label>
+                  <input matInput formControlName="BillTo"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Amount</mat-label>
+                    <input matInput formControlName="Amount"/>
+                  </mat-form-field>
+        
+                <mat-form-field appearance="outline">
+                  <mat-label>Type</mat-label>
+                  <input matInput formControlName="Type"/>
+                </mat-form-field>
+
+              </div>  
+            </form>
+           </div>
+
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Seq No.">
+              <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+                Seq No. 
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.SeqNo }}</td>
+              <td *matFooterCellDef></td>
+            </ng-container>
+      
+            <ng-container matColumnDef="Adjust Date">
+              <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+                Adjust Date
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.AdjustDate }}</td>
+              <td *matFooterCellDef></td>
+            </ng-container>
+      
+            <ng-container matColumnDef="Ledger">
+              <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+                Ledger
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.Ledger }}</td>
+              <td *matFooterCellDef></td>
+            </ng-container>
+
+            <ng-container matColumnDef="Description" >
+                <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+                    Description
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+                <td *matFooterCellDef>Adjusted Value</td>
+              </ng-container>
+      
+            <ng-container matColumnDef="Adjusment Amount">
+              <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+                Adjusment Amount
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.AdjusmentAmount }}</td>
+              <td *matFooterCellDef>{{adjustedValue()}}</td>
+            </ng-container>
+      
+           
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+            <tr mat-footer-row class="sticky-footer" *matFooterRowDef="displayedColumns"></tr>
+            
+        </table>
+        
+    <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>
+    </mat-card-content>
+</mat-card>
+

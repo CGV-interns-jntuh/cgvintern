@@ -1,0 +1,60 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+        <form [formGroup]="form" fxLayoutAlign=>
+            <mat-card>
+              <mat-card-header>
+                  <button mat-button (click)="backstorer()">
+                      <mat-icon></mat-icon>
+                  </button>
+                  
+                <mat-card-title style="color: rgb(145, 128, 32)"
+                  >Write Balance Records for a Storer</mat-card-title
+                >
+                
+              </mat-card-header>
+              <mat-card-content> 
+
+                <div class="row">
+                    <div class="col">
+
+                        <mat-form-field  appearance="outline"><mat-label> Store Number  </mat-label> 
+                            <input matInput formControlName="StoreNumber" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">  <mat-label> Balance Date  </mat-label> 
+                            
+              
+                              <input
+                                matInput
+                                formControlName="BalanceDate"
+                                style="text-transform: uppercase"
+                              />
+                             
+                            </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> RecordType  </mat-label> 
+                
+                            <mat-select matNativeControl required>
+                                <mat-option value="period">period</mat-option>
+                                <mat-option value="Daily">Daily</mat-option>
+                                <mat-option value="Weekly">Weekly</mat-option>
+                            </mat-select>
+                            <input matInput formControlName="RecordType" />
+                          </mat-form-field>
+                    </div>
+                    <div>
+                      <button  mat-button class="submitb" (click)="writeBalanceRecord()">Submit</button>
+                    </div>
+                </div>
+                </mat-card-content></mat-card>
+              
+               
+                </form>
+  
+             
+                 
+                    
+               
+                    
+             

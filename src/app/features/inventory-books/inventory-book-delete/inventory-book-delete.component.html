@@ -1,0 +1,48 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Delete An Inventory Book</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                  
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Name: </mat-label> 
+                        <input matInput formControlName="name" />
+                      </mat-form-field>
+                </div>
+                
+                
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+                        <input matInput formControlName="description" />
+                      </mat-form-field>
+                </div>
+
+                
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Creator: </mat-label> 
+                        <input matInput formControlName="creator" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">  <mat-label> BookDate: </mat-label> 
+                        <input matInput formControlName="bookDate" />
+                      </mat-form-field>
+                </div>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Book</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

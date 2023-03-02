@@ -1,0 +1,127 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+    <div><button mat-button class="update"(click)="putawaylocationsupdate()">update</button>
+    </div>
+  <mat-card>
+    <mat-card-header>
+         <mat-card-title>
+          
+              Maintain Putaway Locations</mat-card-title>
+         </mat-card-header>
+        <mat-card-content> 
+          <mat-form-field appearance="outline">  <mat-label> Tally </mat-label> 
+              
+            <input
+                 matInput
+                 formControlName="Tally"
+                 style="text-transform: uppercase"/>
+              </mat-form-field>
+
+          <mat-form-field appearance="outline">  <mat-label> Line </mat-label> 
+              
+            <input
+                 matInput
+                 formControlName="Line"
+                 style="text-transform: uppercase"/>
+              </mat-form-field>
+
+              <mat-form-field  appearance="outline"  [style.width.em]="8"><mat-label> Item </mat-label> 
+                <input style="text-align:center;" type="text" maxlength="Item" matInput formControlName="Item" />
+              </mat-form-field>
+               
+
+              <mat-form-field appearance="outline">  <mat-label> Building </mat-label> 
+              
+             <input
+                  matInput
+                  formControlName="Building"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+           <mat-form-field appearance="outline">  <mat-label> Description  </mat-label> 
+                <input matInput formControlName="Description" />
+              </mat-form-field>
+               
+          <mat-form-field appearance="outline">  <mat-label> Lot Codes </mat-label> 
+                <input
+                  matInput
+                  formControlName="LotCodes"
+                  style="text-transform: uppercase"
+                />            
+              </mat-form-field>
+                
+
+              <mat-form-field appearance="outline">  <mat-label> Quantity </mat-label> 
+                <input matInput formControlName="Quantity" />
+              </mat-form-field>
+               
+         <mat-form-field appearance="outline">  <mat-label>Over </mat-label> 
+                <input
+                  matInput
+                  formControlName="Over"
+                  style="text-transform: uppercase"/> 
+
+              </mat-form-field>
+                 <mat-form-field appearance="outline">  <mat-label> Short </mat-label> 
+                <input matInput formControlName="Short" />
+               </mat-form-field>
+
+               <div style="overflow-x: auto;">
+               <table class="table table-bordered" formArrayName="locations">  
+               <tr>  
+              <th width="150px"><button type="button" (click)="addLocation()" class="AddLocation" style="float:left">Add Location</button></th>  
+              </tr>  
+             <tr *ngFor="let location of locations().controls; let i=index" [formGroupName]="i">  
+         
+              <td>  
+                Location :  
+                <input type="text" formControlName="Location" class="form-control">  
+            </td>  
+        
+            <td>  
+                Normal:  
+                <input type="text" formControlName="Normal" class="form-control">  
+            </td> 
+        
+            <td>  
+               Damaged:  
+              <input type="text" formControlName="Damaged" class="form-control">  
+          </td> 
+       
+          <td>  
+            Held:  
+            <input type="text" formControlName="Held" class="form-control">  
+        </td>
+     
+        <td>  
+          User1:  
+          <input type="text" formControlName="User1" class="form-control">  
+      </td>
+ 
+      <td>  
+        User2:  
+        <input type="text" formControlName="User2" class="form-control">  
+    </td> 
+
+    <td>  
+      User3:  
+      <input type="text" formControlName="User3" class="form-control">  
+  </td> 
+
+  <td>  
+    User4:  
+    <input type="text" formControlName="User4" class="form-control">  
+</td> 
+<td>  
+ <button (click)="removeLocation(i)" class="remove btn btn-danger">Remove</button>  
+  </td> 
+    </tr>  
+     </table>
+    </div> 
+     </mat-card-content>
+       </mat-card>
+        </form>  

@@ -1,0 +1,95 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Assign A Move Queue Entry</mat-card-title>
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+            <mat-form-field  appearance="outline"><mat-label> Item : </mat-label> 
+              <input matInput formControlName="Item" />
+            </mat-form-field>
+             
+
+            <mat-form-field appearance="outline">  <mat-label> Lot: </mat-label> 
+            
+
+              <input
+                matInput
+                formControlName="Lot"
+                style="text-transform: uppercase"
+              />
+            
+            </mat-form-field>
+         
+          
+
+            <mat-form-field appearance="outline">  <mat-label> Qty : </mat-label> 
+              <input matInput formControlName="Qty" />
+            </mat-form-field>
+             
+
+          
+
+            <mat-form-field appearance="outline">  <mat-label> Type: </mat-label> 
+              <input
+                matInput
+                formControlName="Type"
+                style="text-transform: uppercase"
+              />            
+            </mat-form-field>
+              
+
+            <mat-form-field appearance="outline">  <mat-label> From  : </mat-label> 
+              <input matInput formControlName="From" />
+            </mat-form-field>
+             
+
+          
+
+            <mat-form-field appearance="outline">  <mat-label> Bucket: </mat-label> 
+              <input
+                matInput
+                formControlName="Bucket"
+                style="text-transform: uppercase"
+              />  
+            </mat-form-field>
+             
+        
+
+            <mat-form-field appearance="outline">  <mat-label> Source: </mat-label> 
+              <input matInput formControlName="Source" />
+            </mat-form-field>
+
+            
+            <mat-form-field appearance="outline">  <mat-label> To: </mat-label> 
+                <input matInput formControlName="To" />
+              </mat-form-field>
+               <hr>
+              
+                <mat-form-field appearance="outline">  <mat-label> OpertaorID: </mat-label> 
+                    <input matInput formControlName="OpertaorID" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">  <mat-label> Priority: </mat-label> 
+                    <input matInput formControlName="Priority" />
+                  </mat-form-field>
+              
+              
+                  <div >
+                    <button mat-button class="buttonCss" (click)="entry()">Entry</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  
+

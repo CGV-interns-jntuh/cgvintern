@@ -1,0 +1,68 @@
+<!-- Form No: 285 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card-header>
+    <mat-card-title >Credit an Entire Invoice</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row" >
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Invoice Number</mat-label>
+                    <input matInput formControlName="InvoiceNumber" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Building</mat-label>
+                    <input matInput formControlName="Building" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Invoice Date</mat-label>
+                    <input matInput formControlName="InvoiceDate" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Type</mat-label>
+                    <input matInput formControlName="Type" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Customer</mat-label>
+                    <input matInput formControlName="Customer" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Reference</mat-label>
+                    <input matInput formControlName="Reference" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Original Amount</mat-label>
+                    <input matInput formControlName="OriginalAmount" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Balance</mat-label>
+                    <input matInput formControlName="Balance" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Reason</mat-label>
+                    <input matInput formControlName="Reason" />
+                </mat-form-field>
+            </div>
+            
+        </div>   
+    </form>
+
+    
+    
+    <button mat-button (click)="continueCredit()" class="addButton"><span>Continue</span></button>
+
+    <span>Continue to Confirm the operation.
+        Credits will be issued for each detail transaction line on the Invoice.
+    </span>
+</mat-card-content>

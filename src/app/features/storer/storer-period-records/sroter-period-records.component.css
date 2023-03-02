@@ -1,0 +1,78 @@
+table {
+  width: 100%;
+  display: table;
+}
+
+.buttons {
+  float: right;
+}
+.buttons > * {
+  margin-right: 16px;
+}
+.mat-row:hover {
+  background-color: #f8f8f8;
+}
+
+.mat-row:hover > .mat-cell {
+  color: #2a52be;
+}
+
+.mat-header-cell {
+  background-color: #2a52be;
+  color: white;
+}
+
+.over-Flow{
+  overflow: auto;
+}
+
+.title {
+  font-weight: 600;
+  
+}
+
+.backButton {
+  background-color: #2a52be;
+  color: white;
+}
+
+.addButton {
+  background-color: #4cbb17;
+  color: white;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
+
+.col{
+  padding-block: 10px;
+}
+
+.mat-select {
+ 
+  padding: 10px;
+ 
+}
+
+.mat-form-field
+{
+  padding-left: 20px;
+}
+
+.button{
+padding-left: 20px;
+}
+.mat-card-header{
+background-color: #3887e0;
+color: #fff;
+padding: 10px;
+}
+.mat-card-content
+{
+  padding-top: 20px;
+}
+
+

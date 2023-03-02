@@ -1,0 +1,48 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Storer Delete</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" fxLayoutAlign="center">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field  appearance="outline">
+                        <mat-label> Storer  : </mat-label> 
+                        <input matInput formControlName="storer"/>
+                    </mat-form-field>
+
+                    <mat-form-field  appearance="outline">
+                        <mat-label> Address : </mat-label> 
+                        <input matInput formControlName="address"/>
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Phone : </mat-label> 
+                        <input matInput formControlName="phone" />
+                    </mat-form-field>
+
+                    <!-- <mat-form-field  appearance="outline">
+                        <mat-label> Primary Account Rep : </mat-label> 
+                        <input matInput formControlName="primaryAccountRep"/>
+                    </mat-form-field> -->
+                </div>
+            </div>
+
+        </form>
+
+        <div>
+            <p>Press Enter to confirm Deletion of this storer, all inbound and outboud orders, inventory locations and adjustments, all balance records</p>
+            <button mat-button (click)="deleteStorer()" class="deButton"> Delete</button>
+            
+        </div>
+
+        
+    </mat-card-content>
+</mat-card>
+
+

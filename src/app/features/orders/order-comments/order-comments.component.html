@@ -1,0 +1,73 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary" >close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Order Comments Maintenance</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Order</mat-label>
+            <input matInput formControlName="order" />
+        </mat-form-field>
+
+        <div class="scrollX">
+            <table class="table table-bordered" formArrayName="comments">  
+                <tr>  
+                  <th width="150px">
+                    <button mat-button (click)="addComments()" class="addButton">
+                        <mat-icon>add</mat-icon>
+                        <span>Comment</span>
+                    </button>
+                </th>  
+                </tr>  
+                <tr *ngFor="let comment of comments().controls; let i=index" [formGroupName]="i">  
+                  <td>
+                    <mat-form-field appearance="outline" class="formfields">
+                        <mat-label>Comment :</mat-label>
+                        <input matInput type="textarea" formControlName="comment" class="form-control"/>
+                        
+                    </mat-form-field>  
+                     
+                  </td>  
+                  <td>  
+                   
+
+                    <mat-form-field appearance="outline" class="formfields">  
+                        <mat-label> Print  </mat-label> 
+                
+                        <mat-select matNativeControl >
+                            <mat-option value="Y">Yes</mat-option>
+                            <mat-option value="N">No</mat-option>
+                        </mat-select>
+                        <input matInput formControlName="print" />
+                      </mat-form-field>
+                  </td>  
+                  <td>  
+                    <mat-form-field appearance="outline" class="formfields">
+                        <mat-label> Form:  </mat-label>
+                        <input matInput type="text" formControlName="form" class="form-control"/>
+                    </mat-form-field>
+                 </td>  
+
+                 <td>  
+                    <mat-form-field appearance="outline" class="formfields">
+                        <mat-label> Type:</mat-label>
+                        <input matInput type="text" formControlName="type" class="form-control"/>
+                    </mat-form-field>   
+                 </td> 
+
+
+                  <td> 
+                      <button mat-button (click)="removeComments(i)" class="removeButton">
+                        <mat-icon>remove</mat-icon>
+                        <span>Comment</span>
+                      </button>
+                  </td>  
+                </tr>  
+              </table>  
+        </div> 
+    </form>
+</mat-card-content>

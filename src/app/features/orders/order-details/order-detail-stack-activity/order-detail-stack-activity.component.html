@@ -1,0 +1,101 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Stock Activity Inquiry</mat-card-title>
+    </mat-card-header>
+
+     <form [formGroup]="form">
+       <div class="row cleft" >
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Item</mat-label>
+                    <input matInput formControlName="Item"/>
+                </mat-form-field>
+             </div>     
+          
+    </div>     
+
+    <div class="cright row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Start</mat-label>
+                <input matInput formControlName="Start"/>
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>End</mat-label>
+                <input matInput formControlName="End"/>
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Location_Adj</mat-label>
+                <input matInput formControlName="Location_Adj"/>
+            </mat-form-field>
+        </div>
+    </div>
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="Date">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Date
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Date}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Storer">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Storer
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Storer}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Reference">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Reference
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Reference}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Wr/BOL">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Wr/BOL
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Wr_BOL}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Description">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Description
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Description}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Amount">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Amount
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Amount}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="Balance">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Balance
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Balance}}</td>
+          </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

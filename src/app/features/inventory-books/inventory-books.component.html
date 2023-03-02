@@ -1,0 +1,171 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Inventories</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>bookName</mat-label>
+                      <input matInput formControlName="bookName"/>
+                      </mat-form-field>                    
+                     </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="bookName">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            bookName
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.bookName }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="date">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            date
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="description">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                description
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.description }}
+                
+            </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="sts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                sts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.sts }}<tr>Allow Zero:N</tr></td>
+          </ng-container>
+  
+        <ng-container matColumnDef="opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+          <mat-option>
+            <button mat-icon-button (click)="InventoriesMissingCountsForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Missing Counts</mat-label>
+            </button>
+        
+          </mat-option>
+         
+           <mat-option (click)="InventoriesWorkSheetsForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">worksheet</mat-icon>
+              <mat-label>Work Sheet</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryBookSynopsysForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Synopsys</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryBookToCountForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Book To Count</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryBookCountListForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Count Listing</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryBookDeleteForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryBookReservePostForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Reserve Post</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryEnterCountForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Enter Count</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option (click)="InventoryLpBookToCountForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Lp Book To Count</mat-label>
+            </button>
+        
+          </mat-option>
+
+          
+         
+         
+          <!-- <mat-option>
+            <button mat-icon-button (click)="BalanceErrorsActivityInquiryForm(element)">
+              <mat-icon mat-icon-button color="warn">activity</mat-icon>
+              <mat-label>ACTIVITY</mat-label>
+            </button>
+        
+          </mat-option>
+          <mat-option>
+            <button mat-icon-button (click)="ItemBalanceForm(element)">
+              <mat-icon mat-icon-button color="warn">balances</mat-icon>
+              <mat-label>BALANCES</mat-label>
+            </button>
+        
+          </mat-option>
+          <mat-option>
+            <button mat-icon-button (click)="ItemsLocationsForm(element)">
+              <mat-icon mat-icon-button color="warn">location</mat-icon>
+              <mat-label>LOCATION</mat-label>
+            </button>
+        
+          </mat-option>
+          <mat-option>
+            <button mat-icon-button (click)="ItemsInboundDetailsForm(element)">
+              <mat-icon mat-icon-button color="warn">form</mat-icon>
+              <mat-label>FORM</mat-label>
+            </button>
+        
+          </mat-option> --> 
+         
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

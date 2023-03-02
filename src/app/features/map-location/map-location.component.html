@@ -1,0 +1,149 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title">Work With Warehouse Map</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="buttons">
+      <button
+        mat-button
+        (click)="mapLocationCreate()"
+        class="addButton buttons"
+      >
+        <mat-icon>add</mat-icon>
+        <span>Create Map Location</span>
+      </button>
+    </div>
+
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label> Building </mat-label>
+            <input matInput formControlName="building" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline"
+            ><mat-label> Zone </mat-label>
+            <input matInput formControlName="zone" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline"
+            ><mat-label> Location </mat-label>
+            <input matInput formControlName="location" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline"
+            ><mat-label> H/W/D </mat-label>
+            <input matInput formControlName="hwd" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline"
+            ><mat-label> Available Capacity </mat-label>
+            <input
+              matInput
+              formControlName="availableCapacity"
+            /> </mat-form-field
+          >%
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table [dataSource]="dataSource" mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="Location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZBLDG }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Zone">
+      <th mat-header-cell *matHeaderCellDef>Zone</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="F">
+      <th mat-header-cell *matHeaderCellDef width="60px">F</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Rsrv_Slot">
+      <th mat-header-cell *matHeaderCellDef>Rsrv Slot</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Storer">
+      <th mat-header-cell *matHeaderCellDef>Storer</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Item_Description">
+      <th mat-header-cell *matHeaderCellDef>Item/Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="PctOpen">
+      <th mat-header-cell *matHeaderCellDef>Pct Open</th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="190px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <mat-option>
+            <button mat-icon-button (click)="XReference()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>X-Reference</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="mapLocationUpdate()">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Map Location edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="mapLocationDelete()">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Map Location Delete</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="locationStatusInquiry()">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Location Status Inquiry</mat-label>
+            </button></mat-option
+          >
+        </mat-select>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [pageSizeOptions]="[4, 8, 16]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

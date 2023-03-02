@@ -1,0 +1,68 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Maintain Batch Control Constaints</mat-card-title>
+        
+      </mat-card-header>
+      
+      <mat-card-content> 
+
+        <div class="col">
+            <mat-form-field  appearance="outline"><mat-label> Storer_Number : </mat-label> 
+                <input matInput formControlName="Storer_Number" />
+              </mat-form-field>
+        </div>
+
+            <div class="col">
+                
+                <mat-form-field appearance="outline">  <mat-label> Broker_Name: </mat-label> 
+                    <input matInput formControlName="Broker_Name" />
+                  </mat-form-field>
+                </div>
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label>Carrier_Code</mat-label>
+                  <input matInput placeholder="Comment" formControlName="Carrier_Code" />
+              </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label>Attribute_Name</mat-label>
+                  <input matInput placeholder="Comment" formControlName="Attribute_Name" />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>All_Datials</mat-label>
+                <input matInput placeholder="Comment" formControlName="All_Datials" /> 
+            </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Attribute_value: </mat-label> 
+                    <input matInput formControlName="Attribute_value" />
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> State: </mat-label> 
+                    <input matInput formControlName="State" />
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Gift_Messages: </mat-label> 
+                    <input matInput formControlName="Gift_Messages" />
+                  </mat-form-field>
+              </div>
+                  <div >
+                    <button mat-button class="buttonCss" (click)="number()">Constraints</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  

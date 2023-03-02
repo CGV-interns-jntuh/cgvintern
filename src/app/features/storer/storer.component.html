@@ -1,0 +1,417 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Storer </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button (click)="storerCreate(id)" class="addButton buttons">
+        <mat-icon>add</mat-icon>
+        <span>New Storer</span>
+      </button>
+    </div>
+    <form [formGroup]="updateForm" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>StorerName</mat-label>
+            <input matInput formControlName="storerNum" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Building</mat-label>
+            <input matInput formControlName="building" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Only Active: </mat-label>
+            <input matInput formControlName="onlyActive" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Name: </mat-label>
+            <input matInput formControlName="storerName" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Acct Rep: </mat-label>
+            <input matInput formControlName="acctRep" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Tally Column -->
+    <ng-container matColumnDef="StorerNumber">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer Number
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.CTCONS }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="StorerSuffix">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer Suffix
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.CTCONS }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="StorerName">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer Name
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.CTCONS }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BuildingNumber">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Building Num
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.CTCONS }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PrimaryAcc">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Primart Acc
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.CTCONS }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Rep">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Rep
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.CTCONS }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <!--  <mat-option>
+            <button mat-icon-button (click)="storerCreate(id)">
+              <mat-icon mat-icon-button color="primary">add</mat-icon>
+              <mat-label>Add Storer</mat-label>
+            </button></mat-option
+          > -->
+
+          <mat-option>
+            <button mat-icon-button (click)="storerUpdate(id)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Edit-Storer</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="storerDeactive(id)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Storer-Deactive</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerDelete(id)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Storer-Delete</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerContacts(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Storer-Contacts</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerPeriodRecords(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Storer-Period-Records</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerItem(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Storer-Item</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerWriteBalanceRecords(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Write-Blanace-Records</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAccessInvoiceInquiry(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Access-Invoice-Inquiry</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAragingInquiry(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>AR-Aging-Inquiry</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerRecIvcInquiry(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Rec-Ivc-Inquiry</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerEdiDocuments(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Edi-Document</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerConsItem(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Cons Item</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerUccSerCtl(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Ucc-Ser-Ctl</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerUccLblCtl(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Ucc-Lbl-Ctl</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerPrinters(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Printers</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerRateBasis(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Rate Bases</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerRateChange(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Rate Change</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerGen869Trigger(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Gen-869-Trigger</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerResonableness(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Resonableness</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerEdiInfo(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-EDI-Info</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerItemDefaults(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Item-Defaults</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerWorkWithErrors(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Work-With-Errors</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerExport(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Export</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAttributes(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Attributes</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerInvoiceInquiry(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer-Invoice-Inquiry</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerXref(id)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Storer X-Ref</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAccount(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Storer Accounting Attributes</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="storerStatus(id)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label> Account Status</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAccountAttribute(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label> Account Attribute</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerComments(id)">
+              <mat-icon mat-icon-button color="primary">comment</mat-icon>
+              <mat-label> Storer Comments</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerExpNoActivity(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label> Exp No Activity</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerProductCode(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Product Code</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerAutoRate(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Auto Rate</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerPutawayScheme(id)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Putaway Scheme</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerWwAccountAttribute(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Work With Account Attribute</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storerDailyStatus(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Daily Status</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="storerShortStock(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storer Short Stock</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="storageInvoiceInquiry(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Storage Invoice Inquiry</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button
+              mat-icon-button
+              (click)="storerAutoSchdulingAndProcess(element)"
+            >
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Auto Schedule Processing</mat-label>
+            </button></mat-option
+          >
+
+          <!-- <mat-option>
+                      <button mat-icon-button (click)="storerAutoSchdulingAndProcessUpdate(element)">
+                         <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                        <mat-label>Auto Schedule Process Update</mat-label>
+                  </button></mat-option> -->
+        </mat-select>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <!-- <mat-paginator
+      #paginator
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    >
+    </mat-paginator> -->
+  <mat-paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

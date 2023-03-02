@@ -1,0 +1,58 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Batch Lane Assignment</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Batch Number </mat-label>
+            <input matInput formControlName="BatchNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Carrier</mat-label>
+            <input matInput formControlName="Carrier" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Total Weight </mat-label>
+            <input matInput formControlName="TotalWeight" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Total Cubes </mat-label>
+            <input matInput formControlName="TotalCubes" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Total Orders </mat-label>
+            <input matInput formControlName="TotalOrders" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Total Stops </mat-label>
+            <input matInput formControlName="TotalStops" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Staging Lane </mat-label>
+            <input matInput formControlName="StagingLane" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

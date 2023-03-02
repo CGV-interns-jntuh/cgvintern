@@ -1,0 +1,113 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Carrier EDI Documents</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>SCAC Code:</mat-label>
+                      <input matInput formControlName="SCACCode"/>
+                     </mat-form-field>
+                     </div>
+                 
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="SCACCode">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            SCACCode
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.SCACCode }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="IO">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            IO
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.IO }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="DocumentType">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                DocumentType
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.DocumentType }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ApplicationName">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                ApplicationName
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ApplicationName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ValidationProgram">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                ValidationProgram
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ValidationProgram }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="MessageFile">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                MessageFile
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MessageFile }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="Status">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Status
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Status }}</td>
+          </ng-container>
+          
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+                <mat-option>
+                    <button mat-icon-button (click)="DocumentsAddForm()">
+                      <mat-icon mat-icon-button color="primary">add</mat-icon>
+                      <mat-label>Add</mat-label>
+                    </button>
+                  </mat-option>
+        
+            <mat-option>
+            <button mat-icon-button (click)="DocumentsChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Change</mat-label>
+            </button>
+          </mat-option>  
+          
+          
+          
+          <mat-option>
+            <button mat-icon-button (click)="DocumentsDeleteForm(element)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+          </mat-option>
+           
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  

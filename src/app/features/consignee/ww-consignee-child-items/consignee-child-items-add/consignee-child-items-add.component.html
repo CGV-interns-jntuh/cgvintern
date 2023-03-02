@@ -1,0 +1,68 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Maintain Consignee Child Items</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Storer  : </mat-label> 
+                    <input matInput formControlName="Storer"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Item Code : </mat-label> 
+                    <input matInput formControlName="ItemCode"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Consignee Code : </mat-label> 
+                    <input matInput formControlName="ConsigneeCode"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Buyer Item Code : </mat-label> 
+                    <input matInput formControlName="BuyerItemCode"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>UPC Code: </mat-label> 
+                    <input matInput formControlName="UPCCode" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Secondary Item Code : </mat-label> 
+                    <input matInput formControlName="SecondaryItemCode"/>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Status Code </mat-label> 
+                    <input matInput formControlName="StatusCode"/>
+                </mat-form-field>
+
+                
+            </div>
+
+            
+
+            <div class="col">
+                <button mat-button (click)="addChildItem()" class="addButton">
+                    
+                    <span>create</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>

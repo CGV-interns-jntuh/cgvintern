@@ -1,0 +1,53 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Re-identify Customer</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> BoxNumber: </mat-label> 
+                          <input matInput formControlName="BoxNumber" />
+                        </mat-form-field>
+                  </div>
+                  
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+                    <input matInput formControlName="Description" />
+                  </mat-form-field>
+            </div>
+                     
+      <div class="col">
+        <mat-form-field appearance="outline">  <mat-label> ContentDates: </mat-label> 
+            <input matInput formControlName="ContentDates" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> Customer: </mat-label> 
+                <input matInput formControlName="Customer" />
+              </mat-form-field>
+  </div>
+  <hr>
+  <div class="col">
+    <mat-form-field appearance="outline">  <mat-label> NewCustomer: </mat-label> 
+        <input matInput formControlName="NewCustomer" />
+      </mat-form-field>
+</div>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Customer</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

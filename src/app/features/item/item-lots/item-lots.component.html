@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-card-title style="color: rgb(10, 186, 25)"
+        >Work With an Items Lots</mat-card-title
+      >
+      &nbsp;
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label>Storer</mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"
+            ><mat-label>Item</mat-label>
+            <input matInput formControlName="item" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label>Lots</mat-label>
+            <input matInput formControlName="lots" />
+          </mat-form-field>
+
+          &nbsp;
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table [dataSource]="dataSource" mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="Sts">
+      <th mat-header-cell *matHeaderCellDef>Sts</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHBRKN1 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LotCodes">
+      <th mat-header-cell *matHeaderCellDef>Lot Codes</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHTALY }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LotUnitWeight">
+      <th mat-header-cell *matHeaderCellDef>Lot Unit Weight</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHTQTY }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="FirstReceived">
+      <th mat-header-cell *matHeaderCellDef>First Received</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHACTA }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LastShipped">
+      <th mat-header-cell *matHeaderCellDef>Last Shipped</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHACTA }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-card>

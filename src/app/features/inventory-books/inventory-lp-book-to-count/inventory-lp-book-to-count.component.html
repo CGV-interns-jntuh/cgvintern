@@ -1,0 +1,47 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >LP Book to Count Listing</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                  
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> sortorder  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="I">Item </mat-option>
+                        <mat-option value="L">Location</mat-option>
+                        <mat-option value="R">Routing </mat-option>
+                        <mat-option value="T">Team</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                
+                <div class="col">
+                  <mat-form-field appearance="outline">  <mat-label> listingType  </mat-label> 
+                      <mat-select matNativeControl required>
+                      <mat-option value="A">*ANY</mat-option>
+                      <mat-option value="T">Team</mat-option>
+                      </mat-select> 
+                  </mat-form-field>
+                </div>
+              
+              
+              
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">CountListing</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

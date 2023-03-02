@@ -1,0 +1,67 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Account Processing Steps</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer </mat-label>
+            <input matInput formControlName="Storer" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Process</mat-label>
+            <input matInput formControlName="Process" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Condition </mat-label>
+            <input matInput formControlName="Condition" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Account Step </mat-label>
+            <input matInput formControlName="AccountStep" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Standard Hours </mat-label>
+            <input matInput formControlName="StandardHours" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Task </mat-label>
+            <input matInput formControlName="Task" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Responsible </mat-label>
+            <input matInput formControlName="Responsible" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Status Code </mat-label>
+            <input
+              matInput
+              formControlName="StatusCode"
+              maxlength="2"
+              style="text-transform: uppercase"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

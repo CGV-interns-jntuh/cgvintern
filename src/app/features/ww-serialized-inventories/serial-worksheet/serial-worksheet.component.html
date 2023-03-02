@@ -1,0 +1,54 @@
+<!-- Form No : task no:63.2(476) -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Serial/LP WorkSheet Options</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                    <div class="row">    
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ListRecountsOnly  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="Item">N</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div></div>
+
+                  <div class="row">    
+                    <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> BreakByAisle  </mat-label> 
+                          <mat-select matNativeControl required>
+                          <mat-option value="All">N</mat-option>
+                          </mat-select> 
+                      </mat-form-field>
+                    </div></div>
+
+               
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BreakEvery: </mat-label> 
+                        <input matInput formControlName="BreakEvery" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">  <mat-label> Location: </mat-label> 
+                        <input matInput formControlName="Location" />
+                      </mat-form-field>
+                </div>
+            
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">WorkSheet</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

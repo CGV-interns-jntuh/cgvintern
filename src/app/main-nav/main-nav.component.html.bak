@@ -1,0 +1,197 @@
+<div style="height: 100vh">
+  <mat-toolbar color="accent">
+    <span routerLink="/">SC CodeWorks</span>
+  </mat-toolbar>
+  <!-- <mat-toolbar color="primary"> -->
+
+  <mat-sidenav-container class="example-container primary">
+    <mat-sidenav #drawer mode="side" opened>
+      <mat-nav-list>
+
+        <!-- Talyy Sub Menu -->
+        <mat-list-item (click)="showreceviceSubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Receive</span
+          >
+          <mat-icon mat-list-icon>store</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showreceviceSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="receviedisplay"
+          [style.flex-direction]="receviedirection"
+          class="submenu"
+          [ngClass]="{ expanded: showreceviceSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item routerLink="/receive/staging">Staging</a>
+          <a mat-list-item routerLink="/receive/putaway">Putaway</a>
+          <a mat-list-item routerLink="/receive/onestep"> Inbound 1-Step</a>
+        </div>
+
+        <mat-list-item (click)="showtallySubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Tally</span>
+          <mat-icon mat-list-icon>assignment_ind</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showtallysSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="tallysdisplay"
+          [style.flex-direction]="tallysdirection"
+          class="submenu"
+          [ngClass]="{ expanded: showtallysSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item routerLink="/tallys">Read</a>
+          <button mat-list-item routerLink="/tallys/add">Create</button>
+          <a mat-list-item>Update</a>
+        </div>
+
+        
+        <!-- Building Sub Menu -->
+        <mat-list-item (click)="showBuildingSubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Building</span
+          >
+          <mat-icon mat-list-icon>home</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showBuildingSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="buildingdisplay"
+          [style.flex-direction]="buildingdirection"
+          class="submenu"
+          [ngClass]="{ expanded: showBuildingSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item routerLink="/building/read">Read</a>
+        </div>
+
+        <mat-list-item (click)="showMapZoneSubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Map Zone</span
+          >
+          <mat-icon mat-list-icon>map</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showMapZoneSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="mapZonedisplay"
+          [style.flex-direction]="mapZonedirection"
+          class="submenu"
+          [ngClass]="{ expanded: showMapZoneSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item routerLink="/mapzone/read">Read</a>
+        </div>
+
+        <!-- Ordes Sub Menu -->
+        <mat-list-item (click)="showordersSubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Orders</span>
+          <mat-icon mat-list-icon>add_shopping_cart</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showorderSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="ordersdisplay"
+          [style.flex-direction]="ordersdirection"
+          class="submenu"
+          [ngClass]="{ expanded: showorderSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item></a>
+        </div>
+        
+        <!-- Storer Sub Menu -->
+        
+        <div
+          [style.display]="storerdisplay"
+          [style.flex-direction]="storerdirection"
+          class="submenu"
+          [ngClass]="{ expanded: showstorerSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item routerLink="/storer">Storer</a>
+          <a mat-list-item routerLink="/receive/putaway">Putaway</a>
+          <a mat-list-item routerLink="/receive/onestep"> Inbound 1-Step</a>
+        </div>
+
+
+        <!-- Shipping Sub Menu -->
+        <mat-list-item (click)="showshippingsSubmenushowhide()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Shipping</span
+          >
+          <mat-icon mat-list-icon>explore</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showshippingSubmenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="shippingsdisplay"
+          [style.flex-direction]="shippingsdirection"
+          class="submenu"
+          [ngClass]="{ expanded: showshippingSubmenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+          <a mat-list-item></a>
+        </div>
+
+
+         <!-- Map Location Sub Menu -->
+        <mat-list-item (click)="showMapLocationMenu()" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Map Location</span
+          >
+          <mat-icon mat-list-icon>explore</mat-icon>
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{ rotated: showMapLocationMenu }"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          [style.display]="mapLocationDispaly"
+          [style.flex-direction]="mapLocationDirection"
+          class="submenu"
+          [ngClass]="{ expanded: showMapLocationMenu }"
+          *ngIf="isShowing || isExpanded"
+        >
+        <a mat-list-item routerLink="/map-location">Map Location</a>
+        </div>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <div class="content mat-elevation-z4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
+</div>
+
+
+
+<!-- https://fonts.google.com/icons?selected=Material+Icons -->

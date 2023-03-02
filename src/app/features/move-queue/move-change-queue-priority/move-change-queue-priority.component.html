@@ -1,0 +1,124 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >ChangeQueuePriorities</mat-card-title>
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+        <div class="col">
+          
+            <mat-form-field  appearance="outline"><mat-label> Item : </mat-label> 
+                <input matInput formControlName="Item" />
+              </mat-form-field>
+        </div>
+
+        <div class="col">
+          
+            <mat-form-field appearance="outline">  <mat-label> Lots: </mat-label> 
+                  <input
+                  matInput
+                  formControlName="Lots"
+                  style="text-transform: uppercase"/>
+              
+              </mat-form-field>
+        </div>   
+
+          <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> From : </mat-label> 
+                <input matInput formControlName="From" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> To : </mat-label> 
+                <input matInput formControlName="To" />
+              </mat-form-field>
+
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> Source: </mat-label> 
+                <input
+                  matInput
+                  formControlName="Source"
+                  style="text-transform: uppercase"
+                />            
+              </mat-form-field>
+          </div>
+              <hr>
+              <div class="col">   
+            <mat-form-field appearance="outline">  <mat-label> ChangePriorityby : </mat-label> 
+                <input matInput formControlName="ChangePriorityby" />
+              </mat-form-field>
+
+              </div>
+
+              <div class="col">
+                <mat-form-field appearance="outline">  <mat-label>Change for only this move </mat-label> 
+        
+                    <mat-select matNativeControl required>
+                        <mat-option value="Y">Y</mat-option>  
+                        <mat-option value="N">N</mat-option> 
+                    </mat-select>
+                    <input matInput formControlName="Changeforonlythismove" />
+                  </mat-form-field>
+                </div>
+            
+            
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Change all moves for this source document </mat-label> 
+        
+                    <mat-select matNativeControl required>
+                        <mat-option value="Y">Y</mat-option>  
+                        <mat-option value="N">N</mat-option> 
+                    </mat-select>
+                    <input matInput formControlName="Changeallmovesforthissourcedocument" />
+                  </mat-form-field>
+            </div>
+        
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Change all moves for this item </mat-label> 
+        
+                    <mat-select matNativeControl required>
+                        <mat-option value="N">N</mat-option>  
+                        <mat-option value="Y">Y</mat-option> 
+                    </mat-select>
+                    <input matInput formControlName="Changeallmovesforthisitem" />
+                  </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Change all moves for the form location </mat-label> 
+        
+                    <mat-select matNativeControl required>
+                        <mat-option value="N">N</mat-option>  
+                        <mat-option value="Y">Y</mat-option> 
+                    </mat-select>
+                    <input matInput formControlName="Changeallmovesfortheformlocation" />
+                  </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Change all moves for the to location </mat-label> 
+        
+                    <mat-select matNativeControl required>
+                        <mat-option value="N">N</mat-option>  
+                        <mat-option value="Y">Y</mat-option> 
+                    </mat-select>
+                    <input matInput formControlName="Changeallmovesforthetolocation" />
+                  </mat-form-field>
+            </div>
+                  <div >
+                    <button mat-button class="buttonCss" (click)="priorities()">Priorities</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  

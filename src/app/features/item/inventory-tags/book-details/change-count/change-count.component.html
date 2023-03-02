@@ -1,0 +1,77 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Maintain Serial/LP Count </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Serial/LP</mat-label>
+            <input matInput formControlName="SerialLP" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Item </mat-label>
+            <input matInput formControlName="Item" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lots</mat-label>
+            <input matInput formControlName="Lots" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Tally Column -->
+        <ng-container matColumnDef="Team">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Team
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Team }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Condition">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Condition
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.Condition }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Location">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Location
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Location }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Quantity
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Quantity }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table></form
+  ></mat-card-content>
+
+  <mat-paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

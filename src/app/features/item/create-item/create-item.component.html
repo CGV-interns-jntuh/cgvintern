@@ -1,0 +1,95 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <button mat-button></button>
+      <mat-card-title>Item Master Maitenance</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Number </mat-label>
+            <input matInput formControlName="storerNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Item Code</mat-label>
+            <input matInput maxlength="1" formControlName="itemCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>UPC/Tail Code</mat-label>
+            <input matInput formControlName="UPCTailCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Product Code</mat-label>
+            <input matInput formControlName="productCode" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Allow Web Selection </mat-label>
+            <mat-select formControlName="allowwebSelection">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lotted Item </mat-label>
+            <mat-select formControlName="lottedItem">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Unit Weight </mat-label>
+            <mat-select formControlName="lotUnitWeight">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Sort Mask </mat-label>
+            <input matInput formControlName="sortMask" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Apply To Lot </mat-label>
+            <input matInput formControlName="applyToLot" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Place After </mat-label>
+            <input matInput formControlName="PlaceAfter" />
+          </mat-form-field>
+          <button mat-button class="buttons addButton" (click)="addItem()">
+            <mat-label>Add</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

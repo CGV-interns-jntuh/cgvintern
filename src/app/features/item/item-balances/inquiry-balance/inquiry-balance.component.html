@@ -1,0 +1,120 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <button mat-button></button>
+      <mat-card-title>Balance Record Inquiry</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Number </mat-label>
+            <input matInput formControlName="StorerNumber" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput formControlName="Date" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <input matInput formControlName="Type" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Item Code</mat-label>
+            <input matInput formControlName="ItemCode" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Codes</mat-label>
+            <input matInput formControlName="LotCodes" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building </mat-label>
+            <input matInput formControlName="Building" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Storage Invoice Number </mat-label>
+            <input matInput formControlName="StorageInvoiceNumber" />
+          </mat-form-field>
+        </div>
+        <u>Quantities</u>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>On Hand </mat-label>
+            <input matInput formControlName="QtyOnHand" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Allocated </mat-label>
+            <input matInput formControlName="QtyAllocated" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Committed </mat-label>
+            <input matInput formControlName="QtyCommitted" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Held </mat-label>
+            <input matInput formControlName="QtyHeld" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Damaged </mat-label>
+            <input matInput formControlName="QtyDamaged" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Shipped </mat-label>
+            <input matInput formControlName="QtyShipped" />
+          </mat-form-field>
+        </div>
+        <u>Weights</u>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>On Hand </mat-label>
+            <input matInput formControlName="WgtOnHand" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Allocated </mat-label>
+            <input matInput formControlName="WgtAllocated" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Committed </mat-label>
+            <input matInput formControlName="WgtCommitted" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Held </mat-label>
+            <input matInput formControlName="WgtHeld" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Damaged </mat-label>
+            <input matInput formControlName="WgtDamaged" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Shipped </mat-label>
+            <input matInput formControlName="WgtShipped" />
+          </mat-form-field>
+          <button
+            mat-button
+            class="buttons addButton"
+            (click)="InquiryBalance()"
+          >
+            <mat-label>Add</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

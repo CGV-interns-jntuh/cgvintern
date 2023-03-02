@@ -1,0 +1,154 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Inventory Adjustments</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <!-- <div class="buttons">
+                 <button mat-button  (click)="BatchFileAddForm()" class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>File</span>
+                     </button>
+                    </div> -->
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Trans</mat-label>
+                      <input matInput formControlName="trans"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Reason</mat-label>
+                       <input matInput formControlName="reason"/>
+                       </mat-form-field>
+                       <tr>Dates</tr>
+                       <mat-form-field appearance="outline">
+                        <mat-label>FromDate</mat-label>
+                       <input matInput formControlName="fromDate"/>
+                       </mat-form-field>
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>ToDate</mat-label>
+                       <input matInput formControlName="toDate"/>
+                       </mat-form-field>
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Storer</mat-label>
+                       <input matInput formControlName="Entry_storerUser"/>
+                       </mat-form-field>
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>Type</mat-label>
+                       <input matInput formControlName="type"/>
+                       </mat-form-field>
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>Location</mat-label>
+                       <input matInput formControlName="location"/>
+                       </mat-form-field>
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="trans">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Trans
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.trans }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="date">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Date
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="storer">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Storer
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.storer }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="fT">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                FT
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.fT }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="reason">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Reason
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.reason }}</td>
+          </ng-container>
+          
+
+          <ng-container matColumnDef="location">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Location
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Quantity
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="iT">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                IT
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.iT }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+              <mat-option>
+                <button mat-icon-button (click)="itemAdjustmentChangeDate(element)">
+                  <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                  <mat-label>Item Adjustment Change Date</mat-label>
+                </button></mat-option
+              >
+
+              <mat-option>
+                <button mat-icon-button (click)="itemAdjustmentDisplay(element)">
+                  <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                  <mat-label>Adjsutment Inquiry(Display)</mat-label>
+                </button></mat-option
+              >
+            
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

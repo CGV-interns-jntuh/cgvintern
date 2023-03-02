@@ -1,0 +1,97 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Work With Files</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button (click)="addFile()" class="addButton buttons">
+        <mat-icon>add</mat-icon>
+        <span>New File</span>
+      </button>
+    </div>
+    <div class="formDiv">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Library</mat-label>
+              <input matInput formControlName="Library" />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>File</mat-label>
+              <input matInput formControlName="File" />
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="LibraryName">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Library Name
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.LibraryName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="FileName">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>File Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.FileName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Members">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Members</th>
+          <td mat-cell *matCellDef="let element">{{ element.Members }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="ActiveRecords">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Active Records
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.ActiveRecords }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="DeletedRecords">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Deleted Records
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.DeletedRecords }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="Space">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Space</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Space }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell mat-header-cell width="250px" *matHeaderCellDef>
+            Actions
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select class="mat-select" placeholder="Select Option">
+              <mat-option>
+                <button mat-icon-button (click)="deleteFile()">
+                  <mat-icon mat-icon-button color="secondary">delete</mat-icon>
+                  <mat-label>Delete</mat-label>
+                </button></mat-option
+              >
+            </mat-select>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Totals</mat-label>
+        <input matInput formControlName="Totals" />
+      </mat-form-field>
+    </div> </mat-card-content
+></mat-card>

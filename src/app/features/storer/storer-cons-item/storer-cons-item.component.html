@@ -1,0 +1,98 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Work with Consignee Items</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="Storer" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Item</mat-label>
+                    <input matInput formControlName="Item" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Consignee</mat-label>
+                    <input matInput formControlName="Consignee" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Buyer Items</mat-label>
+                    <input matInput formControlName="BuyerItems" />
+                </mat-form-field>
+                
+            </div>
+
+          
+        </div>     
+    </form>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Storer">
+          <th mat-header-cell mat-header-cell width="15%" *matHeaderCellDef>
+            Storer
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Storer }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Consignee">
+          <th mat-header-cell mat-header-cell width="15%" *matHeaderCellDef>
+            Consignee
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Consignee }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Storer Item Code">
+          <th mat-header-cell mat-header-cell width="15%" *matHeaderCellDef>
+            Storer Item Code
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.StorerItemCode }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Buyer Item Code">
+          <th mat-header-cell mat-header-cell width="15%" *matHeaderCellDef>
+            Buyer Item Code
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.BuyerItemCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="St">
+            <th mat-header-cell mat-header-cell width="15%" *matHeaderCellDef>
+                St
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.St }}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="Action">
+          <th  mat-header-cell mat-header-cell width="10%" *matHeaderCellDef>
+            Actions
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+          
+        
+  
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+</mat-card-content>

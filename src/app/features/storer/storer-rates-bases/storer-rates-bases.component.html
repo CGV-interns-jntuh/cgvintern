@@ -1,0 +1,211 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Maintain Storer Rates and Bases</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" >
+
+        <mat-form-field appearance="outline">
+            <mat-label>Storer</mat-label>
+            <input matInput formControlName="Storer" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Default Frieght Charge</mat-label>
+            <input matInput formControlName="defaultFrieghtCharge" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Defalut COD Charge</mat-label>
+            <input matInput formControlName="defaultCodCharge" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Deffered Handling Percentage</mat-label>
+            <input matInput formControlName="defferedHandlingPerdentage" />
+        </mat-form-field>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Defalut</th>
+                    <th>Weight</th>
+                    <th>Cubes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>Ruccuring Storage</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="reccStorageRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="reccStorageBasis" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Receiving Storage</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="recvStorageRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="reccStorageBasis" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Regular Handling</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="regHandlingRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="regHandlingBasis" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Alternate Handling</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="altrHandlingRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="altrHandlingBasis" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Distribution Handling</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="distbHandlingRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName=" distbHandlingBasis" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Distribution Handling</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="distbHandlingRate" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName=" distbHandlingBasis" />
+                        </mat-form-field>
+                    </td>
+                    <th>Amount</th>
+                </tr>
+
+               <tr>
+                    <th>Insurance Liability</th>
+                    <td>
+                        <!-- <mat-form-field appearance="outline">
+                            <input matInput formControlName="distbHandlingRate" />
+                        </mat-form-field> -->
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="insuLiabilityBais" />
+                        </mat-form-field>
+                    </td>
+
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="amount" />
+                        </mat-form-field>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>W/R Lot Minimum</mat-label>
+                    <input matInput formControlName="wrLotMin" />
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Storage Lot Minimum</mat-label>
+                    <input matInput formControlName="storageLotMin" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>W/R Item Hdl Minimum</mat-label>
+                    <input matInput formControlName="wrItemHdlMin" />
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Storage Item Minimum</mat-label>
+                    <input matInput formControlName="storageItemMin" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>W/R Item Storage Minimum</mat-label>
+                    <input matInput formControlName="wrItemStgMin" />
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Storage Invoice Minimum</mat-label>
+                    <input matInput formControlName="storageInvoiceMin" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>W/R Storage Minimum</mat-label>
+                    <input matInput formControlName="wrStorageMin" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>W/R Handling Minimum</mat-label>
+                    <input matInput formControlName="wrHandlingMin" />
+                </mat-form-field>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>

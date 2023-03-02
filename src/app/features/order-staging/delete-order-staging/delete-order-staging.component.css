@@ -1,0 +1,12 @@
+.mat-card-title {
+  color: red;
+}
+
+.mat-form-field {
+  padding: 20px;
+}
+
+.deButton {
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,70 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Master Serials</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Serial</mat-label>
+                      <input matInput formControlName="Serial"/>
+                     </mat-form-field>
+                     </div>
+                 
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Serial">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Serial#
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Serial }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Type">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Type
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Type }}</td>
+        </ng-container>
+          
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+             
+         <mat-option>
+            <button mat-icon-button (click)="masterSerialListAddForm(element)">
+              <mat-icon mat-icon-button color="primary">add</mat-icon>
+              <mat-label>ADD</mat-label>
+            </button>
+        
+          </mat-option>
+           
+          <mat-option>
+            <button mat-icon-button (click)="masterSerialListChangeForm(element)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>CHANGE</mat-label>
+            </button>
+        
+          </mat-option>
+
+          
+           
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

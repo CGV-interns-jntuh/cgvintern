@@ -1,0 +1,81 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Hazardous Chemicals</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>ProperName:</mat-label>
+                      <input matInput formControlName="properName"/>
+                     </mat-form-field>
+                     </div>
+                     <div class="row">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Chemical#:</mat-label>
+                         <input matInput formControlName="chemical"/>
+                        </mat-form-field>
+                        </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="ChemicalNumber">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            ChemicalNumber
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.ChemicalNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Proper">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Proper
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Proper }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Name
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+          </ng-container>
+          
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+
+                <mat-option>
+                    <button mat-icon-button (click)="ChemicalsAddForm(element)">
+                      <mat-icon mat-icon-button color="primary">add</mat-icon>
+                      <mat-label>ADD</mat-label>
+                    </button>
+                  </mat-option> 
+          
+           <mat-option>
+            <button mat-icon-button (click)="ChemicalsChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>CHANGE</mat-label>
+            </button>
+          </mat-option> 
+          
+         
+           
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  

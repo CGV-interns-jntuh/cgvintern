@@ -1,0 +1,89 @@
+<!-- Form No : Task No:63.1(475) -->
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Inventory Serials/Lps</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Serial/LP:</mat-label>
+                      <input matInput formControlName="SerialLP"/>
+                      </mat-form-field>
+                    
+                      <mat-form-field appearance="outline">
+                       <mat-label>Not Found:</mat-label>
+                       <input matInput formControlName="NotFound"/>
+                       </mat-form-field>
+                    
+                       <mat-form-field appearance="outline">
+                        <mat-label>Condition Change:</mat-label>
+                        <input matInput formControlName="ConditionChange"/>
+                        </mat-form-field>
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Location:</mat-label>
+                       <input matInput formControlName="Location"/>
+                       </mat-form-field>
+                       
+                      <mat-form-field appearance="outline">
+                        <mat-label>Recounts:</mat-label>
+                       <input matInput formControlName="Recounts"/>
+                       </mat-form-field>
+  
+                         
+                      <mat-form-field appearance="outline">
+                        <mat-label>Relocations:</mat-label>
+                       <input matInput formControlName="Relocations"/>
+                       </mat-form-field>
+                     </div>
+                     
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="SerialLPNumber">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Serial/LP Number
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.SerialLPNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Item">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Item
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Item }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Lots">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Lots
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Lots }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

@@ -1,0 +1,153 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Auto Scheduling and Processing</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <div class="buttons">
+                 <button mat-button (click)="storerAutoSchdulingAndProcessAdd()"  class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>Processing</span>
+                     </button>
+                    </div>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Storer</mat-label>
+                      <input matInput formControlName="Storer"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Process</mat-label>
+                      <input matInput formControlName="Process"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>AutoProcess</mat-label>
+                      <input matInput formControlName="AutoProcess"/>
+                     </mat-form-field>
+
+                     <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                       <input matInput formControlName="Status"/>
+                      </mat-form-field>
+
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="StorerNumber">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            StorerNumber
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.StorerNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Process">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Process
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Process }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Auto">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Auto
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Auto }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Date">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Date
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Date }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="LastRunTime">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                LastRunTime
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.LastRunTime }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Min">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Min
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Min }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="intervalOffset">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                intervalOffset
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.intervalOffset }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="Date1">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Date1
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Date1 }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="NextRunTime-">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                NextRunTime
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.NextRunTime }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Stat">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Stat
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Stat }}</td>
+          </ng-container>
+   
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="storerAutoSchdulingAndProcessUpdate(element)">
+              <mat-icon mat-icon-button color="warn">update</mat-icon>
+              <mat-label>UPDATE</mat-label>
+            </button>
+          </mat-option>
+         
+          <mat-option>
+            <button mat-icon-button (click)="storerAutoSchdulingAndProcessError()">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Auto-Schedule-Error</mat-label>
+            </button>
+          </mat-option>
+         
+
+        </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

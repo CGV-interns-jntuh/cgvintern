@@ -1,0 +1,79 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Tag Count Summary</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Tags Produced </mat-label>
+            <input matInput formControlName="TagsProduced" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Voids</mat-label>
+            <input matInput formControlName="Voids" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Unused </mat-label>
+            <input matInput formControlName="Unused" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Tally Column -->
+      <ng-container matColumnDef="Team">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Team
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.Team }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Tags">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Tags
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.Tags }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Quantity">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Quantity
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.Quantity }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Pct">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Pct
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.Pct }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!-- <mat-paginator
+                #paginator
+                [pageIndex]="0"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+              >
+              </mat-paginator> -->
+    <mat-paginator
+      [pageSizeOptions]="[8, 16, 24]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card>
+</form>

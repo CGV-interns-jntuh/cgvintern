@@ -1,0 +1,63 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+           
+          </button>
+          
+        <mat-card-title 
+          >Orders-Delete</mat-card-title
+        >
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+            <mat-form-field  appearance="outline"><mat-label> Billoflanding : </mat-label> 
+              <input matInput formControlName="Billoflanding" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">  <mat-label> Storer: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Storer"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+              
+            <mat-form-field appearance="outline">  <mat-label> Consignee: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Consignee"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+               
+            <mat-form-field appearance="outline">  <mat-label> ScheduledShipDate: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="ScheduledShipDate"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+            
+              
+               <div>
+                <button mat-button class="button removeButton"(click)="delete()">Delete</button>
+              </div> 
+
+      </mat-card-content>
+    </mat-card>
+  </form>  

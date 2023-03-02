@@ -1,0 +1,54 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain Customer Address</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Customer: </mat-label> 
+                          <input matInput formControlName="Customer" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label>Address Type: </mat-label> 
+                          <input matInput formControlName="AddressType" />
+                        </mat-form-field>
+                  </div>
+                 <div class="col">
+                  <mat-form-field appearance="outline">  <mat-label>Customer Name: </mat-label> 
+                    <input matInput formControlName="CustomerName" />
+                  </mat-form-field>
+                  </div>
+
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label>Address: </mat-label> 
+                      <textarea matInput formControlName="Address" ></textarea> 
+                    </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label>City/St/Zip: </mat-label> 
+                          <input matInput formControlName="CityStZip" />
+                        </mat-form-field>
+                        </div>
+                             
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">CHANGE</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+

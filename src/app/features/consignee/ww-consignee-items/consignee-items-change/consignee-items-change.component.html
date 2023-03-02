@@ -1,0 +1,67 @@
+<!-- Form No : 669 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain Consignee Items</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Storer: </mat-label> 
+                          <input matInput formControlName="Storer" />
+                        </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> ItemCode: </mat-label> 
+                          <input matInput formControlName="ItemCode" />
+                        </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ConsigneeCode: </mat-label> 
+                        <input matInput formControlName="ConsigneeCode" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BuyerItemCode: </mat-label> 
+                        <input matInput formControlName="BuyerItemCode" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> UPCCode: </mat-label> 
+                        <input matInput formControlName="UPCCode" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> SecondaryItemCode: </mat-label> 
+                        <input matInput formControlName="SecondaryItemCode" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> StatusCode: </mat-label> 
+                        <input matInput formControlName="StatusCode" />
+                      </mat-form-field>
+                 </div>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Change</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

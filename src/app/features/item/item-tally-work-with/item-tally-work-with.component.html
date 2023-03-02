@@ -1,0 +1,102 @@
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With Inbound Details</mat-card-title>
+    </mat-card-header>
+
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                   <mat-label>Item</mat-label>
+                   <input matInput formControlName="Item"/>
+               </mat-form-field>
+               
+           </div>
+          
+        </div>
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="TallyNumber">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            TallyNumber
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.TallyNumber}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Seq">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Seq
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Seq}}</td>
+         </ng-container>
+         <ng-container matColumnDef="ST">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            ST
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.ST}}</td>
+         </ng-container>
+         <ng-container matColumnDef="transDate">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            transDate
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.transDate}}</td>
+         </ng-container>
+         <ng-container matColumnDef="ArrivalDate">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            ArrivalDate
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.ArrivalDate}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Expected">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Expected
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Expected}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="Recv">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Recv
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Recv}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="d">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                d
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.d}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Lots">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Lots
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Lots}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="opt">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                opt
+            </th> 
+            <td mat-cell *matCellDef="let element">
+                <mat-select class="mat-select" placeholder="Select Option">
+                    <mat-option>
+                      <button mat-icon-button (click)="itemTallyInquiry(element)">
+                        <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                        <mat-label>Item Tally Inquiry</mat-label>
+                      </button></mat-option
+                    ></mat-select>
+            </td>
+          </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

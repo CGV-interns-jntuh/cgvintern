@@ -1,0 +1,84 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="title">Tally Posting Errors </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content> 
+
+        <form style="text-align: center">
+            <div class="row">
+                <div class="col">
+                   <label> <b>Tally Number: </b></label>{{anyvariable}}
+
+                    <label> <b>Total Quantity</b> </label> 9630
+                    <label> <b>Actual Arrival:</b> </label> 2022-10-12
+                   
+
+                   
+                </div>
+              
+            </div>
+           
+        </form>
+        <!--<div class="example-container">
+            <mat-form-field hintLabel="Max 10 characters">
+              <input matInput #input maxlength="10" placeholder="Enter some input">
+            
+            </mat-form-field>
+           
+        </div>-->
+          
+    </mat-card-content>
+
+    <table [dataSource]="dataSource"  mat-table class="mat-elevation-z8">
+        <ng-container matColumnDef="tally">
+            <th mat-header-cell *matHeaderCellDef> Tally </th>
+            <td mat-cell *matCellDef="let element"> {{ element.tally }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sequence">
+            <th mat-header-cell *matHeaderCellDef> Sequence </th>
+            <td mat-cell *matCellDef="let element"> {{ element.sequence }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="severity">
+            <th mat-header-cell *matHeaderCellDef> Severity </th>
+            <td mat-cell *matCellDef="let element"> {{ element.severity }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="message">
+            <th mat-header-cell *matHeaderCellDef> Message </th>
+            <td mat-cell *matCellDef="let element"> {{ element.message }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+            <th mat-header-cell *matHeaderCellDef> Item </th>
+            <td mat-cell *matCellDef="let element"> {{ element.item }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef> Code </th>
+            <td mat-cell *matCellDef="let element"> {{ element.code }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="intransit">
+            <th mat-header-cell *matHeaderCellDef> Intransit </th>
+            <td mat-cell *matCellDef="let element"> {{ element.intransit }} </td>
+        </ng-container>
+         
+        
+          <ng-container matColumnDef="receive">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                Recieved
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.receive }}</td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</mat-card>

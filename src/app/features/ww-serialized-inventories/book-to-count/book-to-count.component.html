@@ -1,0 +1,50 @@
+<!-- Form no : taskno:63.8(482) -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Book To physical Count Listing</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                    <div class="row">    
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ShowLotBreakouts  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="Item">Y</mat-option>
+                        <mat-option value="Item">N</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div></div>
+   
+                    <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Sort </mat-label> 
+                          <mat-select matNativeControl required>
+                          <mat-option value="All">I=Item</mat-option>
+                          <mat-option value="All">D=DEviation</mat-option>
+                          </mat-select> 
+                      </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> MinDevianceToShow: </mat-label> 
+                            <input matInput formControlName="MinDevianceToShow" />
+                          </mat-form-field>
+                    </div>
+               
+  
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">WorkSheet</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

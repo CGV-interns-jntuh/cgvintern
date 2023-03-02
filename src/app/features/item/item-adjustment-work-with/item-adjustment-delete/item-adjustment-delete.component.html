@@ -1,0 +1,55 @@
+<button  mat-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Delete An Item</mat-card-title>
+        
+      </mat-card-header>
+      <mat-card-content> 
+<div class="col">
+<mat-form-field  appearance="outline"><mat-label> Storer : </mat-label> 
+    <input matInput formControlName="Storer" />
+  </mat-form-field>
+</div>
+<div class="col">
+
+  <mat-form-field appearance="outline">  <mat-label> Item Code: </mat-label> 
+  
+
+    <input
+      matInput
+      formControlName="ItemCode"
+      style="text-transform: uppercase"
+    />
+  
+  </mat-form-field>
+</div>
+<div class="col">
+
+
+  <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+    <input matInput formControlName="Description" />
+  </mat-form-field>
+   
+</div>
+          
+
+          
+
+              <div >
+                <button mat-button class="buttonCss" (click)="Item()">Move</button>
+            </div>
+          
+
+      </mat-card-content>
+    </mat-card>
+  </form>  
+

@@ -1,0 +1,112 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title">Exit Points</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button (click)="addExitPoint()" class="addButton buttons">
+        <mat-icon>add</mat-icon>
+        <span>New Exit Point</span>
+      </button>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Storer</mat-label>
+            <input matInput formControlName="Storer" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline">
+            <mat-label>Exit Point</mat-label>
+            <input matInput formControlName="ExitPoint" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline">
+            <mat-label>Choice</mat-label>
+            <input matInput formControlName="Choice" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+          <br /><br />
+        </div>
+      </div>
+    </form>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="Storer">
+        <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+          Storer
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.SFSTOR }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ExitPoint">
+        <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+          Exit Point
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.SFFORM }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Choice">
+        <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+          Choice
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.SFPGM }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+          Description
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-select placeholder="Select Option">
+            <mat-option>
+              <button mat-icon-button (click)="exitUpdateForm(element)">
+                <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                <mat-label>Edit</mat-label>
+              </button>
+            </mat-option>
+
+            <mat-option>
+              <button mat-icon-button (click)="exitDeleteForm(element)">
+                <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                <mat-label>Delete</mat-label>
+              </button>
+            </mat-option>
+          </mat-select>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      #paginator
+      [pageSizeOptions]="[4, 8, 16]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card-content>
+</mat-card>

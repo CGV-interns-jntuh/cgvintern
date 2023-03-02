@@ -1,0 +1,58 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+      Auto-Processing-schedule-Error</mat-card-title>
+    </mat-card-header>
+
+     <form [formGroup]="form">
+        <div class="row" style="float:left;" >
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                <mat-label>Process</mat-label>
+                <input matInput formControlName="Process"/>
+            </mat-form-field>
+           
+           
+       </div>   
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="Storer_Number">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Storer_Number
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Storer_Number}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Process">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Process
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Process}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Last_Emailed">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Last_Emailed
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Last_Emailed}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Opt">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Opt
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Opt}}</td>
+         </ng-container>
+    
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       
+       </table>

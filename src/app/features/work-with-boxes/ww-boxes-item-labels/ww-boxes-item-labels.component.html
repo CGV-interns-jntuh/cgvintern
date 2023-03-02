@@ -1,0 +1,37 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Print Labels for A Box</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> LabelStyle: </mat-label> 
+                          <input matInput formControlName="LabelStyle" />
+                        </mat-form-field>
+                  </div>
+                  
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> OutputQueue: </mat-label> 
+                    <input matInput formControlName="OutputQueue" />
+                  </mat-form-field>
+      </div>
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Labels</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

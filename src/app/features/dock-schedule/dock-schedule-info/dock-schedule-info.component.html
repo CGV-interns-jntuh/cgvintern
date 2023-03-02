@@ -1,0 +1,86 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Update Dock Appointment Details</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Storer : </mat-label> 
+                    <input matInput formControlName="Storer"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Tally/Bill Number : </mat-label> 
+                    <input matInput formControlName="TallyBillNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Storer Reference Number : </mat-label> 
+                    <input matInput formControlName="StorerReferenceNo"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Appointment Date/Time : </mat-label> 
+                    <input matInput formControlName="AppointmentDateTime"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Carrier Code : </mat-label> 
+                    <input matInput formControlName="CarrierCode"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Door Number: </mat-label> 
+                    <input matInput formControlName="DoorNumber" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Trailer/Rail Car Number </mat-label> 
+                    <input matInput formControlName="TRCarNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Spotted : </mat-label> 
+                    <input matInput formControlName="Spotted"/>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>TimeIN : </mat-label> 
+                    <input matInput formControlName="TimeIN" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>TimeOut : </mat-label> 
+                    <input matInput formControlName="TimeOut" />
+                </mat-form-field>
+
+                
+            </div>
+
+            
+
+            <div class="col">
+                <button mat-button (click)="changeDocScheduler()" class="addButton">
+                    
+                    <span>create</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>
+

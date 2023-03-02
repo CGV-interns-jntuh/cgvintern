@@ -1,0 +1,35 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Item Xref</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Number : </mat-label>
+            <input matInput formControlName="storerNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Warehouse Item Code: </mat-label> &nbsp;
+
+            <input matInput formControlName="warehouseitemCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Item Code: </mat-label> &nbsp;
+
+            <input matInput formControlName="storeritemcode" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

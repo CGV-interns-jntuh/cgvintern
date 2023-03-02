@@ -1,0 +1,71 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Reset physical Inventory Status</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                  
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BookHeader: </mat-label> 
+                        <input matInput formControlName="bookHeader" />
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">  <mat-label> BookDate: </mat-label> 
+                        <input matInput formControlName="bookDate" />
+                      </mat-form-field>
+                </div>
+                
+                
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BookDescription: </mat-label> 
+                        <input matInput formControlName="bookDescription" />
+                      </mat-form-field>
+                </div>
+
+                
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> NumberOfCounts: </mat-label> 
+                        <input matInput formControlName="numberOfCounts" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">  <mat-label> FrmTag: </mat-label> 
+                        <input matInput formControlName="frmTag" />
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">  <mat-label> ToTag: </mat-label> 
+                        <input matInput formControlName="toTag" />
+                      </mat-form-field>
+                </div>
+
+                       
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BookCreator: </mat-label> 
+                        <input matInput formControlName="bookCreator" />
+                      </mat-form-field>
+                </div>
+
+                       
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> BookStatus: </mat-label> 
+                        <input matInput formControlName="bookStatus" />
+                      </mat-form-field>
+                </div>
+
+                <p style="color:brown">This process will reverse the posting that was previously selected All adjustments to inventory will reversed!</p>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Status</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

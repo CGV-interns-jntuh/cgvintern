@@ -1,0 +1,329 @@
+
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Tally </mat-card-title>
+  </mat-card-header>
+  <mat-card-content> <div class="row">
+    <div class="col">
+  <div class="buttons">
+    <!-- <button mat-button (click)="onBack()" class="backButton">
+      <mat-icon>navigate_before </mat-icon>
+      <span>Modules</span>
+    </button> -->  <button mat-button (click)="searchTally()" class="addButton" *ngIf="searchTextDisplay">
+      <mat-icon>clear</mat-icon>
+      <span>Hide Search Details</span>
+    </button>
+    <button mat-button (click)="searchTally()" class="addButton" *ngIf="!searchTextDisplay">
+      <mat-icon>search</mat-icon>
+      <span>Search By Tally Details</span>
+    </button>
+    <button mat-button (click)="addTally()" class="addButton">
+      <mat-icon>add</mat-icon>
+      <span>New Tally</span>
+    </button>
+  
+  </div>
+  </div></div></mat-card-content> <mat-card-content></mat-card-content>
+  <mat-card-content >
+    <form
+      [formGroup]="updateForm"
+      (ngSubmit)="getTallyBySearch2(updateForm.value)"
+      class="form over-Flow"
+    >
+   
+      <div class="row" *ngIf="searchTextDisplay">
+        <div class="col">
+         
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Tally</mat-label>
+            <input matInput formControlName="tally" />
+          </mat-form-field>
+         
+
+         
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Ref#:{{searchTextDisplay}}</mat-label>
+            <input
+              matInput
+              formControlName="storerRef"
+              style="text-transform: uppercase"
+            />
+          </mat-form-field>
+         
+          
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Schd Arv:</mat-label>
+            <input
+              matInput
+              formControlName="schdldArrival"
+              [matDatepicker]="schdldArrivalDatePicker"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="schdldArrivalDatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #schdldArrivalDatePicker></mat-datepicker>
+          </mat-form-field>
+         
+         
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Invoice</mat-label>
+            <input matInput formControlName="invoice" />
+          </mat-form-field>
+        
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Carrier </mat-label>
+            <input
+              matInput
+              formControlName="carrier"
+              style="text-transform: uppercase"
+            />
+          </mat-form-field>
+        
+          
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Building  </mat-label>
+            <input matInput />
+          </mat-form-field> 
+         
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Storer  </mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+         
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Consignee  </mat-label>
+            <input
+              matInput
+              formControlName="recvdFrom"
+              style="text-transform: uppercase"
+            />
+          </mat-form-field>
+        
+          
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Status  </mat-label>
+            <input matInput value="0" />
+          </mat-form-field>
+         
+       
+       
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label> PRO Number  </mat-label>
+          <input matInput formControlName="pro" />
+        </mat-form-field>
+        &nbsp; &nbsp;
+      </div></div>
+      <div>
+        <!-- <input
+          (keyup)="onSubmit($event)"
+          formControlName="tally"
+          type="text"
+          id="searchKey"
+          class="form-control"
+          placeholder="Search Box"
+        /> -->
+
+        <button *ngIf="searchTextDisplay"
+          class="buttons addButton"
+          mat-raised-button
+          type="submit"
+          [disabled]="!updateForm.dirty"
+          placeholder="Search"
+        >
+          Search
+        </button>
+        <br /><br />
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Tally Column -->
+    <ng-container matColumnDef="Tally">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Tally Number
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.IHTALY }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Invoice">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Invoice
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.IHINVO }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Storer">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+
+    
+
+    <ng-container matColumnDef="ScheduleArrival">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Scheduled Arrival
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSCHA }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ActualArrival">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Actual Arrival
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHACTA }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="StorerRefNo.">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer Ref No
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTRF }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ProNo.">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Pro No
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.IHPRO }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Carrier">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Carrier
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHCARR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <mat-option (click)="getUpdateForm(element)">
+            <button mat-icon-button >
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="delete(element['IHTALY'])">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option  (click)="comment(element['IHTALY'])">
+            <button mat-icon-button>
+              <mat-icon mat-icon-button color="secondary">comments</mat-icon>
+              <mat-label>Comments</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="tallyPosting(element['IHTALY'])">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Tally Posting Errors</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="tallyDetails(element['IHTALY'])">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Tally-Details</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="inquiry(element['IHTALY'])">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Inquiry</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-icon-button (click)="tallyEvent(element['IHTALY'])">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Tally-Event</mat-label>
+            </button></mat-option>
+
+            <!-- <mat-option>
+              <button mat-icon-button (click)="storer()">
+                <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+                <mat-label>Storer</mat-label>
+              </button></mat-option> -->
+
+          <!-- <mat-option>
+            <button mat-icon-button (click)="tallyDetailsCreate()">
+              <mat-icon mat-icon-button color="secondary">call_made</mat-icon>
+              <mat-label>Tally-Details Creation</mat-label>
+            </button></mat-option
+          >
+
+         
+          
+            <mat-option>
+
+           
+            <button
+              mat-icon-button
+              (click)="tallyDetailsComment(element['IHTALY'])"
+            >
+              <mat-icon mat-icon-button color="secondary">comments</mat-icon>
+              <mat-label>Tally Detail Comments</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="tallyDetailUpdate(element['IHTALY'])">           
+              <mat-icon mat-icon-button color="secondary">edit</mat-icon>
+              <mat-label>Tally Detail Update</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="tallyDetailDelete(element['IHTALY'])">           
+              <mat-icon mat-icon-button color="secondary">delete</mat-icon>
+              <mat-label>Tally Detail Delete</mat-label>
+            </button>
+          </mat-option> -->
+        </mat-select>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <!-- <mat-paginator
+      #paginator
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    >
+    </mat-paginator> -->
+  <mat-paginator
+  #paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

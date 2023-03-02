@@ -1,0 +1,112 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+  
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="title"> Work with Periods </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content> 
+
+        <form
+        [formGroup]="updateForm"
+        
+        class="form over-Flow"
+      >
+        <div class="row">
+          <div class="col">
+            
+  
+            <mat-form-field  appearance="outline">
+              <mat-label>Storer Number</mat-label>
+              <input matInput formControlName="storerNum" />
+            </mat-form-field>
+           
+  
+           
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Search Date</mat-label>
+              <input
+                matInput
+                formControlName="searchDate"
+              />
+            </mat-form-field>
+           
+           
+            
+            <button
+      class="buttons addButton"
+      mat-raised-button
+      type="submit"
+     
+      placeholder="Search"
+    >
+      Search
+    </button>
+           
+           
+          </div>
+        </div>
+        
+  
+          
+          
+      
+      </form>
+    </mat-card-content>
+
+    <table [dataSource]="dataSource"  mat-table class="mat-elevation-z8">
+       
+        <ng-container matColumnDef="Storer">
+            <th mat-header-cell *matHeaderCellDef> Storer</th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+        <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef> Start Date </th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="EndDate">
+            <th mat-header-cell *matHeaderCellDef> End Date </th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="BalWrtn">
+            <th mat-header-cell *matHeaderCellDef> Bal Wrtn </th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="StorageInvoice">
+            <th mat-header-cell *matHeaderCellDef> Storage Invoice</th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="Sts">
+            <th mat-header-cell *matHeaderCellDef> Sts</th>
+            <td mat-cell *matCellDef="let element"> {{ element.IHTALY }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+            Actions
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select class="mat-select" placeholder="Select Option">
+            
+    
+              <mat-option>
+                <button mat-icon-button >
+                  <mat-icon mat-icon-button color="warn">edit</mat-icon>
+                  <mat-label>Edit-Storer</mat-label>
+                </button></mat-option
+              ></mat-select>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</mat-card>

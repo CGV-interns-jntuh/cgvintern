@@ -1,0 +1,80 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <button mat-button (click)="backCommodity()">
+        <mat-icon></mat-icon>
+      </button>
+
+      <mat-card-title style="color: rgb(32, 68, 145)"
+        >Delete Sequenced Commodity Printer</mat-card-title
+      >
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-label>Storer</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Storer" />
+          </mat-form-field>
+          <mat-label>Plant</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Plant" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-label>Commodity</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Commodity" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-label>Type</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Type" />
+          </mat-form-field>
+          <mat-label>Program</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Program" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-label>Printer</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Printer" />
+          </mat-form-field>
+          <mat-label>Copies</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="Copies" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-label>Label Name</mat-label>
+
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="LabelName" />
+          </mat-form-field>
+        </div>
+        <p>Press Enter to Confirm Deletion</p>
+      </div>
+
+      <div>
+        <button mat-button class="buttonCss" (click)="deletePrinter()">
+          Delete
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

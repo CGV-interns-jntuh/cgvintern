@@ -1,0 +1,14 @@
+.mat-form-field{
+    padding: 10px;
+}
+.mat-card-content{
+    padding-top: 20px;
+}
+
+.closeIcon{
+    float: right;
+}
+
+.mat-icon{
+    padding-right: 5px;
+}

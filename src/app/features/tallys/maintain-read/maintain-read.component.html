@@ -1,0 +1,154 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title class="title"> Inbound Details </mat-card-title>
+    </mat-card-header>
+     
+    <mat-card-content>
+      <form class="form">
+        <div class="row">
+          <div class="col">
+            <label> Tally : </label> &nbsp;
+  
+            <mat-form-field class="full-width">
+              <input matInput formControlName="tally" />
+            </mat-form-field>
+            &nbsp; &nbsp;
+  
+            <label> Storer: </label> &nbsp;
+  
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                formControlName="storerRef"
+                style="text-transform: uppercase"
+              />
+            </mat-form-field>
+
+
+            
+            
+           
+            
+            
+
+            &nbsp; &nbsp; 
+           
+            &nbsp; &nbsp;
+          </div>
+        </div>
+         
+        <mat-card>
+          <!-- <mat-card-header>
+            <mat-card-title style="color: rgb(32, 145, 83)"
+              >Maintain Inbound Details</mat-card-title
+            >
+            &nbsp; Line: 100
+          </mat-card-header> -->
+          
+        </mat-card>
+      </form>  
+    <table mat-table [dataSource]="dataSource"  >
+      <!-- Tally Column -->
+      <ng-container matColumnDef="Tally">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Tally Number
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.IHTALY }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Invoice">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Invoice
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.IHINVO }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Quantity">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Quantity
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTOR }}
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="item">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Item-Code
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTRF }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lotCodes">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          LotCodes
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSCHA }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="rateType">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Rate Type
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHACTA }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="dmgAreas">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Dmg Areas
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.IHPRO }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Carrier">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Carrier
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHCARR }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button >
+            <mat-icon mat-icon-button color="primary">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="delete(element['id'])">
+            <mat-icon mat-icon-button color="warn">delete</mat-icon>
+          </button>
+          <button mat-icon-button (click)="comment()">
+            <mat-icon mat-icon-button color="secondary">comments</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="onTallyClick(row)"
+      ></tr>
+    </table>
+  
+    <!-- <mat-paginator
+        #paginator
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      >
+      </mat-paginator> -->
+    <mat-paginator
+      [pageSizeOptions]="[8, 16, 24]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card-content> 
+  </mat-card>
+  

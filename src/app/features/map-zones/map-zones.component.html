@@ -1,0 +1,149 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Work With Warehouse Zones </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button class="addButton buttons" (click)="mapZoneCreate()">
+        <mat-icon>add</mat-icon>
+        <span>New Map Zone</span>
+      </button>
+    </div>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building </mat-label>
+
+            <input matInput formControlName="building" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+          <mat-form-field appearance="outline">
+            <mat-label>Zone </mat-label>
+
+            <input matInput formControlName="zone" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="Building">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Bldg
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.WZBLDG }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Zone">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Zone
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.WZZONE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell mat-header-cell width="100px" *matHeaderCellDef>
+        Description
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.WZDESC }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Locns">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Locns
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTRF }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Empty">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Empty
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHPRO }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Items">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Items
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHCARR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="On">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>On</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Hand">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Hand
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PctOpen">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Pct Open
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select placeholder="Select Option">
+          <mat-option>
+            <button mat-button (click)="updateMapZone()">
+              <mat-icon mat-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-button (click)="deleteMapZone()">
+              <mat-icon mat-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+        </mat-select>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [pageSizeOptions]="[4, 8, 16]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

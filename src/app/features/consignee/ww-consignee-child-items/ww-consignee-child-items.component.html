@@ -1,0 +1,112 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >Work with Consignee Child Items</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <button mat-button  class="addButton" (click)="addChildItem()">
+            <mat-icon>add</mat-icon>
+            <span>Child Item</span>
+      </button>
+      
+        <div class="formDiv">
+
+             
+         
+
+          <form [formGroup]="form">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Storer</mat-label>
+                            <input matInput formControlName="Storer"/>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>Item</mat-label>
+                            <input matInput formControlName="Item"/>
+                          </mat-form-field>
+
+                         
+                    </div>
+    
+                    <div class="col">
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Consignee</mat-label>
+                            <input matInput formControlName="Consignee"/>
+                        </mat-form-field>
+
+                        
+                        <mat-form-field appearance="outline">
+                            <mat-label>Buyers Item</mat-label>
+                            <input matInput formControlName="BuyersItem"/>
+                        </mat-form-field>
+                    </div>  
+
+
+                </div>
+            </form>
+        </div>
+
+       
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Storer">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Storer
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.Storer }}</td>
+            </ng-container>
+      
+            <ng-container matColumnDef="Consignee">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Consignee
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.Consignee }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Storer Item Code">
+                <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                    Storer Item Code
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.StorerItemCode }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Buyer Item Code">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Buyer Item Code
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.BuyerItemCode }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Sts">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Sts
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Sts }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+                <th  mat-header-cell mat-header-cell  *matHeaderCellDef>
+                  Actions
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-select  placeholder="Select Option">
+                    <mat-option>
+                        <button mat-icon-button >
+                          <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                          <mat-label>Child Item</mat-label>
+                        </button>
+                    </mat-option>
+                  </mat-select>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+            
+        </table>
+    </mat-card-content>
+</mat-card>

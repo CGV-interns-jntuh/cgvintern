@@ -1,0 +1,197 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Maintain Reasonable Values</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" >
+<!-- 
+        <div class="row">
+            <div class="col">
+                
+                <mat-label>Storer</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="Storer" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>Inventory Labels 1/2/3/4</mat-label>
+
+                <mat-form-field >
+                    <input matInput formControlName="ILabel1" />
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input matInput formControlName="ILabel2" />
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input matInput formControlName="ILabel3" />
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input matInput formControlName="ILabel4" />
+                </mat-form-field>
+                
+
+            </div>
+
+            <div class="col">
+                <mat-label>All Items Lotted</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="AllItemsLotted" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>Lot Code Labels 1/2/3</mat-label>
+
+                <mat-form-field >
+                    <input matInput formControlName="LClabels1" />
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input matInput formControlName="LClabels2" />
+                </mat-form-field>
+
+                <mat-form-field >
+                    <input matInput formControlName="LClabels3" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>Primary Mask</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="PrimaryMask" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>Sort Mask 1</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="SortMask1" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>2</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="SortMask2" />
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-label>3</mat-label>
+                <mat-form-field >
+                    <input matInput formControlName="SortMask3" />
+                </mat-form-field>
+            </div>
+        </div> -->
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Storer</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="Storer" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Inventory Labels 1/2/3/4</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="ILabel1" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="ILabel2" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="ILabel3" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="ILabel4" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>All Items Lotted</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="AllItemsLotted" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Lot Code Labels 1/2/3</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="LClabels1" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="LClabels2" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="LClabels3" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Primary Mask</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="PrimaryMask" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Sort Mask 1</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="SortMask1" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Sort Mask 2</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="SortMask2" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Sort Mask 3</th>
+                    <td>
+                        <mat-form-field >
+                            <input matInput formControlName="SortMask3" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </form>
+</mat-card-content>

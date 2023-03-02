@@ -1,0 +1,189 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Move Queue Entry Inquiry</mat-card-title>
+        
+      </mat-card-header>
+      <div>
+        
+      </div>
+      <mat-card-content> 
+
+        <div class="col">
+            <mat-form-field  appearance="outline"><mat-label> Item : </mat-label> 
+                <input matInput formControlName="Item" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> OnQueue: </mat-label> 
+                <input matInput formControlName="OnQueue" />
+              </mat-form-field>
+
+        </div>
+
+            <div class="col">
+                
+            <mat-form-field appearance="outline">  <mat-label> Lots: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Lots"
+                  style="text-transform: uppercase" />
+              
+              </mat-form-field>
+
+               
+            <mat-form-field appearance="outline">  <mat-label> Assigned: </mat-label> 
+                <input matInput formControlName="Assigned" />
+              </mat-form-field>
+               
+           
+
+            </div>
+
+            <div class="col">
+                
+                <mat-form-field appearance="outline">  <mat-label> From: </mat-label> 
+                
+  
+                    <input
+                      matInput
+                      formControlName="From"
+                      style="text-transform: uppercase" />
+                  
+                  </mat-form-field>
+
+                   
+                <mat-form-field appearance="outline">  <mat-label> Completed: </mat-label> 
+                    <input matInput formControlName="Completed" />
+                  </mat-form-field>
+                   
+               
+
+                </div>
+
+
+                
+            <div class="col">
+                
+                <mat-form-field appearance="outline">  <mat-label> To: </mat-label> 
+                
+  
+                    <input
+                      matInput
+                      formControlName="To"
+                      style="text-transform: uppercase" />
+                  
+                  </mat-form-field>
+
+                   
+                <mat-form-field appearance="outline">  <mat-label> By: </mat-label> 
+                    <input matInput formControlName="By" />
+                  </mat-form-field>
+                   
+               
+
+                </div>
+
+                      
+            <div class="col">
+                
+                <mat-form-field appearance="outline">  <mat-label> Qty: </mat-label> 
+                
+  
+                    <input
+                      matInput
+                      formControlName="Qty"
+                      style="text-transform: uppercase" />
+                  
+                  </mat-form-field>
+
+                   
+                <mat-form-field appearance="outline">  <mat-label> Priority: </mat-label> 
+                    <input matInput formControlName="Priority" />
+                  </mat-form-field>
+                </div>
+             
+                            
+            <div class="col">
+                
+                <mat-form-field appearance="outline">  <mat-label> Source: </mat-label> 
+                
+  
+                    <input
+                      matInput
+                      formControlName="Source"
+                      style="text-transform: uppercase" />
+                  
+                  </mat-form-field>
+
+                   
+                <mat-form-field appearance="outline">  <mat-label> Status: </mat-label> 
+                    <input matInput formControlName="Status" />
+                  </mat-form-field>
+                </div>
+
+                  
+                    <mat-label> MoveProblem: </mat-label> 
+                    <input matInput formControlName="MoveProblem" />
+                  
+                     <hr>
+                  <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+                            <input matInput formControlName="Description" />
+                          </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Reported: </mat-label> 
+                            <input matInput formControlName="Reported" />
+                          </mat-form-field>
+
+
+                          <mat-form-field appearance="outline">  <mat-label> By: </mat-label> 
+                            <input matInput formControlName="By" />
+                          </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Resolution: </mat-label> 
+                            <input matInput formControlName="Resolution" />
+                          </mat-form-field>
+                    </div>
+                  
+                  
+                 
+                    <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Resolved: </mat-label> 
+                            <input matInput formControlName="Resolved" />
+                          </mat-form-field>
+
+
+                          <mat-form-field appearance="outline">  <mat-label> By: </mat-label> 
+                            <input matInput formControlName="By" />
+                          </mat-form-field>
+                    </div>
+                  </div>
+              
+              
+              
+                  <div >
+                    <button mat-button class="buttonCss" (click)="Inquiry()">Inquiry</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  
+

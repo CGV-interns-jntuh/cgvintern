@@ -1,0 +1,74 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(145, 128, 32)"
+                    >Maintain Control Batch File</mat-card-title>
+                  
+                </mat-card-header>
+                <div>
+                  
+                </div>
+                <mat-card-content> 
+  
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field  appearance="outline"><mat-label> Storer_Number : </mat-label> 
+                              <input matInput formControlName="Storer_Number" />
+                            </mat-form-field>  
+                            
+                            <mat-form-field appearance="outline">  <mat-label> Sequence: </mat-label> 
+                              <input matInput formControlName="Sequence" />
+                            </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field  appearance="outline"><mat-label> Mix_Carriers : </mat-label> 
+                          <input matInput formControlName="Mix_Carriers" />
+                        </mat-form-field>  
+                        
+                        <mat-form-field appearance="outline">  <mat-label> Mix_Ship_Dates: </mat-label> 
+                          <input matInput formControlName="Mix_Ship_Dates" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field  appearance="outline"><mat-label> Batch_Size : </mat-label> 
+                          <input matInput formControlName="Batch_Size" />
+                        </mat-form-field>  
+                        
+                        <mat-form-field appearance="outline">  <mat-label> Days_Forward: </mat-label> 
+                          <input matInput formControlName="Days_Forward" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Minumium_Demand_Quantity: </mat-label> 
+                          <input matInput formControlName="Minumium_Demand_Quantity" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Maximum_Lines_On_Order: </mat-label> 
+                          <input matInput formControlName="Maximum_Lines_On_Order" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>Max_Quantity_On_Order</mat-label>
+                        <input matInput formControlName="Max_Quantity_On_Order"/></mat-form-field>
+                      </div>
+                      </div>
+                
+
+                 <div >
+            
+                  <button mat-button class="buttonCss" (click)="attributes()">Add</button>
+              </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

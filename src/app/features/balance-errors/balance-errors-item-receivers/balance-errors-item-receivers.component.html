@@ -1,0 +1,104 @@
+<button mat-icon-button (click)="closeDialog()">
+    <mat-icon mat-icon-button color="primary">close</mat-icon>
+  </button>
+
+
+  <mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With Inbound Details</mat-card-title>
+    </mat-card-header>
+  
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field> 
+               <mat-form-field appearance="outline">
+                <mat-label>Item</mat-label>
+                <input matInput formControlName="Item"/>
+            </mat-form-field>          
+           </div> 
+            
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="tallyNumber">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            tallyNumber
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.tallyNumber}}</td>
+         </ng-container>
+         <ng-container matColumnDef="seq">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            seq
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.seq}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="sT">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                sT
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.sT}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="transDate">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                transDate
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.transDate}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="arrivalDate">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                arrivalDate
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.arrivalDate}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="expected">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                expected
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.expected}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="recv">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                recv
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.recv}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="d">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                d
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.d}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="lots">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                lots
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.lots}}</td>
+          </ng-container>
+          <ng-container matColumnDef="opt">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                opt
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.opt}}</td>
+          </ng-container>
+  
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>
+

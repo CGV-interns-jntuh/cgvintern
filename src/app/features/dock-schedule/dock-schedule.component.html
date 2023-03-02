@@ -1,0 +1,150 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >Work with Dock Schedule</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <button mat-button (click)="addDocScheduler()" class="addButton">
+            <mat-icon>add</mat-icon>
+            <span>Doc Scheduler</span>
+      </button>
+      
+        <div class="formDiv">
+
+             
+         
+
+          <form [formGroup]="form">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Reference</mat-label>
+                            <input matInput formControlName="Reference"/>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>Date</mat-label>
+                            <input matInput formControlName="Date"/>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>In/Out</mat-label>
+                            <input matInput formControlName="InOut"/>
+                          </mat-form-field>
+
+                         
+                    </div>
+    
+                    <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Storer</mat-label>
+                        <input matInput formControlName="Storer"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Building</mat-label>
+                        <input matInput formControlName="Building"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Carrier</mat-label>
+                        <input matInput formControlName="Carrier"/>
+                      </mat-form-field>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+       
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Storer Number">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Storer Number
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.StorerNumber }}</td>
+            </ng-container>
+      
+            <ng-container matColumnDef="Appt Date">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Appt Date
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.ApptDate }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Appt Time">
+                <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                    Appt Time
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.ApptTime }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Appt Type">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Appt Type
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.ApptType }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Bldg">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Bldg
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Bldg }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Reference">
+                <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                    Reference
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Reference }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Sts">
+                <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                    Sts
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Sts }}</td>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="Action">
+                <th  mat-header-cell mat-header-cell  *matHeaderCellDef>
+                  Actions
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-select  placeholder="Select Option">
+                    <mat-option>
+                        <button mat-icon-button (click)="changeDocScheduler()">
+                          <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                          <mat-label>Change Doc Schedule</mat-label>
+                        </button>
+                    </mat-option>
+
+                    <mat-option>
+                        <button mat-icon-button (click)="docInfo()">
+                          <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                          <mat-label>Doc Info</mat-label>
+                        </button>
+                    </mat-option>
+
+                    <mat-option>
+                      <button mat-icon-button (click)="dockScheduleMarkHot()">
+                        <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                        <mat-label>Mark Hot</mat-label>
+                      </button>
+                  </mat-option>
+
+                  </mat-select>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+            
+        </table>
+    </mat-card-content>
+</mat-card>

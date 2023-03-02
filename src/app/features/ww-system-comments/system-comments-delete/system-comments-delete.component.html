@@ -1,0 +1,68 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Delete System Comments </mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> FileID: </mat-label> 
+                          <input matInput formControlName="FileID" />
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">  <mat-label> Key: </mat-label> 
+                            <input matInput formControlName="Key" />
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">  <mat-label> SubCode: </mat-label> 
+                            <input matInput formControlName="SubCode" />
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">  <mat-label> Seq: </mat-label> 
+                            <input matInput formControlName="Seq" />
+                          </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Text: </mat-label> 
+                          <input matInput formControlName="Text" />
+                        </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ChgDate: </mat-label> 
+                        <input matInput formControlName="ChgDate" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ChgTime: </mat-label> 
+                        <input matInput formControlName="ChgTime" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ChgID: </mat-label> 
+                        <input matInput formControlName="ChgID" />
+                      </mat-form-field>
+                 </div>
+                 <p style="color:crimson"> Press Enter to Confirm Deletion</p>
+
+                       <div >
+                       <button mat-button class="buttonCss" (click)="attributes()">Delete</button>
+                        </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

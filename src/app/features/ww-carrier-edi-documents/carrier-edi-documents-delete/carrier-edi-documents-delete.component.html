@@ -1,0 +1,69 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain EDI Docs</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> SCAC Code: </mat-label> 
+                          <input matInput formControlName="SCACCode" />
+                        </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Inbound / Outbound: </mat-label> 
+                          <input matInput formControlName="InboundOutbound" />
+                        </mat-form-field>
+                   </div>
+
+                   <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> DocumentType: </mat-label> 
+                        <input matInput formControlName="DocumentType" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> ApplicationName</mat-label> 
+                        <input matInput formControlName="ApplicationName" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> validationProgram: </mat-label> 
+                        <input matInput formControlName="validationProgram" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> MessageFile: </mat-label> 
+                        <input matInput formControlName="MessageFile" />
+                      </mat-form-field>
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Status  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="Item">AC</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                 </div>
+                 <p style="color:crimson">Press Enter to confirm Deletion</p>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Add</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

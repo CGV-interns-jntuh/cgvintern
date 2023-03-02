@@ -1,0 +1,241 @@
+<mat-card class="over-Flow">
+    <mat-card-header>
+      <mat-card-title class="title"> Work With Movement Queue </mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <!-- <div class="buttons">
+        <button mat-button (click)="storerCreate(id)" class="addButton buttons">
+          <mat-icon>add</mat-icon>
+          <span>New Storer</span>
+        </button>
+      </div> -->
+      <form [formGroup]="updateForm" class="form over-Flow">
+        <div class="row">
+          <div class="col">
+           
+            <mat-form-field appearance="outline">
+              <mat-label>Building</mat-label>
+              <input matInput formControlName="building" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Storer</mat-label>
+                <input matInput formControlName="storer" />
+              </mat-form-field>
+            </div>
+        </div>
+  
+        <div class="row">
+            <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label> Priority </mat-label>
+              <input matInput formControlName="priority" />
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label> Document </mat-label>
+              <input matInput formControlName="document" />
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label> From </mat-label>
+              <input matInput formControlName="from" />
+            </mat-form-field>
+
+            
+            <mat-form-field appearance="outline">
+                <mat-label> Oper </mat-label>
+                <input matInput formControlName="oper" />
+              </mat-form-field>
+
+            
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label> Type </mat-label>
+                    <input matInput formControlName="type" />
+                  </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label> Item </mat-label>
+              <input matInput formControlName="item" />
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label> To </mat-label>
+              <input matInput formControlName="to" />
+            </mat-form-field>
+
+            
+            <mat-form-field appearance="outline">
+                <mat-label> Sts </mat-label>
+                <input matInput formControlName="sts" />
+              </mat-form-field>
+
+            
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col">
+
+            
+
+            <button
+              class="buttons addButton"
+              mat-raised-button
+              type="submit"
+              placeholder="Search"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Tally Column -->
+      <ng-container matColumnDef="Pr">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+         Pr
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.IHTALY }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Item/Desctiption">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Item/Description
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.IHINVO }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Quantity">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Quantity
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTOR }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="I">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Item
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTRF }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="From">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+         From
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTRF }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="To">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          To
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTOR }}
+        </td>
+      </ng-container>
+
+      
+  
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-select class="mat-select" placeholder="Select Option">
+            <!--  <mat-option>
+              <button mat-icon-button (click)="storerCreate(id)">
+                <mat-icon mat-icon-button color="primary">add</mat-icon>
+                <mat-label>Add Storer</mat-label>
+              </button></mat-option
+            > -->
+  
+            <mat-option>
+              <button mat-icon-button (click)="moveQueueChange(id)">
+                <mat-icon mat-icon-button color="warn">edit</mat-icon>
+                <mat-label>Edit-MoveQueue</mat-label>
+              </button></mat-option
+            >
+            <mat-option>
+              <button mat-icon-button (click)="moveQueueComplete(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>Move-Completion</mat-label>
+              </button></mat-option
+            >
+  
+            <mat-option>
+              <button mat-icon-button (click)="moveQueueEntryAssign(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>Move-Entry-Assign</mat-label>
+              </button></mat-option
+            >
+  
+            <mat-option>
+              <button mat-icon-button (click)=" moveQueueEntryInquiry(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>Move-Entry-Inquiry</mat-label>
+              </button></mat-option
+            >
+  
+            <mat-option>
+              <button mat-icon-button (click)="moveChangeStagingLocation(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>change Staging Location</mat-label>
+              </button></mat-option
+            >
+
+            <mat-option>
+              <button mat-icon-button (click)="moveQueueNoPick(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>Move Queue No Pick</mat-label>
+              </button></mat-option
+            >
+
+            <mat-option>
+              <button mat-icon-button (click)="moveChangeQueuePriority(id)">
+                <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                <mat-label>Change Queue Prioity</mat-label>
+              </button></mat-option
+            >
+
+            <mat-option>
+              <button mat-icon-button (click)="moveQueueDelete(id)">
+                <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                <mat-label>Delete</mat-label>
+              </button></mat-option
+            >
+          
+          </mat-select>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!-- <mat-paginator
+        #paginator
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      >
+      </mat-paginator> -->
+    <mat-paginator
+      [pageSizeOptions]="[8, 16, 24]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card>
+  

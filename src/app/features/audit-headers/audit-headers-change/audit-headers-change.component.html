@@ -1,0 +1,72 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(145, 128, 32)"
+                    >Maintain Audit Header</mat-card-title>
+                  
+                </mat-card-header>
+                <div>
+                  
+                </div>
+                <mat-card-content> 
+  
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field  appearance="outline"><mat-label> loadNumber : </mat-label> 
+                              <input matInput formControlName="loadNumber" />
+                            </mat-form-field>    
+                      </div>
+                      <div class="col"><mat-form-field appearance="outline">  <mat-label> referenceNumber: </mat-label> 
+                        <input matInput formControlName="referenceNumber" />
+                      </mat-form-field></div>
+                      </div>
+                 <div >
+                    <div class="col"><mat-form-field appearance="outline"><mat-label> dueDate:  </mat-label> 
+                        <input matInput formControlName="dueDate" />
+                      </mat-form-field></div>
+                      </div>
+                 <div >
+                    <div class="col">
+                        <mat-form-field appearance="outline"><mat-label>paymentTerms: : </mat-label> 
+                        <input matInput formControlName="paymentTerms" />
+                      </mat-form-field>
+                    </div>
+                      </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline"><mat-label>entry : </mat-label> 
+                        <input matInput formControlName="entry" />
+                    </mat-form-field>
+                 </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline"><mat-label> authorization: </mat-label> 
+                        <input matInput formControlName="authorization" />
+                      </mat-form-field>
+
+                     
+                 </div>
+
+                 <div class="col">
+                    <mat-form-field appearance="outline"><mat-label> status: </mat-label> 
+                        <input matInput formControlName="status" />
+                      </mat-form-field>
+
+                     
+                 </div>
+
+                 <div >
+            
+                  <button mat-button class="buttonCss" (click)="attributes()">Change</button>
+              </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

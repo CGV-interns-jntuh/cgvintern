@@ -1,0 +1,83 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Maintain a Dock Appointment</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Storer Number  : </mat-label> 
+                    <input matInput formControlName="StorerNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Appointment Reference : </mat-label> 
+                    <input matInput formControlName="AppointmentReference"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Inbound/OutBound Flag : </mat-label> 
+                    <input matInput formControlName="IOFlag"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Tally/Bill Number : </mat-label> 
+                    <input matInput formControlName="TallyBillNumber"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Carrier Code : </mat-label> 
+                    <input matInput formControlName="CarrierCode"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Appointment Date: </mat-label> 
+                    <input matInput formControlName="AppointmentDate" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Appointment Time : </mat-label> 
+                    <input matInput formControlName="AppointmentTime"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Building Number </mat-label> 
+                    <input matInput formControlName="BuildingNumber"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Trailer/Rail Car Number </mat-label> 
+                    <input matInput formControlName="TRCarNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Comment : </mat-label> 
+                    <input matInput formControlName="Comment" />
+                </mat-form-field>
+
+                
+            </div>
+
+            
+
+            <div class="col">
+                <button mat-button (click)="addDocScheduler()" class="addButton">
+                    
+                    <span>create</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>
+

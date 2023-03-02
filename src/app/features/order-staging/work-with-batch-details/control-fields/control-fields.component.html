@@ -1,0 +1,86 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Shipment Confirmation</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Bill of Lading  : </mat-label> 
+                    <input matInput formControlName="BillLading"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Order Status : </mat-label> 
+                    <input matInput formControlName="OrderStatus"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> PickSheet Reprint Count : </mat-label> 
+                    <input matInput formControlName="PickSheetRC"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> B/L Reprint Count : </mat-label> 
+                    <input matInput formControlName="BLRC"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Consolidation Load Number : </mat-label> 
+                    <input matInput formControlName="ConsolidationLN"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Consolidation Stop Number: </mat-label> 
+                    <input matInput formControlName="ConsolidationSN" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>EDI Flag: </mat-label> 
+                    <input matInput formControlName="EDIFlag"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>EDI Change Flag: </mat-label> 
+                    <input matInput formControlName="EDIChangeFlag"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>EDI 856 ASN : </mat-label> 
+                    <input matInput formControlName="EDI856ASN"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>UCC 128 Label: </mat-label> 
+                    <input matInput formControlName="UCC128Label" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Original Order Entry Date: </mat-label> 
+                    <input matInput formControlName="OOEntryDate"/>
+                </mat-form-field>
+
+            </div>
+
+
+            <div class="col">
+                <button mat-button (click)="control()" class="addButton">
+                    
+                    <span>Control</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>
+

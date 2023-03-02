@@ -1,0 +1,97 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Item Locations</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer </mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Item</mat-label>
+            <input matInput formControlName="item" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building Number</mat-label>
+            <input matInput formControlName="buildingnumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Floor</mat-label>
+            <input matInput formControlName="Floor" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Aisle</mat-label>
+            <input matInput formControlName="Aisle" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot</mat-label>
+
+            <input matInput formControlName="Slot" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 1</mat-label>
+            <input matInput formControlName="lotCode1" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 2</mat-label>
+            <input matInput formControlName="lotCode2" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 3 </mat-label>
+            <input matInput formControlName="lotCode3" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Unit Weight </mat-label>
+            <input matInput formControlName="weight" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>First Received Date </mat-label>
+
+            <input
+              matInput
+              formControlName="date"
+              [matDatepicker]="DatePicker"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="DatePicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #DatePicker></mat-datepicker>
+          </mat-form-field>
+          <button
+            mat-button
+            class="buttons addButton"
+            (click)="addItemLocation()"
+          >
+            <mat-label>Add</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

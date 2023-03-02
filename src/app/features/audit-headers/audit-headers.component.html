@@ -1,0 +1,136 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Audit Headers</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <!-- <div class="buttons">
+                 <button mat-button  (click)="BatchFileAddForm()" class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>File</span>
+                     </button>
+                    </div> -->
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Load_Number</mat-label>
+                      <input matInput formControlName="Load_Number"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Reference</mat-label>
+                       <input matInput formControlName="Reference"/>
+                       </mat-form-field>
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                       <input matInput formControlName="Status"/>
+                       </mat-form-field>
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Entry_User</mat-label>
+                       <input matInput formControlName="Entry_User"/>
+                       </mat-form-field>
+
+                       <mat-form-field appearance="outline">
+                        <mat-label>Entry_Date</mat-label>
+                       <input matInput formControlName="Entry_Date"/>
+                       </mat-form-field>
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Load_Number">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Load_Number
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Load_Number }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Reference_Number">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Reference_Number
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Reference_Number }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="EstimatedCosts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              EstimatedCosts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.EstimatedCosts }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="InvoicedCosts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              InvoicedCosts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.InvoicedCosts }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="ApprovedCosts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              ApprovedCosts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ApprovedCosts }}</td>
+          </ng-container>
+          
+
+          <ng-container matColumnDef="ST">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              ST
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ST }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="auditHeadersChangesForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+        
+          </mat-option>
+        
+          <mat-option>
+            <button mat-icon-button (click)="auditHeadersCommentsForm(element)">
+              <mat-icon mat-icon-button color="primary">comment</mat-icon>
+              <mat-label>Comments</mat-label>
+            </button>
+        
+          </mat-option>
+          <mat-option>
+            <button mat-icon-button (click)="auditHeadersStatusForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Status</mat-label>
+            </button>
+        
+          </mat-option>
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

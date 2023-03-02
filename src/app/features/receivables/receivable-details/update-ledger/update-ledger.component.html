@@ -1,0 +1,51 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Receivable Ledger Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Invoice Number </mat-label>
+            <input matInput formControlName="CustInvoiceNumberomer" />
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Sequence Number </mat-label> &nbsp;
+          <input matInput formControlName="SequenceNumber" />
+        </mat-form-field>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Invoice Date </mat-label> &nbsp;
+            <input matInput formControlName="InvoiceDate" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Line Amount </mat-label> &nbsp;
+            <input matInput formControlName="LineAmount" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Ledger Code </mat-label> &nbsp;
+            <input matInput formControlName="LedgerCode" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Ledger Sub Code </mat-label> &nbsp;
+            <input matInput formControlName="LedgerSubCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building Number </mat-label> &nbsp;
+            <input matInput formControlName="BuildingNumber" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

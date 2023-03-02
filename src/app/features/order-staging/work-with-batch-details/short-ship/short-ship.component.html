@@ -1,0 +1,95 @@
+<button mat-icon-button (click)="closeDialog()">
+    <mat-icon mat-icon-button color="primary">close</mat-icon>
+  </button>
+  <mat-card-content>
+    <mat-card-header>
+        <mat-card-title>Shot Ship An Order</mat-card-title>
+        &nbsp;
+      </mat-card-header>
+  <form [formGroup]="form">
+    <mat-card>
+      
+      
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Bill Of Lading</mat-label>
+              <input matInput formControlName="billOfLading" />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Storer</mat-label>
+              <input matInput formControlName="storer" />
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Consignee</mat-label>
+              <input matInput formControlName="consignee" />
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+
+            <div class="col">
+                <p><b>1-Cut Short Items Form the Bill</b></p>
+                <p><b>2-Short Ship the items without a notice</b></p>
+                <p><b>3-Short ship with a line Comment</b></p>
+            </div>
+          
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Option</mat-label>
+                <mat-select matNativeControl required matInput formControlName="option">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                </mat-select>
+               <!-- <input matInput formControlName="locationAdj" /> -->
+            </mat-form-field>
+        </div> 
+          
+        </div>
+      
+    </mat-card>
+  </form>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="line">
+      <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+        Line
+      </th> 
+      <td mat-cell *matCellDef="let element">{{ element.QtyOrd }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="item">
+      <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+        Item
+      </th> 
+      <td mat-cell *matCellDef="let element">{{ element.QtyShp }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ordered">
+      <th mat-header-cell mat-header-cell *matHeaderCellDef>
+        Ordered
+      </th> 
+      <td mat-cell *matCellDef="let element">{{ element.ItemDescription }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="available">
+      <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+        Available
+      </th> 
+      <td mat-cell *matCellDef="let element">{{ element.Hz }}</td>
+    </ng-container>
+
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+
+    
+  </table>
+
+</mat-card-content>

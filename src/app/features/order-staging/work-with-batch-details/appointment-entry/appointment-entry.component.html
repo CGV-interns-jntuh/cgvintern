@@ -1,0 +1,71 @@
+<!-- Form No : 56.8 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Appointment Entry</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Bill Of Lading</mat-label>
+                    <input matInput formControlName="billOfLading" />
+                </mat-form-field>
+            </div>
+
+        
+        
+        
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="storer" />
+                </mat-form-field>
+            </div>
+        
+             
+        
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Consignee</mat-label>
+                    <input matInput formControlName="consignee" />
+                </mat-form-field>
+            </div>
+         
+
+        
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Appointment Date</mat-label>
+                    <input type="date" matInput formControlName="appointmentDate" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Time</mat-label>
+                    <input type="time" matInput formControlName="time" />
+                </mat-form-field>
+            </div>  
+           
+
+            
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Contact Name</mat-label>
+                    <input matInput formControlName="contactName" />
+                </mat-form-field>
+            </div>
+            
+        
+
+       
+            
+        </div>   
+             
+     
+    </form>

@@ -1,0 +1,97 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Application</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <div class="buttons">
+                 <button mat-button  (click)="ApplicationsAddForm()" class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>Applications</span>
+                     </button>
+                    </div>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Application_Number</mat-label>
+                      <input matInput formControlName="Application_Number"/>
+                      </mat-form-field>
+
+                    
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="APPNumber">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            APPNumber
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.APPNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Application_Name">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Application_Name
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Application_Name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Sequence">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Sequence
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Sequence }}</td>
+          </ng-container>
+
+       
+   
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="applicationChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+        
+          </mat-option>
+          <mat-option>
+            <button mat-icon-button (click)="applicationModuleForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Module</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="applicationAuthoritiesForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Authorities</mat-label>
+            </button>
+        
+          </mat-option>
+          
+        </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

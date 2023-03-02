@@ -1,0 +1,113 @@
+<!-- Form No: Rec Ivc Inquery(198): -->
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Receiving Invoice WorkSheet Inquiry</mat-card-title>
+    </mat-card-header>
+
+     <form [formGroup]="form">
+        <div class="row" style="float:left;" >
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Page</mat-label>
+                   <input matInput formControlName="Page"/>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                <mat-label>worksheetGenerated</mat-label>
+                <input matInput formControlName="worksheetGenerated"/>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Storer</mat-label>
+                <input matInput formControlName="Storer"/>
+            </mat-form-field>
+           </div>
+           <div class="cright row ">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input matInput formControlName="Date"/>
+                </mat-form-field>
+              
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Time</mat-label>
+                    <input matInput formControlName="Time"/>
+                </mat-form-field>
+            </div>
+    </div>
+        
+
+           
+          
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="Date">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Date
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Date}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Tally">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Tally
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Tally}}</td>
+         </ng-container>
+         <ng-container matColumnDef="ReferenceNo">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            ReferenceNo
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.ReferenceNo}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Pieces">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Pieces
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Pieces}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Weight">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Weight
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Weight}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Type">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Type
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Type}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="Rtn_PayTp">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Rtn_PayTp
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Rtn_PayTp}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Consignee">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Consignee
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Consignee}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Min">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Min
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Min}}</td>
+          </ng-container>
+
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

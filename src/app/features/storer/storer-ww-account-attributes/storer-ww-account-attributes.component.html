@@ -1,0 +1,89 @@
+<!-- Form No: 256 -add -->
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Attributes</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+      <div class="buttons">
+        <button mat-button   class="addButton" (click)="MaintainAttributesaddForm()">
+          <mat-icon>add</mat-icon>
+          <span>New Attribute</span>
+        </button>
+      </div>
+     
+     
+     <div class="formDiv">
+      <form [formGroup]="form">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Attribute</mat-label>
+            <input matInput formControlName="Attribute"/>
+          </mat-form-field>
+  
+         
+     
+  
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Attribute">
+          <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+            Attribute
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Attribute }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Attribute_Description">
+          <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+            Attribute_Description
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Attribute_Description }}</td>
+        </ng-container>
+  
+        <!-- <ng-container matColumnDef="Opt">
+          <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+            Opt
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Opt }}</td>
+        </ng-container> -->
+  
+        
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+          <!-- <mat-option>
+            <button mat-icon-button (click)="MaintainAttributesaddForm(element)" >           
+              <mat-icon mat-icon-button color="primary">add</mat-icon>
+              <mat-label>Add</mat-label>
+            </button>
+          </mat-option> -->
+  
+         <mat-option>
+            <button mat-icon-button (click)="MaintainAttributes1editForm(element)">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+          </mat-option>
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>
+   
+  

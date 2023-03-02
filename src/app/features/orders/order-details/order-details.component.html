@@ -1,0 +1,201 @@
+
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With Order Details</mat-card-title>
+    </mat-card-header>
+
+    <div class="buttons">
+        <button mat-button (click)="addOrderDetail()" class="addButton">
+          <mat-icon>add</mat-icon>
+          <span>New Order Detail</span>
+        </button>
+      </div>
+  
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Bill_of_Lading</mat-label>
+                   <input matInput formControlName="Bill_of_Lading"/>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                <mat-label>Storer</mat-label>
+                <input matInput formControlName="Storer"/>
+            </mat-form-field>
+                      
+           </div>
+  
+           <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>total_Quantitry</mat-label>
+                <input matInput formControlName="total_Quantitry"/>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Consignee</mat-label>
+                <input matInput formControlName="Consignee"/>
+            </mat-form-field>
+        
+           </div>     
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="Quantity">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Quantity
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Quantity}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Item">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Item
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Item}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Code/Description">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Code/Description
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.CodeDescription}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Weight">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Weight
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Weight}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Ovr">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Ovr
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Ovr}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Status">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Status
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Status}}</td>
+         </ng-container>
+         
+         <ng-container matColumnDef="Opt">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Opt
+          </th> 
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailEdit(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Detail-Edit</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailStackStatus(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Stack-Status</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailItemtatus(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Item-Status</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailIStockActivity(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Stock-Activity</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailChnageShipFrom(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Chnage-Ship-From</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailSplitLine(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Detail-Split-Line</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailCrossDocRef(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Cross-Doc-Ref</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailComments(element)" >           
+              <mat-icon mat-icon-button color="primary">comment</mat-icon>
+              <mat-label>Order-Detail-Comments</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailCut(element)" >           
+              <mat-icon mat-icon-button color="primary">delete</mat-icon>
+              <mat-label>Order-Detail-Cut</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailChangeEvent(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Order-Change-Event</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderChangeLocLot(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Change-Loc/Lot</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailLotStatus(element)" >           
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Lot-Status</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailDelete(element)" >           
+              <mat-icon mat-icon-button color="primary">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+          </mat-option>
+        
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailUcc128Maint(element)" >           
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>UCC-128-Maint</mat-label>
+            </button>
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="orderDetailMoveQueue(element)" >           
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Move-Queue</mat-label>
+            </button>
+          </mat-option>
+        
+        </mat-select>
+        </ng-container>
+  
+  
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

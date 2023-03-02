@@ -1,0 +1,38 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Location Missing counts</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> sortOrder: </mat-label> 
+                          <input matInput formControlName="sortOrder" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> listingType: </mat-label> 
+                          <input matInput formControlName="listingType" />
+                        </mat-form-field>
+                  </div>
+              
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Counts</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

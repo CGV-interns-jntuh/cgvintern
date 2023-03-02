@@ -1,0 +1,63 @@
+.mat-form-field {
+  padding-left: 10px;
+  width: 300px;
+}
+
+table {
+  width: 100%;
+  display: table;
+}
+
+.buttons {
+  float: right;
+}
+.buttons > * {
+  margin-right: 16px;
+}
+.mat-row:hover {
+  background-color: #f8f8f8;
+}
+
+.mat-row:hover > .mat-cell {
+  color: #2a52be;
+}
+
+.mat-header-cell {
+  background-color: #2a52be;
+  color: white;
+}
+
+.over-Flow {
+  overflow: auto;
+}
+
+.title {
+  font-weight: 600;
+  color: #2a52be;
+}
+
+.backButton {
+  background-color: #2a52be;
+  color: white;
+}
+
+.addButton {
+  background-color: #4cbb17;
+  color: white;
+  float: right;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
+
+.center {
+  align-items: center;
+}
+
+.mat-select {
+  background-color: rgb(235, 241, 235);
+  padding: 10px;
+}

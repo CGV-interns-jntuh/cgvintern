@@ -1,0 +1,181 @@
+
+
+<mat-card class="over-Flow">
+    <mat-card-header>
+      <mat-card-title class="title"> Storer-Contacts </mat-card-title>
+  
+      
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="buttons" >
+        
+        <button mat-button (click)=" storerConatactCreate()" class="addButton buttons" >
+          <mat-icon>add</mat-icon>
+          <span>New-Storer-Contact</span>
+        </button>
+      </div>
+      <form
+        [formGroup]="updateForm"
+        
+        class="form over-Flow"
+      >
+        <div class="row">
+          <div class="col">
+            
+  
+            <mat-form-field  appearance="outline">
+              <mat-label>Contact Type</mat-label>
+              <input matInput formControlName="contactType" />
+            </mat-form-field>
+           
+  
+           
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                formControlName="name"
+              />
+            </mat-form-field>
+           
+           
+            <mat-form-field appearance="outline">
+              <mat-label> Status: </mat-label> 
+              <input
+                matInput
+                formControlName="status"
+               
+              />
+            </mat-form-field>
+
+            <button
+      class="buttons addButton"
+      mat-raised-button
+      type="submit"
+     
+      placeholder="Search"
+    >
+      Search
+    </button>
+           
+           
+          </div>
+        </div>
+        
+  
+          
+          
+      
+      </form>
+    </mat-card-content>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Tally Column -->
+      <ng-container matColumnDef="Type">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Type
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.CTCONS }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Contact">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+         Conatact
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.CTNAME }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.CTTYPE }}
+        </td>
+      </ng-container>
+  
+      
+  
+      <ng-container matColumnDef="Telephone">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Telephone
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.CTTYPE }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Status">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+          Status
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.CTTYPE }}
+        </td>
+      </ng-container>
+  
+      <!-- <ng-container matColumnDef="Rep">
+        <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+         Rep
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.IHSTOR }}
+        </td>
+      </ng-container> -->
+  
+      
+  
+  
+      
+  
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+           <mat-select class="mat-select" placeholder="Select Option">
+          <!--  <mat-option>
+              <button mat-icon-button (click)="storerCreate(id)">
+                <mat-icon mat-icon-button color="primary">add</mat-icon>
+                <mat-label>Add Storer</mat-label>
+              </button></mat-option
+            > -->
+  
+            <mat-option>
+              <button mat-icon-button (click)=" storerConatactUpdate(element)">
+                <mat-icon mat-icon-button color="warn">edit</mat-icon>
+                <mat-label>Storer-Contact-Edit</mat-label>
+              </button></mat-option
+            >
+  
+            <mat-option>
+              <button mat-icon-button (click)=" storerConatactDelete(id)">
+                <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                <mat-label>Storer-Contact-Delete</mat-label>
+              </button></mat-option
+            >
+
+            
+
+            </mat-select>
+            </td>
+       
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!-- <mat-paginator
+        #paginator
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      >
+      </mat-paginator> -->
+    <mat-paginator
+      [pageSizeOptions]="[8, 16, 24]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card>
+  

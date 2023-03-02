@@ -1,0 +1,18 @@
+.closeIcon{
+    float: right;
+}
+
+.mat-form-field{
+    padding: 5px;
+}
+
+.enterButton{
+
+    float: right;
+    color: black;
+    background-color: aqua;
+}
+
+.paddingClass{
+    padding: 10px;
+}

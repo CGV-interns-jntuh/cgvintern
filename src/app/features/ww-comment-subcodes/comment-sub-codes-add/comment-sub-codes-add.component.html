@@ -1,0 +1,37 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain Comment Subcodes</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Comment Sub CodeID: </mat-label> 
+                          <input matInput formControlName="CommentSubCodeID" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Comment Sub Code Description: </mat-label> 
+                          <input matInput formControlName="CommentSubCodeDescription" />
+                        </mat-form-field>
+            </div>
+      
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">ADD</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

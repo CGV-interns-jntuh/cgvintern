@@ -1,0 +1,50 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Remove Preservation Hold</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> boxNumber: </mat-label> 
+                          <input matInput formControlName="boxNumber" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> contentIdentifier: </mat-label> 
+                          <input matInput formControlName="contentIdentifier" />
+                        </mat-form-field>
+                  </div>
+              
+                        <div class="col">
+                          <mat-form-field appearance="outline">
+                            <mat-label>reference:</mat-label>
+                            <input matInput formControlName="reference:"/>
+                        </mat-form-field>
+                        </div>
+  
+                        <mat-form-field appearance="outline">
+                          <mat-label> comment:</mat-label>
+                          <textarea matInput placeholder="Comment" formControlName="comment:"></textarea>
+                      </mat-form-field>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">HOLD</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  
+  
+  

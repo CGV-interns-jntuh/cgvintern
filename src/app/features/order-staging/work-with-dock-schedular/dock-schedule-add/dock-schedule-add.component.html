@@ -1,0 +1,109 @@
+Task No: 
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Maintain Doc Schedule</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> ApptNo  : </mat-label> 
+                    <input matInput formControlName="ApptNo"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Building : </mat-label> 
+                    <input matInput formControlName="Building"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> In/Out : </mat-label> 
+                    <input matInput formControlName="InOut"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> SCAC Code : </mat-label> 
+                    <input matInput formControlName="SCACCode"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Requested DateTime : </mat-label> 
+                    <input matInput formControlName="ReqDateTime"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Appt Type: </mat-label> 
+                    <input matInput formControlName="ApptType" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Load Type : </mat-label> 
+                    <input matInput formControlName="LoadType"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Exp Duration: </mat-label> 
+                    <input matInput formControlName="ExpDuration"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Qty Expected: </mat-label> 
+                    <input matInput formControlName="QtyExpected"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Wgt Expected : </mat-label> 
+                    <input matInput formControlName="WgtExpected" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Trailer No  : </mat-label> 
+                    <input matInput formControlName="TrailerNo"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Prty </mat-label> 
+                    <input matInput formControlName="Prty"/>
+                </mat-form-field>
+
+                
+            </div>
+
+            <div class="col">
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Contact: </mat-label> 
+                    <input matInput formControlName="Contact"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Phone : </mat-label> 
+                    <input matInput formControlName="Phone" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Email  : </mat-label> 
+                    <input matInput formControlName="Email"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <button mat-button (click)="addDocScheduler()" class="addButton">
+                    
+                    <span>create</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>

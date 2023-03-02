@@ -1,0 +1,138 @@
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With an Items Adjustments</mat-card-title>
+    </mat-card-header>
+
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                <mat-label>Item</mat-label>
+                <input matInput formControlName="Item"/>
+            </mat-form-field>
+               </div>
+               <div class="row">
+               <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label>Type</mat-label>
+                  <input matInput formControlName="Type"/>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Location</mat-label>
+                <input matInput formControlName="Location"/>
+            </mat-form-field>
+               </div>
+              </div>
+              <div class="row">
+               <div class="col">
+                <mat-form-field appearance="outline">
+                  <mat-label>Date</mat-label>
+                  <input matInput formControlName="Date"/>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Lots</mat-label>
+                <input matInput formControlName="Lots"/>
+            </mat-form-field>
+           </div>
+               </div>
+               </div> 
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="Number">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Number
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Number}}</td>
+         </ng-container>
+         <ng-container matColumnDef="L">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            L
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.L}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Date">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Date
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Date}}</td>
+         </ng-container>
+         <ng-container matColumnDef="LotCodes">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Lot Codes
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.LotCodes}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Location">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Location
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Location}}</td>
+         </ng-container>
+         <ng-container matColumnDef="Bkt">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Bkt
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.Bkt}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="Qty">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Qty
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Qty}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Opt">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Opt
+            </th> 
+            <td mat-cell *matCellDef="let element">
+                <mat-select class="mat-select" placeholder="Select Option">
+                  <mat-option>
+                    <button mat-icon-button (click)="itemAdjustmentInquiry(element)">
+                      <mat-icon mat-icon-button color="warn">edit</mat-icon>
+                      <mat-label>Item Adjustment Inquiry</mat-label>
+                    </button></mat-option
+                  >
+                
+                  <mat-option>
+                    <button mat-icon-button (click)="itemAdjustmentDelete(element)">
+                      <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                      <mat-label>Item Adjustment Delete</mat-label>
+                    </button></mat-option
+                  >
+
+                  <mat-option>
+                    <button mat-icon-button (click)="itemAdjustmentChangeDate(element)">
+                      <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                      <mat-label>Item Adjustment Change Date</mat-label>
+                    </button></mat-option
+                  >
+
+                  <mat-option>
+                    <button mat-icon-button >
+                      <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                      <mat-label>Delete</mat-label>
+                    </button></mat-option
+                  >
+
+                  <mat-option>
+                    <button mat-icon-button (click)="itemAdjustmentDisplay(element)">
+                      <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                      <mat-label>Adjsutment Inquiry(Display)</mat-label>
+                    </button></mat-option
+                  >
+                </mat-select>
+          </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

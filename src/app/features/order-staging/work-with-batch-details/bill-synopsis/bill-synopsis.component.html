@@ -1,0 +1,194 @@
+<!-- Task No: 56.2 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Bill of Lading Synopsis</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>B/L No</mat-label>
+                    <input matInput formControlName="BLNo" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Sts</mat-label>
+                    <input matInput formControlName="Sts" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="Storer" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Stop</mat-label>
+                    <input matInput formControlName="Stop" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Load No</mat-label>
+                    <input matInput formControlName="LoadNo" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Dock Appt</mat-label>
+                    <input matInput formControlName="DockAppt" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Ship Date</mat-label>
+                    <input matInput formControlName="ShipDate" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Arrival</mat-label>
+                    <input matInput formControlName="Arrival" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Carrier</mat-label>
+                    <input matInput formControlName="Carrier" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Pro No</mat-label>
+                    <input matInput formControlName="ProNo" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>P.O. No</mat-label>
+                    <input matInput formControlName="PONo" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Pieces</mat-label>
+                    <input matInput formControlName="Pieces" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cubes</mat-label>
+                    <input matInput formControlName="Cubes" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Ref No</mat-label>
+                    <input matInput formControlName="RefNo" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Weight</mat-label>
+                    <input matInput formControlName="Weight" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Zone</mat-label>
+                    <input matInput formControlName="Zone" />
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>CHEP</mat-label>
+                    <input matInput formControlName="CHEP" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>ASN</mat-label>
+                    <input matInput formControlName="ASN" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>UCC128</mat-label>
+                    <input matInput formControlName="UCC128" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Inv No</mat-label>
+                    <input matInput formControlName="InvNo" />
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Ship Type</mat-label>
+                    <input matInput formControlName="ShipType" />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Freight Code</mat-label>
+                    <input matInput formControlName="freightCode" />
+                </mat-form-field>
+
+                
+            </div>
+        </div>     
+    </form>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Qty Ord">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Qty Ord
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.QtyOrd }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Qty Shp">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Qty Shp
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.QtyShp }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Item/Description">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Item/Description
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.ItemDescription }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Hz">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Hz
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Hz }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Cubes">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Cubes
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Cubes }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Weight">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Weight
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Weight }}</td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+
+</mat-card-content>

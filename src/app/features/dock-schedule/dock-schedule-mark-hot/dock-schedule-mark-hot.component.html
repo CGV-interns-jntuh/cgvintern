@@ -1,0 +1,56 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Mark a Dock Appointment as Hot</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Storer: </mat-label> 
+                          <input matInput formControlName="Storer" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">  <mat-label> carrier: </mat-label> 
+                            <input matInput formControlName="carrier" />
+                          </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> ReferenceNo: </mat-label> 
+                          <input matInput formControlName="ReferenceNo" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">  <mat-label> IODocNo: </mat-label> 
+                            <input matInput formControlName="IODocNo" />
+                          </mat-form-field>
+                 </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> DateTime: </mat-label> 
+                        <input matInput formControlName="DateTime" />
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">  <mat-label> Status: </mat-label> 
+                        <input matInput formControlName="Status" />
+                      </mat-form-field>
+                 </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Comment: </mat-label> 
+                        <input matInput formControlName="Comment" />
+                      </mat-form-field>
+                 </div>
+                 <p style="color:red;">Press Enter to update this appointment status to Hot!</p>
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">HOT</button>
+                          </div>
+                          
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

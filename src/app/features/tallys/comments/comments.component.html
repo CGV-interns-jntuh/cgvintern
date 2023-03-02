@@ -1,0 +1,48 @@
+<button mat-icon-button (click)="closeDialog()">           
+  <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-grid-list cols="1" rows="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <form>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title 
+            >Inbound Comments Maintenance</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              
+              
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Tally</mat-label>
+                <input matInput required />{{result.genericData.IHTALY}}
+              </mat-form-field>
+            </div> <div class="row">
+            
+              <div class="col"> <label style="align-items: center"> Comments :</label><br>
+              
+                <textarea matInput required  >{{result.genericData.comments}}</textarea>
+              
+            </div></div>
+
+            <!-- <div class="row">
+              <div class="col"> <label style="align-items: center"></label>
+                <mat-form-field class="full-width">
+                  <input matInput required />
+                </mat-form-field>
+              </div></div>
+
+              <div class="row">
+                <div class="col"> <label style="align-items: center"></label>
+                  <mat-form-field class="full-width">
+                    <input matInput required />
+                  </mat-form-field>
+                </div></div> -->
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>

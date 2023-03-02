@@ -1,0 +1,108 @@
+<button mat-icon-button (click)="closeDialog()">
+    <mat-icon mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >Work With an Item Orders</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+       <div class="formDiv">
+        <form [formGroup]="form">
+          <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Storer</mat-label>
+                    <input matInput formControlName="Storer"/>
+                  </mat-form-field>
+          
+                  <mat-form-field appearance="outline">
+                    <mat-label>Item</mat-label>
+                    <input matInput formControlName="Item"/>
+                  </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+                    <input matInput formControlName="Status"/>
+                  </mat-form-field>
+            </div>
+            
+          </div>     
+        </form>
+       </div>
+
+
+       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Detail Status">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Detail Status
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.DetailStatus }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Bill Number">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            Bill Number
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.BillNumber }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Line No">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Line No
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.LineNo }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Ship Dates">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Ship Dates
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.ShipDates }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Bkt">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Bkt
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Bkt }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Quantity Orders">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Quantity Orders
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.QuantityOrders }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Quantity Shipped">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Quantity Shipped
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.QuantityShipped }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Lot Codes">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Lot Codes
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.LotCodes}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Action">
+          <th  mat-header-cell mat-header-cell  *matHeaderCellDef>
+            Actions
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+            </mat-select>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+        </table>
+    </mat-card-content>
+</mat-card>

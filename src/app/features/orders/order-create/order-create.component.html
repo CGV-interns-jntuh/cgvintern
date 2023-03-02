@@ -1,0 +1,164 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+           
+          </button>
+          
+        <mat-card-title 
+          >Orders-Create</mat-card-title
+        >
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+            <mat-form-field  appearance="outline"><mat-label> Bill No : </mat-label> 
+              <input matInput formControlName="BillNo" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">  <mat-label> Ref No: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="RefNo"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+              
+            <mat-form-field appearance="outline">  <mat-label> P_O_No: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="P_O_NO"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> PRO No: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="PRONo"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Consignee </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Consignee"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Carrier: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Carrier"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Ship Dates: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Ship Dates"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Status: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Status"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Bldg: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Bldg"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Storer: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Storer"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Open_All: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Trk"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Trk: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Broker"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+                 <mat-form-field appearance="outline">  <mat-label> Broker: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Ref No"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              
+            
+              
+               
+                
+             
+
+      </mat-card-content>
+      <button mat-button class="button addButton"(click)="create()">Create</button>
+    </mat-card>
+  </form>  

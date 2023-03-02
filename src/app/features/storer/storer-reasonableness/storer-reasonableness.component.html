@@ -1,0 +1,158 @@
+<!-- Form No: 219 -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title fxLayoutAlign="center">Maintain Reasonable Values</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" >
+
+        <mat-form-field appearance="outline">
+            <mat-label>Storer</mat-label>
+            <input matInput formControlName="Storer" />
+        </mat-form-field>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Weight</th>
+                    <th>Cubes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>Car Load Inbound</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CLinboudWeight" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CLinboudCubes" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Car Load Outbound</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CLoutboudWeight" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CLoutboudCubes" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Truck Load Inbound</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="TLinboudWeight" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="TLinboudCubes" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Truck Load Outbound</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="TLoutboudWeight" />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="TLoutboudCubes" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>Storage Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="StorageInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Accesorial Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="AccesorialInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>W/R Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="WrInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>General Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="GeneralInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Freight Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="FreightInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>cartage Invoice</th>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CartageInvoice" />
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Storage Variance Percent</mat-label>
+            <input matInput formControlName="StorageVariancePercent" />
+        </mat-form-field>
+
+    </form>
+</mat-card-content>
+

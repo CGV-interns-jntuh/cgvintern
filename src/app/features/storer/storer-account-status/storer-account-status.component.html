@@ -1,0 +1,148 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+  <mat-card-header>
+    <button mat-button></button>
+    <mat-card-title>Account Status Report</mat-card-title>
+    &nbsp;
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Account</mat-label>
+            <input matInput formControlName="Account" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Reporting For</mat-label>
+            <input matInput formControlName="ReportingFor" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Consign </mat-label>
+            <input matInput formControlName="Consign" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Omit Pallets </mat-label>
+            <mat-select formControlName="OmitPallets">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          &nbsp;&nbsp;
+
+          <u>Outbound</u>
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+
+          <u>Inbound</u>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Total Orders Shipped </mat-label>
+            <input matInput formControlName="TotalOrdersShipped" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Total Shipments Received </mat-label>
+            <input matInput formControlName="TotalShipmentsReceived" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Orders W/Loose Picks </mat-label>
+            <input matInput formControlName="OrdersWLoosePicks" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Total Lines </mat-label>
+            <input matInput formControlName="TotalLines" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Total Lines Received </mat-label>
+            <input matInput formControlName="TotalLinesReceived" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lines After Splits </mat-label>
+            <input matInput formControlName="LinesAfterSplits" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Total Putaways </mat-label>
+            <input matInput formControlName="TotalPutaway" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lines With Exceptions </mat-label>
+            <input matInput formControlName="LinesWithExceptions" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Lines With Exceptions </mat-label>
+            <input matInput formControlName="LinesWithExceptionsIn" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Total Units Picked </mat-label>
+            <input matInput formControlName="TotalUnitsPicked" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Total Units Received </mat-label>
+            <input matInput formControlName="TotalUnitsReceived" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Total Pallets Picked </mat-label>
+            <input matInput formControlName="TotalPalletsPicked" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Total Pallets Received </mat-label>
+            <input matInput formControlName="TotalPalletsReceived" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Pallets </mat-label>
+            <input matInput formControlName="Pallets1" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Pallets </mat-label>
+            <input matInput formControlName="Pallets2" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Layers </mat-label>
+            <input matInput formControlName="Layers1" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Layers </mat-label>
+            <input matInput formControlName="Layers2" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Loose </mat-label>
+            <input matInput formControlName="Loose1" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Loose </mat-label>
+            <input matInput formControlName="Loose2" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

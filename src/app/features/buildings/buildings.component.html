@@ -1,0 +1,93 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Work With Buildings </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button (click)="addBuilding()" class="addButton buttons">
+        <mat-icon>add</mat-icon>
+        <span>New Building</span>
+      </button>
+    </div>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" style="padding-right: 14px;">
+            <mat-label>Building Number</mat-label>
+            <input matInput formControlName="building" />
+          </mat-form-field>
+          <button
+            class="addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <table [dataSource]="dataSource" mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.BUILD }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.BUNAME }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let element">{{ element.BUADD1 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Zip">
+      <th mat-header-cell *matHeaderCellDef>Zip</th>
+      <td mat-cell *matCellDef="let element">{{ element.BUZIP }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="20%" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select placeholder="Select Option">
+          <mat-option>
+            <button mat-button (click)="updateForm()">
+              <mat-icon mat-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-button (click)="deleteForm()">
+              <mat-icon mat-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+          <!-- <mat-option>
+            <button mat-button (click)="doorForm()">
+              <mat-icon mat-button color="primary">window</mat-icon>
+              <mat-label>Doors</mat-label>
+            </button></mat-option
+          >
+          <mat-option>
+            <button mat-button (click)="buildingContact()">
+              <mat-icon mat-button color="primary">person</mat-icon>
+              <mat-label>Building Contact</mat-label>
+            </button></mat-option
+          > -->
+        </mat-select>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [pageSizeOptions]="[4, 8, 16]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

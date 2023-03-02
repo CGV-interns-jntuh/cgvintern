@@ -1,0 +1,67 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Print Worksheets</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> showLotCodes  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="y">Y</mat-option>
+                        <mat-option value="n">N</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> breakByAisle  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="n">N</mat-option>
+                        <mat-option value="y">Y</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> listRecountsOnly  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="n">N</mat-option>
+                        <mat-option value="y">Y</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                 <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> showItemDescription  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="n">N</mat-option>
+                        <mat-option value="y">Y</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> printOddEvenorBoth  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="b">B</mat-option>
+                       
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+              
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">WorkSheet</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

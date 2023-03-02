@@ -1,0 +1,42 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Delete An Exit Point</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label> Storer </mat-label>
+            <input matInput formControlName="Storer" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Exit Point </mat-label>
+
+            <input matInput formControlName="Exit_Point" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Choice </mat-label>
+
+            <input
+              matInput
+              formControlName="Choice"
+              style="text-transform: uppercase"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div>
+      <button mat-button (click)="delete()" class="deleteButton">Delete</button>
+      <br />
+    </div>
+  </mat-card-content>
+</mat-card>

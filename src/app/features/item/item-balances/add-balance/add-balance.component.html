@@ -1,0 +1,74 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <button mat-button></button>
+      <mat-card-title>Write a Balance Record</mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Number </mat-label>
+            <input matInput formControlName="StorerNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Item</mat-label>
+            <input matInput formControlName="Item" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Balance Date</mat-label>
+            <input matInput formControlName="BalanceDate" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 1</mat-label>
+            <input matInput formControlName="LotCode1" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 2</mat-label>
+            <input matInput formControlName="LotCode2" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Lot Code 3</mat-label>
+            <input matInput formControlName="LotCode3" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building </mat-label>
+            <input matInput formControlName="Building" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Record Type </mat-label>
+            <input matInput formControlName="RecordType" />
+          </mat-form-field>
+          (P = Period, D = Daily, W = Weekly)
+          <button
+            mat-button
+            class="buttons addButton"
+            (click)="addItemBalance()"
+          >
+            <mat-label>Add</mat-label>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

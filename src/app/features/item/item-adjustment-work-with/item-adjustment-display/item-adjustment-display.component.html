@@ -1,0 +1,87 @@
+<!-- Form No: 40.3(task) -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Inventory Adjustment Inquiry</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Storer: </mat-label> 
+                          <input matInput formControlName="storer" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Item: </mat-label> 
+                          <input matInput formControlName="item" />
+                        </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline">  <mat-label> Lot: </mat-label> 
+                  <input matInput formControlName="lot" />
+                </mat-form-field>
+               </div>
+               <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Location: </mat-label> 
+                    <input matInput formControlName="Location" />
+                  </mat-form-field>
+                 </div>
+               <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> AdjustmentQuantity: </mat-label> 
+                    <input matInput formControlName="adjustmentQuantity" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">  <mat-label> InventoryBucket: </mat-label> 
+                    <input matInput formControlName="inventoryBucket" />
+                  </mat-form-field>
+                 </div>
+                 <div class="col">
+                  <mat-form-field appearance="outline">  <mat-label> Date: </mat-label> 
+                      <input matInput type="date" formControlName="date" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">  <mat-label> Time: </mat-label> 
+                        <input matInput type="time" formControlName="Time" />
+                      </mat-form-field>
+                    <mat-form-field appearance="outline">  <mat-label> ChangeUserID: </mat-label> 
+                        <input matInput formControlName="changeUserID" />
+                      </mat-form-field>
+                   </div>
+                   <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> WRorBillNumber: </mat-label> 
+                        <input matInput formControlName="wRorBillNumber" />
+                       
+                      </mat-form-field>
+                     </div>
+                     <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Serial: </mat-label> 
+                            <input matInput formControlName="serial" />
+                           
+                          </mat-form-field>
+                         </div>
+                         <div class="col">
+                            <mat-form-field appearance="outline">  <mat-label> ReasonforAdjustment: </mat-label> 
+                                <input matInput formControlName="reasonforAdjustment" />
+                               
+                              </mat-form-field>
+                             </div>
+                             <h3>Comments</h3>
+                             <hr>
+                         
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Inquiry</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

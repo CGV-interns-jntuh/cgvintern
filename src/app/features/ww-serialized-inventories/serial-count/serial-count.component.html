@@ -1,0 +1,37 @@
+<!-- Form No : task no : 63.4(478) -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Maintain Team Counts </mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> InventoryTeam: </mat-label> 
+                          <input matInput formControlName="InventoryTeam" />
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">  <mat-label> Location: </mat-label> 
+                            <input matInput formControlName="Location" />
+                          </mat-form-field>
+
+                  </div>
+
+                          <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Change</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

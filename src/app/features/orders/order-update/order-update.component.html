@@ -1,0 +1,106 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+           
+          </button>
+          
+        <mat-card-title 
+          >Orders-Update</mat-card-title
+        >
+        
+      </mat-card-header>
+      <mat-card-content> 
+
+            <mat-form-field  appearance="outline"><mat-label> BOLNumber: </mat-label> 
+              <input matInput formControlName="BOLNumber" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">  <mat-label> StorerNumber: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="StorerNumber"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+              
+            <mat-form-field appearance="outline">  <mat-label> Consignee: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Consignee"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> StorerReference </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="StorerReference"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> PurchaseOrder</mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="PurchaseOrder"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Name: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Name"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Address: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Address"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> OrderStatus: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="OrderStatus"
+                  style="text-transform: uppercase"
+                />
+              
+              </mat-form-field>
+  
+               <div>
+                <button mat-button class="button addButton"(click)="Update()">update</button>
+              </div> 
+
+      </mat-card-content>
+    </mat-card>
+  </form>  
+

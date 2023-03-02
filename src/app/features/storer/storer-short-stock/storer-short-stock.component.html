@@ -1,0 +1,90 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Item Requirements Summary </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="updateForm" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Storer</mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Item </mat-label>
+            <input matInput formControlName="item" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Show Negatives Only </mat-label>
+            <input matInput formControlName="showneg" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Tally Column -->
+
+    <ng-container matColumnDef="Item/Description">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Item/Description
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.IHCARR }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Commit">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Commit
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Alloc">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Alloc
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTRF }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="InTrans">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        In Trans
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTRF }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Avail">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Avail
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHSTOR }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        11/21/2022
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.IHTQTY }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

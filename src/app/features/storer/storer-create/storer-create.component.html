@@ -1,0 +1,142 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+  
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Maintain Storer Information</mat-card-title
+        >
+        &nbsp;
+      </mat-card-header>
+      <mat-card-content>
+          <div class="row">
+              <div class="col">
+                
+                  <mat-form-field  appearance="outline">
+                      <mat-label> Storer Number</mat-label> 
+                      <input matInput formControlName="storerNumber" style="text-transform: uppercase"/>
+                  </mat-form-field>
+             
+               
+                   <mat-form-field appearance="outline" >   
+                      <mat-label> Name : </mat-label>
+                      <input matInput formControlName="Name"/>
+                  </mat-form-field>
+             
+               
+                   <mat-form-field appearance="outline" >
+                      <mat-label> Address</mat-label>
+                      <input matInput formControlName="address"/>
+                  </mat-form-field>
+            
+             
+                   <mat-form-field appearance="outline" >
+                      <mat-label> Zip Code</mat-label>
+                      <input matInput formControlName="zipCode"/>
+                  </mat-form-field>
+              </div>
+              <div class="col">
+               
+                   <mat-form-field appearance="outline" >   
+                      <mat-label> Phone Number</mat-label>
+                      <input matInput formControlName="phoneNumber"/>
+                  </mat-form-field>
+           
+                  
+                   <mat-form-field appearance="outline" >
+                      <mat-label> Primary Rep</mat-label>
+                      <input matInput formControlName="primaryRep"/>
+                  </mat-form-field>
+         
+                
+                   <mat-form-field appearance="outline" >  
+                      <mat-label>Credit Limit</mat-label>
+                      <input matInput formControlName="creditLimit"/>
+                  </mat-form-field>
+
+                
+                   <mat-form-field appearance="outline" >
+                      <mat-label> Credit Hold</mat-label>
+                      <input matInput formControlName="creditHold" maxlength="1" style="text-transform: uppercase"/>
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                 
+                   <mat-form-field appearance="outline" >
+                       <mat-label>Building</mat-label>
+                      <input matInput formControlName="building"/>
+                  </mat-form-field>
+
+                  
+                   <mat-form-field appearance="outline" >
+                      <mat-label>Track QBL</mat-label>
+                      <input matInput formControlName="trackQBL"/>
+                  </mat-form-field>
+             
+                  
+                   <mat-form-field appearance="outline" 
+                   ><mat-label>Standard Close</mat-label>
+                      <input matInput formControlName="standardClose" style="text-transform: uppercase" maxlength="1"/>
+                  </mat-form-field>
+
+                
+                   <mat-form-field appearance="outline" > 
+                       <mat-label>CutOff Code/Day</mat-label>
+                      <input matInput formControlName="cutoffCodeDay"/>
+                  </mat-form-field>
+              </div>
+             
+              <div class="col">
+                 
+                   <mat-form-field appearance="outline"> 
+                      <mat-label>Force PS/BL</mat-label>
+                      <input matInput formControlName="forcePSBL" style="text-transform: uppercase"/>
+                  </mat-form-field>
+
+                
+                   <mat-form-field appearance="outline" > 
+                       <mat-label>Combo PS/BL</mat-label>
+                      <input matInput formControlName="comboPSBL" maxlength="1" style="text-transform: uppercase"/>
+                  </mat-form-field>
+           
+                  
+                   <mat-form-field appearance="outline" >
+                      <mat-label>Cuts Allowed</mat-label>
+                      <input matInput formControlName="cutsAllowed" maxlength="1" style="text-transform: uppercase"/>
+                  </mat-form-field>
+
+                  
+                   <mat-form-field appearance="outline" >
+                      <mat-label>Blind Tally</mat-label>
+                      <input matInput formControlName="blindTally" style="text-transform: uppercase"/>
+                  </mat-form-field>
+              </div>
+
+              <div class="col">
+              
+                   <mat-form-field appearance="outline" >    
+                      <mat-label>CHEP Pallets</mat-label>
+                      <input matInput formControlName="chepPallets" style="text-transform: uppercase"/>
+                  </mat-form-field>
+
+            
+                   <mat-form-field appearance="outline" >      
+                      <mat-label>Prevent Consolidation</mat-label>
+                      <input matInput formControlName="preventConsolidation" maxlength="1" style="text-transform: uppercase"/>
+                  </mat-form-field>
+              </div>
+
+              <div class="col">
+                <button mat-button class="addButton buttons">
+                    
+                    <span>Create</span>
+                  </button>
+            </div>
+          </div>
+      </mat-card-content>
+     
+    </mat-card>
+  </form> 
+
+

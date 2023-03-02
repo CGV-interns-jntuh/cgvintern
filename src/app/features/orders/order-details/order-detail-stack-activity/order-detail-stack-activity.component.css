@@ -1,0 +1,150 @@
+table {
+    width: 100%;
+    display: table;
+  }
+  
+  .buttons {
+    float: right;
+  }
+  .buttons > * {
+    margin-right: 16px;
+  }
+  .mat-row:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .mat-row:hover > .mat-cell {
+    color: #2a52be;
+  }
+  
+  .mat-header-cell {
+    background-color: #2a6abe;
+    color: white;
+  }
+  
+  .title {
+    font-weight: 600;
+    color: #afbe2a;
+  }
+  
+  .backButton {
+    background-color: #2abe99;
+    color: white;
+  }
+  
+  .addButton {
+    background-color: #bba217;
+    color: white;
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+  }
+  
+  
+  .menu-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .mat-sidenav {
+    margin: 16px;
+    width: 300px;
+    border-right: none;
+    background: #5c003d;
+    color: white;
+    border-radius: 15px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+  
+    padding: 16px;
+  
+    overflow: auto;
+  }
+  
+  .mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1rem;
+  }
+    .mat-icon {
+      margin-right: 8px;
+      float:left;
+    }
+  
+  .parent
+  {
+    color: white;
+  }
+  .parent a{
+    color: white;
+  }  
+  
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 30px;
+    
+  }
+  .submenu a{
+    color: white;
+  }
+  
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+  
+  .mat-select {
+    padding: 10px;
+   
+  }
+
+  
+.mat-card-title{
+    padding-top: 10px;;
+    color: white;
+    text-align:center ;
+}
+
+.mat-card-header{    
+    background-color: rgb(0, 111, 139);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.mat-form-field{
+    padding-right: 20px;
+}
+  
+th.mat-header-cell {
+    text-align: center !important;
+  }
+
+  td.mat-cell{
+    text-align: center !important;
+  }
+
+  .cright{
+    float: right;
+  }
+
+  .cleft{
+    float: left;
+  }

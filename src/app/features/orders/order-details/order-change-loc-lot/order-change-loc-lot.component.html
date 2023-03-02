@@ -1,0 +1,78 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title 
+          >Change Detail Location</mat-card-title>
+        
+      </mat-card-header>
+      <div>
+        
+      </div>
+      <mat-card-content> 
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline"><mat-label> Bill : </mat-label> 
+                    <input matInput formControlName="Bill" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">  <mat-label> Line_No: </mat-label> 
+                    <input matInput formControlName="Line_No" />
+                  </mat-form-field>
+                    
+            </div>
+        </div>
+
+        <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> Item: </mat-label> 
+                <input matInput formControlName="Item" />
+              </mat-form-field>
+            
+
+        </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> Quantity: </mat-label> 
+                    <input matInput formControlName="Quantity" />
+                  </mat-form-field>
+
+            </div>
+             <hr>
+            <div class="col">
+                   
+           
+                <mat-form-field appearance="outline">  <mat-label> Location: </mat-label> 
+                
+  
+                    <input matInput
+                      formControlName="Location"
+                      style="text-transform: uppercase" />
+                   </mat-form-field> 
+                   
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Lot: </mat-label> 
+                
+  
+                        <input
+                          matInput
+                          formControlName="Lot"
+                          style="text-transform: uppercase" />
+
+                      </mat-form-field>
+    
+                  </div>
+                </div>
+                  <div >
+                    <button mat-button class="button addButton" (click)="location()">Location</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  

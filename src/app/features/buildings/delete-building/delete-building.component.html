@@ -1,0 +1,42 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Delete a Building</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Building Number </mat-label>
+            <input matInput formControlName="buildingNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Building Name : </mat-label>
+            <input matInput formControlName="buildingName" />
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Address </mat-label>
+            <input matInput formControlName="address" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+    <div>
+      <p>Press Enter to confirm Delete</p>
+      <button mat-button (click)="deleteBuilding()" class="deleteButton">
+        Delete
+      </button>
+      <br />
+    </div>
+  </mat-card-content>
+</mat-card>

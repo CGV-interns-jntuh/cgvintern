@@ -1,0 +1,149 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Control Batch File</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      
+      
+                  <div class="buttons">
+                 <button mat-button  (click)="controllBatchFileAddForm()" class="addButton">
+                  <mat-icon>add</mat-icon>
+                   <span>File</span>
+                     </button>
+                    </div>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Storer_Number</mat-label>
+                      <input matInput formControlName="Storer_Number"/>
+                      </mat-form-field>
+
+                    
+                     </div>
+          
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="Storer">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Storer
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.Storer }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="SeqNumber">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            SeqNumber
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.SeqNumber }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="MinimumDemandQuantity">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                MinimumDemand
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MinimumDemandQuantity }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="MaximumLinesOrder">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                MaximumLines
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MaximumLinesOrder }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="MaximumQuantityOn_Order">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                MaximumQuantity
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MaximumQuantityOn_Order }}</td>
+          </ng-container>
+          
+
+          <ng-container matColumnDef="MixedCarriers">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                MixedCarriers
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MixedCarriers }}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="MixShipDays">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                MixShipDays
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.MixShipDays }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="BatchSize">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                BatchSize
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.BatchSize }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ShipDaysForward">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                ShipDaysForward
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ShipDaysForward }}</td>
+          </ng-container>
+           
+          <ng-container matColumnDef="ST">
+            <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+                ST
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.ST }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="controllBatchFileChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+        
+          </mat-option>
+        
+          <mat-option>
+            <button mat-icon-button (click)="controllBatchFileDeleteForm(element)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="controllBatchFileConsttraintForm(element)">
+              <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+              <mat-label>Constraints</mat-label>
+            </button>
+        
+          </mat-option>
+          
+        </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>
+   

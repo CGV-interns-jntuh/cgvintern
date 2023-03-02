@@ -1,0 +1,119 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Warehouse Map</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label> Building Number </mat-label>
+            <input matInput formControlName="BuildingNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Floor </mat-label>
+
+            <input matInput formControlName="Floor" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Aisle </mat-label>
+
+            <input matInput formControlName="Aisle" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Slot </mat-label>
+
+            <input matInput formControlName="Slot" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Pallets High</mat-label>
+
+            <input matInput formControlName="PalletsHigh" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Deep </mat-label>
+
+            <input matInput formControlName="Deep" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Slot Height </mat-label>
+
+            <input matInput formControlName="SlotHeight" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Width </mat-label>
+
+            <input matInput formControlName="Width" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Deep </mat-label>
+
+            <input matInput formControlName="Deep1" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Picking Sequence </mat-label>
+
+            <input matInput formControlName="PickingSequence" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Warehouse Zone</mat-label>
+
+            <input matInput formControlName="WarehouseZone" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Reserved Slot? </mat-label>
+
+            <mat-select formControlName="ReservedSlot">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Reserved Storer Number </mat-label>
+
+            <input matInput formControlName="ReservedStorerNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Reserved Storer Suffix </mat-label>
+
+            <input matInput formControlName="ReservedStorerSuffix" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Reserved Item code </mat-label>
+
+            <input matInput formControlName="ReservedItemcode" />
+          </mat-form-field>
+        </div>
+        <button
+          class="buttons addButton"
+          mat-raised-button
+          (click)="maplocationscreate()"
+        >
+          Add
+        </button>
+      </div>
+      <br /><br />
+    </mat-card-content>
+  </mat-card>
+</form>

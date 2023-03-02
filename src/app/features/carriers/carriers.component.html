@@ -1,0 +1,105 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Work With Carriers </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="buttons">
+      <button mat-button (click)="carrierCreate()" class="addButton buttons">
+        <mat-icon>add</mat-icon>
+        <span>Create Carrier</span>
+      </button>
+    </div>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline"
+            ><mat-label> Carrier Code</mat-label>
+            <input matInput formControlName="carrierCode" />
+          </mat-form-field>
+          &nbsp;&nbsp;
+
+          <mat-form-field appearance="outline"
+            ><mat-label> Carrier Name</mat-label>
+            <input matInput formControlName="carrierName" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table [dataSource]="dataSource" mat-table class="mat-elevation-z8">
+    <ng-container matColumnDef="CarrierCode">
+      <th mat-header-cell *matHeaderCellDef>Carrier Code</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHTALY }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="CarrierName">
+      <th mat-header-cell *matHeaderCellDef>Carrier Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHCONS }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ZipCode">
+      <th mat-header-cell *matHeaderCellDef>Zip Code</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHTQTY }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Suffix">
+      <th mat-header-cell *matHeaderCellDef>Suffix</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHSTRF }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="PalletExch">
+      <th mat-header-cell *matHeaderCellDef>Pallet Exch</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHBRK2 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Hazmat">
+      <th mat-header-cell *matHeaderCellDef>Hazmat</th>
+      <td mat-cell *matCellDef="let element">{{ element.IHBRK1 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="250px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <mat-option>
+            <button mat-icon-button (click)="carrierUpdate()">
+              <mat-icon mat-icon-button color="warn">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="carrierDelete()">
+              <mat-icon mat-icon-button color="secondary">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+        </mat-select>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [pageSizeOptions]="[4, 8, 16]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

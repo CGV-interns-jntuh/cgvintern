@@ -1,0 +1,227 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >Work with Boxes</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <button mat-button (click)="addBoxes()" class="addButton">
+            <mat-icon>add</mat-icon>
+            <span>Box</span>
+      </button>
+      
+        <div class="formDiv">
+
+             
+         
+
+          <form [formGroup]="form">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Box Number</mat-label>
+                            <input matInput formControlName="BoxNumber"/>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>Location</mat-label>
+                            <input matInput formControlName="Location"/>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>Ref Box</mat-label>
+                            <input matInput formControlName="RefBox"/>
+                          </mat-form-field>
+
+                         
+                    </div>
+    
+                    <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Customer</mat-label>
+                        <input matInput formControlName="Customer"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Reference</mat-label>
+                        <input matInput formControlName="Reference"/>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <input matInput formControlName="Status"/>
+                      </mat-form-field>
+
+ 
+
+                    <div class="col">
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Desc</mat-label>
+                            <input matInput formControlName="Desc"/>
+                        </mat-form-field>
+
+                        
+                        <mat-form-field appearance="outline">
+                            <mat-label>OnlyActive</mat-label>
+                            <input matInput formControlName="OnlyActive"/>
+                        </mat-form-field>
+                    </div>  
+
+
+                    </div>  
+
+                </div>
+            </form>
+        </div>
+
+       
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Box Number">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Box Number
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.BoxNumber }}</td>
+            </ng-container>
+      
+            <ng-container matColumnDef="Age">
+              <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Age
+              </th> 
+              <td mat-cell *matCellDef="let element">{{ element.Age }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Customer">
+                <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                    Customer
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Customer }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Location">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Location
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Location }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Sts">
+                <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                    Sts
+                </th> 
+                <td mat-cell *matCellDef="let element">{{ element.Sts }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+                <th  mat-header-cell mat-header-cell  *matHeaderCellDef>
+                  Actions
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-select  placeholder="Select Option">
+                    <mat-option>
+                        <button mat-icon-button (click)=" changeBoxes()">
+                          <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                          <mat-label>Change</mat-label>
+                        </button>
+                    </mat-option>
+
+                    <mat-option>
+                        <button mat-icon-button (click)=" deleteBoxes()">
+                          <mat-icon mat-icon-button color="warn">delete</mat-icon>
+                          <mat-label>box</mat-label>
+                        </button>
+                    </mat-option>
+
+                    <!-- Form No:70.4 -->
+                    <mat-option>
+                        <button mat-icon-button (click)="boxesDetails()">
+                          <mat-icon mat-icon-button color="warn">call_made</mat-icon>
+                          <mat-label>Details</mat-label>
+                        </button>
+                    </mat-option>
+
+                 <!-- Form No:70.5 -->
+                 <mat-option>
+                  <button mat-icon-button (click)="boxesEventInquiry()">
+                    <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                    <mat-label>Event Inquiry</mat-label>
+                  </button>
+              </mat-option>
+
+             <!-- Form No:70.6 -->
+             <mat-option>
+              <button mat-icon-button (click)="boxesInquiry()">
+                <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+                <mat-label>Inquiry</mat-label>
+              </button>
+          </mat-option>
+
+          <!-- Form No:70.10 -->
+          <mat-option>
+            <button mat-icon-button (click)="boxesItemLabel()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Item-Label</mat-label>
+            </button>
+        </mat-option>
+
+        <!-- Form No:70.12 -->
+        <mat-option>
+          <button mat-icon-button (click)="boxesBundleLabel()">
+            <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+            <mat-label>Bundle-Label</mat-label>
+          </button>
+      </mat-option>
+
+       <!-- Form No:70.13 -->
+       <mat-option>
+        <button mat-icon-button (click)="boxesBundleManifest()">
+          <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+          <mat-label>Bundle-Manifest</mat-label>
+        </button>
+    </mat-option>
+
+    <!-- Form No:70.13 -->
+    <mat-option>
+      <button mat-icon-button (click)="boxesupdateStsDelete()">
+        <mat-icon mat-icon-button color="primary">delete</mat-icon>
+        <mat-label>Update Sts Delete</mat-label>
+      </button>
+  </mat-option>
+
+  <!-- Form No:70.20 -->
+  <mat-option>
+    <button mat-icon-button (click)="boxesupdateStatus()">
+      <mat-icon mat-icon-button color="primary">update</mat-icon>
+      <mat-label>Update Status</mat-label>
+    </button>
+</mat-option>
+
+<!-- Form No:70.21 -->
+<mat-option>
+  <button mat-icon-button (click)="boxesChgCustomer()">
+    <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+    <mat-label>Chg Customer</mat-label>
+  </button>
+</mat-option>
+
+<!-- Form No:70.22 -->
+<mat-option>
+  <button mat-icon-button (click)="boxesExportBox()">
+    <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+    <mat-label>Export Box</mat-label>
+  </button>
+</mat-option>
+
+
+                  
+                </mat-select>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+            
+        </table>
+    </mat-card-content>
+</mat-card>

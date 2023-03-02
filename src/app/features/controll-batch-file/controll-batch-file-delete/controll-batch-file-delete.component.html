@@ -1,0 +1,85 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(145, 128, 32)"
+                    >Delete Control Batch File</mat-card-title>
+                  
+                </mat-card-header>
+                <div>
+                  
+                </div>
+                <mat-card-content> 
+  
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field  appearance="outline"><mat-label> Storer_Number : </mat-label> 
+                              <input matInput formControlName="Storer_Number" />
+                            </mat-form-field>  
+                      </div>
+
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Sequence_Nuber: </mat-label> 
+                            <input matInput formControlName="Sequence_Nuber" />
+                          </mat-form-field> 
+                      </div>
+
+                      <div class="col">
+                        <mat-form-field  appearance="outline"><mat-label> Minumum_Demand : </mat-label> 
+                          <input matInput formControlName="Minumum_Demand" />
+                        </mat-form-field>  
+                      </div>
+
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Lines_on_Order: </mat-label> 
+                          <input matInput formControlName="Lines_on_Order" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline">  <mat-label> Quantity_on_Order: </mat-label> 
+                          <input matInput formControlName="Quantity_on_Order" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>Mix_Carriers</mat-label>
+                        <input matInput formControlName="Mix_Carriers"/></mat-form-field>
+                      </div>
+
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>AMix_Ship_Dates</mat-label>
+                        <input matInput formControlName="AMix_Ship_Dates"/></mat-form-field>
+                      </div>
+                      
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>Batch_Size</mat-label>
+                        <input matInput formControlName="Batch_Size"/></mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>Ship_Days_Forward</mat-label>
+                        <input matInput formControlName="Ship_Days_Forward"/></mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field appearance="outline"> <mat-label>Status</mat-label>
+                        <input matInput formControlName="Status"/></mat-form-field>
+                      </div>
+                      <p>Press Enter to Confirm Deletion</p>
+                    
+                      </div>
+                
+
+                 <div >
+            
+                  <button mat-button class="buttonCss" (click)="attributes()">Delete</button>
+              </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

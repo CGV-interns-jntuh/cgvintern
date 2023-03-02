@@ -1,0 +1,188 @@
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title">
+      Work With Order Staging Batches
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Batch Number</mat-label>
+            <input matInput formControlName="BatchNumber" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Storer</mat-label>
+            <input matInput formControlName="Storer" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Carrier/Group</mat-label>
+            <input matInput formControlName="CarrierGroup" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Open</mat-label>
+            <input matInput formControlName="Open" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Printed</mat-label>
+            <input matInput formControlName="Printed" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="buttons addButton"
+            mat-raised-button
+            type="submit"
+            placeholder="Search"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Tally Column -->
+    <ng-container matColumnDef="BatchStatus">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Batch Status
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.BatchStatus }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="P">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>P</th>
+      <td mat-cell *matCellDef="let element">{{ element.P }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="BatchNumber">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Batch Number
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.BatchNumber }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Storer">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Storer
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Storer }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="CarrierGroup">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Carrier/Group
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.CarrierGroup }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="StagingLane">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Staging Lane
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.StagingLane }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalOrders">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Total Orders
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.TotalOrders }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalQuantity">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Total Quantity
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.TotalQuantity }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalWeight">
+      <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+        Total Weight
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.TotalWeight }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell mat-header-cell width="150px" *matHeaderCellDef>
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-select class="mat-select" placeholder="Select Option">
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingDelete()">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingAssignLane()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Assign Lane</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingDockSchedule()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Docker Schedule</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingDockSchedule()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Docker Schedule</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingMoveHistory()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Move History</mat-label>
+            </button></mat-option
+          >
+
+          <mat-option>
+            <button mat-icon-button (click)="orderStagingBatchDetails()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>W/W Batch Details</mat-label>
+            </button></mat-option
+          >
+        
+        </mat-select>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <!-- <mat-paginator
+            #paginator
+            [pageIndex]="0"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]"
+          >
+          </mat-paginator> -->
+  <mat-paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

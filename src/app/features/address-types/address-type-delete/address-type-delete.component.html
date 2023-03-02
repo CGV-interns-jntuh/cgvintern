@@ -1,0 +1,37 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Delete Address Types</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> AddressType: </mat-label> 
+                          <input matInput formControlName="AddressType" />
+                        </mat-form-field>
+                  </div>
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> Description: </mat-label> 
+                          <input matInput formControlName="Description" />
+                        </mat-form-field>
+                  </div>
+              <p style="color:brown"> Press Enter to confirm Deletion</p>
+                       
+                            <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">DELETE</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  

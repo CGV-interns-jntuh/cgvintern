@@ -1,0 +1,186 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Box Contents</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>contentID</mat-label>
+                      <input matInput formControlName="contentID"/>
+                      </mat-form-field>
+  
+                      <mat-form-field appearance="outline">
+                        <mat-label>customer</mat-label>
+                       <input matInput formControlName="customer"/>
+                       </mat-form-field>
+  
+                    
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>assetID</mat-label>
+                       <input matInput formControlName="assetID"/>
+                       </mat-form-field>
+                       
+                      <mat-form-field appearance="outline">
+                        <mat-label>clientId</mat-label>
+                       <input matInput formControlName="clientId"/>
+                       </mat-form-field>
+  
+                     
+                     </div>
+                     <div class="col">
+                      <mat-form-field appearance="outline">
+                        <mat-label>xReference</mat-label>
+                       <input matInput formControlName="xReference"/>
+                       </mat-form-field>
+  
+                       <mat-form-field appearance="outline">
+                        <mat-label>status</mat-label>
+                       <input matInput formControlName="status"/>
+                       </mat-form-field>
+  
+                       <mat-form-field appearance="outline">  <mat-label> onlyActive  </mat-label> 
+                        <mat-select matNativeControl required>
+                        <mat-option value="y">Y</mat-option>
+                        <mat-option value="n">N</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                     </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="content">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            content
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.content }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="identifier">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            identifier
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.identifier }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="boxNumber">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              boxNumber
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.boxNumber }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="fileType">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              fileType
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.fileType }}</td>
+          </ng-container>
+         
+          
+          <ng-container matColumnDef="sts">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+              sts
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.sts }}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="BoxContentsChangeForm(element)">
+              <mat-icon mat-icon-button color="primary">edit</mat-icon>
+              <mat-label>Edit</mat-label>
+            </button>
+        
+          </mat-option>
+        
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentsDeactiveForm(element)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Deactive</mat-label>
+            </button>
+        
+          </mat-option>
+          
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentItemActivityForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Item-Activity</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentItemLabelForm(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Item-Label</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentDeleteForm(element)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Delete</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentAddPressHold(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Add Press Hold</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentRemovePressHold(element)">
+              <mat-icon mat-icon-button color="warn">delete</mat-icon>
+              <mat-label>Remove Press Hold</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentEventHistoryInquiry(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Event History Inquiry</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BoxContentInquiry(element)">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Inquiry</mat-label>
+            </button>
+        
+          </mat-option>
+
+
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>
+  
+      <mat-paginator #paginator [pageSizeOptions]="[1,2]" showFirstLastButtons ></mat-paginator>

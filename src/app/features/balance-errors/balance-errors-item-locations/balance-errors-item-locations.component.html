@@ -1,0 +1,115 @@
+<button mat-icon-button (click)="closeDialog()">
+    <mat-icon mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With An Items Locations</mat-card-title>
+    </mat-card-header>
+  
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field> 
+               <mat-form-field appearance="outline">
+                <mat-label>Item</mat-label>
+                <input matInput formControlName="Item"/>
+            </mat-form-field>
+            <div class="col"> 
+                <mat-form-field appearance="outline">
+                  <mat-label>Location</mat-label>
+                  <input matInput formControlName="Location"/>
+              </mat-form-field> 
+                 </div>           
+           </div> 
+            
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="bldNbr">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            bldNbr
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.bldNbr}}</td>
+         </ng-container>
+         <ng-container matColumnDef="floor">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            floor
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.floor}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="aisle">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                aisle
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.aisle}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="slot">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                slot
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.slot}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="lot">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                lot
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.lot}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="code1">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                code1
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.code1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="firstReceived">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                firstReceived
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.firstReceived}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="totalCapacity">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                totalCapacity
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.totalCapacity}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="onHand">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                onHand
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.onHand}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="addlCapacity">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                addlCapacity
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.addlCapacity}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="opt">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                opt
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.opt}}</td>
+          </ng-container>
+  
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

@@ -1,0 +1,57 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Maintain Buildings </mat-card-title>
+      &nbsp;
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Building Number </mat-label>
+            <input matInput formControlName="buildingNumber" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Building Name </mat-label>
+            <input matInput formControlName="buildingName" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Address1 </mat-label>
+            <input matInput formControlName="address1" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Address2 </mat-label>
+            <input matInput formControlName="address2" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Zip Code </mat-label>
+            <input matInput formControlName="zipcode" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Suffix</mat-label>
+            <input matInput formControlName="suffix" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label> Number of Doors </mat-label>
+            <input matInput formControlName="NumberOfDoors" />
+          </mat-form-field>
+          <button
+          class="buttons addButton"
+          mat-raised-button
+          (click)="updateBuilding()">
+          Update
+        </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

@@ -1,0 +1,110 @@
+<mat-card>
+    <mat-card-header>  
+      <mat-card-title >
+        <button class="backButton" mat-button (click)="onBack()">
+          <mat-icon >navigate_before </mat-icon>
+        </button>
+  
+        Work With Book Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+                    <div class="formDiv">
+                     <form [formGroup]="form">
+                     <div class="row">
+                     <mat-form-field appearance="outline">
+                       <mat-label>Storer</mat-label>
+                      <input matInput formControlName="Storer"/>
+                     </mat-form-field>
+                     </div>
+                     <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Seq</mat-label>
+                           <input matInput formControlName="Seq"/>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Item</mat-label>
+                           <input matInput formControlName="Item"/>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Location</mat-label>
+                           <input matInput formControlName="Location"/>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Status</mat-label>
+                           <input matInput formControlName="Status"/>
+                          </mat-form-field>
+                     </div>
+                     </form>
+  
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+             <ng-container matColumnDef="BookSeq">
+          <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            BookSeq
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.BookSeq }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="ItemCode">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>
+            ItemCode
+          </th> 
+          <td mat-cell *matCellDef="let element">{{ element.ItemCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="LotCodes">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                LotCodes
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.LotCodes }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Location">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                Location
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Location }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="St">
+            <th mat-header-cell mat-header-cell *matHeaderCellDef>
+                St
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.St }}</td>
+          </ng-container>
+          
+          
+        <ng-container matColumnDef="Opt">
+          <th  mat-header-cell mat-header-cell *matHeaderCellDef>
+            Opt
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select  placeholder="Select Option">
+              
+         <mat-option>
+            <button mat-icon-button (click)="BookDatialsAddForm()">
+              <mat-icon mat-icon-button color="warn">add</mat-icon>
+              <mat-label>Add</mat-label>
+            </button>
+        
+          </mat-option>
+
+          <mat-option>
+            <button mat-icon-button (click)="BookDatialsInquiryForm()">
+              <mat-icon mat-icon-button color="primary">call_made</mat-icon>
+              <mat-label>Tag Inquiry</mat-label>
+            </button>
+        
+          </mat-option>
+        
+        
+    
+    
+          </mat-select>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  
+        
+      </table>

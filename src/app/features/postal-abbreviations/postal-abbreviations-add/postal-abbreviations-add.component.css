@@ -1,0 +1,19 @@
+.mat-form-field{
+    padding: 10px;
+}
+
+.addButton {
+    background-color: #3ead0b;
+    color: white;
+    padding: 10px;
+    float: right;
+  }
+
+
+.closeIcon{
+    float: right;
+}
+
+.mat-icon{
+    padding-right: 5px;
+}

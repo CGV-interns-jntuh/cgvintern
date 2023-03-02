@@ -1,0 +1,9 @@
+.buttonCss{
+    background-color: rgb(195, 0, 255);
+    color: black;
+    border: none;
+    
+}
+.mat-form-field{
+    padding-left: 40px;
+   }

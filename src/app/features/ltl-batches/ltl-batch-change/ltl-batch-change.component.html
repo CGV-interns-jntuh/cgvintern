@@ -1,0 +1,59 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Maintain Batch</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Batch Number  : </mat-label> 
+                    <input matInput formControlName="BatchNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> SCAC Code : </mat-label> 
+                    <input matInput formControlName="SCACCode"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Number of Shipments : </mat-label> 
+                    <input matInput formControlName="NumberofShipments"/>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Scheduled Ship Date: </mat-label> 
+                    <input matInput formControlName="ScheduledShipDate"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Changed By: </mat-label> 
+                    <input matInput formControlName="ChangedBy" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Status : </mat-label> 
+                    <input matInput formControlName="Status"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <button mat-button (click)="changeLTI()" class="addButton">
+                    
+                    <span>Change</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>
+
+

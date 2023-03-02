@@ -1,0 +1,81 @@
+<!-- EDI _Info(220) -->
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Maintain EDI Information</mat-card-title>
+        
+      </mat-card-header>
+      <div>
+        
+      </div>
+      <mat-card-content> 
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline"><mat-label> Storer : </mat-label> 
+                    <input matInput formControlName="Storer" />
+                  </mat-form-field>
+              
+            </div>
+        </div>
+        <div class="col">
+            <mat-form-field  appearance="outline"><mat-label> WiNS_CommsID : </mat-label> 
+                <input matInput formControlName="WiNS_CommsID" />
+              </mat-form-field>
+         
+                
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">  <mat-label> DUNS_Number: </mat-label> 
+                <input matInput formControlName="DUNS_Number" />
+              </mat-form-field>
+                
+        </div>
+
+        <div class="col">
+            <mat-form-field appearance="outline">  <mat-label>     CustomEDI_CommsID:'',
+                : </mat-label> 
+                <input matInput formControlName="    CustomEDI_CommsID:'',
+                " />
+              </mat-form-field>
+            
+         <div class="col">
+        <mat-form-field appearance="outline">  <mat-label> CHEPPallet_User  </mat-label> 
+        
+        <mat-select matNativeControl required>
+        <mat-option value="N">N</mat-option>
+        <mat-option value="Y">Y</mat-option>
+        </mat-select>
+       <input matInput formControlName="CHEPPallet_User" />
+    </mat-form-field>
+    </div>
+           
+           
+                <mat-form-field appearance="outline">  <mat-label> ASN_Required: </mat-label> 
+                
+  
+                    <input matInput
+                      formControlName="ASN_Required"
+                      style="text-transform: uppercase" />
+                   </mat-form-field> 
+                   
+                
+                </div>
+                  <div >
+                    <button mat-button class="buttonCss" (click)="information()">Information</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  
+
+

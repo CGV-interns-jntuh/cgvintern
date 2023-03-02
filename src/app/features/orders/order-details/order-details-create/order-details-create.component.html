@@ -1,0 +1,92 @@
+<button mat-icon-button (click)="closeDialog()">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+<form [formGroup]="form">
+    <mat-card>
+      <mat-card-header>
+          <button mat-button (click)="backstorer()">
+              <mat-icon></mat-icon>
+              
+          </button>
+          
+        <mat-card-title style="color: rgb(145, 128, 32)"
+          >Order Detail Maintenance</mat-card-title>
+        
+      </mat-card-header>
+      <div>
+        
+      </div>
+      <mat-card-content> 
+
+        <div class="col">
+            <mat-form-field  appearance="outline"><mat-label> Quantity : </mat-label> 
+                <input matInput formControlName="Quantity" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">  <mat-label> Item_Code: </mat-label> 
+                <input matInput formControlName="Item_Code" />
+              </mat-form-field>
+
+        </div>
+
+            <div class="col">
+                
+            <mat-form-field appearance="outline">  <mat-label> Lot_Code: </mat-label> 
+            
+
+                <input
+                  matInput
+                  formControlName="Lot_Code"
+                  style="text-transform: uppercase" />
+              
+              </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                   
+            <mat-form-field appearance="outline">  <mat-label> Ship_Form: </mat-label> 
+                <input matInput formControlName="Ship_Form" />
+              </mat-form-field>
+                
+                <mat-form-field appearance="outline">  <mat-label> Override_Weight: </mat-label> 
+                
+  
+                    <input matInput
+                      formControlName="Override_Weight"
+                      style="text-transform: uppercase" />
+                   </mat-form-field> 
+                   
+                  <div class="col">
+                    <mat-form-field appearance="outline">  <mat-label> Reason_for_Change: </mat-label> 
+                
+  
+                        <input
+                          matInput
+                          formControlName="Reason_for_Change"
+                          style="text-transform: uppercase" />
+
+                        
+                      
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">  <mat-label> Orig_Line: </mat-label> 
+                
+  
+                        <input matInput
+                          formControlName="Orig_Line"
+                          style="text-transform: uppercase" />
+                       </mat-form-field> 
+
+                  </div>
+
+             
+               
+
+                </div>
+                  <div >
+                    <button mat-button class="buttonCss" (click)="maintain()">maintain</button>
+                </div>
+              
+      </mat-card-content>
+    </mat-card>
+  </form>  

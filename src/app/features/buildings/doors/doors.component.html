@@ -1,0 +1,83 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card class="over-Flow">
+  <mat-card-header>
+    <mat-card-title class="title"> Work With Doors </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="form over-Flow">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Building Number</mat-label>
+            <input matInput formControlName="BuildingNumber" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Door Number</mat-label>
+            <input matInput formControlName="DoorNumber" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Tally Column -->
+        <ng-container matColumnDef="BldgNumb">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Bldg Numb
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.BldgNumb }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="DoorNumb">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Door Numb
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.DoorNumb }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="DoorUse">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Door Use
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.DoorUse }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Stat">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Stat
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Stat }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="SpecialAttribute">
+          <th mat-header-cell mat-header-cell width="60px" *matHeaderCellDef>
+            Special Attribute
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.SpecialAttribute }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table></form
+  ></mat-card-content>
+  <!-- <mat-paginator
+              #paginator
+              [pageIndex]="0"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+            >
+            </mat-paginator> -->
+  <mat-paginator
+    [pageSizeOptions]="[8, 16, 24]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

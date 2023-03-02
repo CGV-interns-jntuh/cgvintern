@@ -1,0 +1,27 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Storer X-ref Maintenance</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer </mat-label>
+            <input matInput formControlName="storer" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Bill To </mat-label> &nbsp;
+            <input matInput formControlName="billTo" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

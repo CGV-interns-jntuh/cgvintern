@@ -1,0 +1,116 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<mat-card-header>
+    <mat-card-title>Delete a Record Storage Box</mat-card-title>
+    
+</mat-card-header>
+
+<mat-card-content>
+    <form [formGroup]="form" fxLayoutAlign="center">
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Box Number  : </mat-label> 
+                    <input matInput formControlName="BoxNumber"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> Record Source: </mat-label> 
+                    <input matInput formControlName="RecordSource"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Box Size : </mat-label> 
+                    <input matInput formControlName="BoxSize"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label> File Type : </mat-label> 
+                    <input matInput formControlName="FileType"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Content From Date : </mat-label> 
+                    <input matInput formControlName="ContentFromDate"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Content To Date: </mat-label> 
+                    <input matInput formControlName="ContentToDate" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Age Class : </mat-label> 
+                    <input matInput formControlName="AgeClass"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Description</mat-label> 
+                    <input matInput formControlName="Description"/>
+                </mat-form-field>
+               
+            </div>
+
+            <div class="col">
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Customer</mat-label> 
+                    <input matInput formControlName="Customer"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Customer Division </mat-label> 
+                    <input matInput formControlName="CustomerDivision"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Customer Department : </mat-label> 
+                    <input matInput formControlName="CustomerDepartment" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Customer Box Number </mat-label> 
+                    <input matInput formControlName="CustomerBoxNumber"/>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Originating District </mat-label> 
+                    <input matInput formControlName="OriginatingDistrict"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Originating Buliding : </mat-label> 
+                    <input matInput formControlName="OriginatingBuliding" />
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Box Location : </mat-label> 
+                    <input matInput formControlName="BoxLocation"/>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label>Box Status : </mat-label> 
+                    <input matInput formControlName="BoxStatus" />
+                </mat-form-field>
+            </div>
+
+
+
+            
+
+            <div class="col">
+                <button mat-button (click)="deleteBox()" class="addButton">
+                    
+                    <span>delete</span>
+                  </button>
+            </div>
+        </div>
+
+    </form>
+</mat-card-content>

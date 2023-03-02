@@ -1,0 +1,177 @@
+<div style="height: 100vh">
+  <mat-toolbar color="primary">
+    <img class="imageCss" src="assets/images/logo.png" />
+    <!-- <span routerLink="/">Sc CodeWorks</span>  -->
+    <span class="example-spacer"></span>
+    <div>
+      <span
+        ><button mat-raised-button class="signout" (click)="Logout()">
+          Sign Out
+        </button></span
+      >
+    </div>
+  </mat-toolbar>
+
+  <!-- <div *ngIf="loggedUser=='true'">
+        <app-item-tally-inquiry></app-item-tally-inquiry> 
+       <app-login></app-login> *ngIf="isLoggedIn"
+  </div>  -->
+
+  <div>
+    <mat-sidenav-container class="example-container primary">
+      <mat-sidenav #drawer mode="side" opened>
+        <mat-nav-list>
+          <!-- Talyy Sub Menu -->
+          <mat-list-item (click)="showreceviceSubmenushowhide()" class="parent">
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >Receive</span
+            >
+            <mat-icon mat-list-icon>store</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showreceviceSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="receviedisplay"
+            [style.flex-direction]="receviedirection"
+            class="submenu"
+            [ngClass]="{ expanded: showreceviceSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/receive/staging">Staging</a>
+            <a mat-list-item routerLink="/main-nav/receive/putaway">Putaway</a>
+            <a mat-list-item routerLink="/main-nav/receive/onestep">
+              Inbound 1-Step</a
+            >
+          </div>
+
+          <mat-list-item (click)="showtallySubmenushowhide()" class="parent">
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >Tally</span
+            >
+            <mat-icon mat-list-icon>assignment_ind</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showtallysSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="tallysdisplay"
+            [style.flex-direction]="tallysdirection"
+            class="submenu"
+            [ngClass]="{ expanded: showtallysSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/tallys/read">Read</a>
+            <!-- <button mat-list-item routerLink="/tallys/add">Create</button> -->
+            <!-- <a mat-list-item>Update</a> -->
+          </div>
+
+          <!-- Building Sub Menu -->
+          <mat-list-item (click)="showBuildingSubmenushowhide()" class="parent">
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >Building</span
+            >
+            <mat-icon mat-list-icon>home</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showBuildingSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="buildingdisplay"
+            [style.flex-direction]="buildingdirection"
+            class="submenu"
+            [ngClass]="{ expanded: showBuildingSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/building/read">Read</a>
+          </div>
+
+          <mat-list-item
+            (click)="showcustomersSubmenushowhide()"
+            class="parent"
+          >
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >Customer</span
+            >
+            <mat-icon mat-list-icon>supervisor_account</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showcustomersSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="customersdisplay"
+            [style.flex-direction]="customersdirection"
+            class="submenu"
+            [ngClass]="{ expanded: showcustomersSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/customers/read">Read</a>
+            <!-- <button mat-list-item routerLink="/tallys/add">Create</button> -->
+            <!-- <a mat-list-item>Update</a> -->
+          </div>
+          <mat-list-item (click)="showExtractReportSubmenushowhide()" class="parent">
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >ExtractReport</span
+            >
+            <mat-icon mat-list-icon>assignment_ind</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showExtractReportSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="ExtractReportdisplay"
+            [style.flex-direction]="ExtractReportdirection"
+            class="submenu"
+            [ngClass]="{ expanded: showExtractReportSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/extractreport/read">Read</a>
+            <!-- <button mat-list-item routerLink="/tallys/add">Create</button> -->
+            <!-- <a mat-list-item>Update</a> -->
+          </div>
+          <mat-list-item (click)="showExtractReportWhereSubmenushowhide()" class="parent">
+            <span class="full-width" *ngIf="isExpanded || isShowing"
+              >ExtractReportWhere</span
+            >
+            <mat-icon mat-list-icon>assignment_ind</mat-icon>
+            <mat-icon
+              class="menu-button"
+              [ngClass]="{ rotated: showExtractReportWhereSubmenu }"
+              *ngIf="isExpanded || isShowing"
+              >expand_more</mat-icon
+            >
+          </mat-list-item>
+          <div
+            [style.display]="ExtractReportWheredisplay"
+            [style.flex-direction]="ExtractReportWheredirection"
+            class="submenu"
+            [ngClass]="{ expanded: showExtractReportWhereSubmenu }"
+            *ngIf="isShowing || isExpanded"
+          >
+            <a mat-list-item routerLink="/main-nav/extractreportwhere/read">Read</a>
+            <!-- <button mat-list-item routerLink="/tallys/add">Create</button> -->
+            <!-- <a mat-list-item>Update</a> -->
+          </div>
+        </mat-nav-list>
+      </mat-sidenav>
+      <div class="content mat-elevation-z4">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-container>
+  </div>
+</div>

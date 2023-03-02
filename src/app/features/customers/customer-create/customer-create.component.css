@@ -1,0 +1,26 @@
+.over-Flow {
+  overflow: auto;
+}
+
+.mat-form-field {
+  padding-right: 10px;
+}
+
+.addButton {
+  float: right;
+}
+.backButton {
+  background-color: #004c8b;
+}
+.mat-button {
+  min-width: 0px;
+  line-height: 0px;
+}
+
+.mat-card-header {
+  padding: 0px;
+}
+
+.addButton {
+  line-height: 30px;
+}

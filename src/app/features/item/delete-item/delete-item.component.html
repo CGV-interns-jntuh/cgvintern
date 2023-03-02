@@ -1,0 +1,41 @@
+<button mat-icon-button (click)="closeDialog()">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form" fxLayoutAlign="center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Delete An Item</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Storer Number : </mat-label>
+            <input matInput formControlName="storerNumber" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Item Code: </mat-label> &nbsp;
+
+            <input matInput formControlName="itemCode" />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> Description: </mat-label> &nbsp;
+
+            <input matInput formControlName="description" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <br />
+      <button mat-button class="buttons addButton" (click)="deleteItem()">
+        <mat-label>Delete</mat-label>
+      </button>
+      <br /><br />
+    </mat-card-content>
+  </mat-card>
+</form>

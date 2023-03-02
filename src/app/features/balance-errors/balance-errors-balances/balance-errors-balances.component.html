@@ -1,0 +1,104 @@
+<button mat-icon-button (click)="closeDialog()">
+    <mat-icon mat-icon-button color="primary">close</mat-icon>
+  </button>
+<mat-card>
+    <mat-card-header>
+   <mat-card-title>
+       <button  mat-button (click)="onBack()">
+           <mat-icon>navigate_before </mat-icon>
+         </button>
+       Work With Item Balances</mat-card-title>
+    </mat-card-header>
+  
+     <form [formGroup]="form">
+       <div class="row">
+           <div class="col">
+               <mat-form-field appearance="outline">
+                   <mat-label>Storer</mat-label>
+                   <input matInput formControlName="Storer"/>
+               </mat-form-field>  
+               <mat-form-field appearance="outline">
+                <mat-label>Item</mat-label>
+                <input matInput formControlName="Item"/>
+            </mat-form-field>          
+           </div> 
+           <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Date</mat-label>
+              <input matInput formControlName="Date"/>
+          </mat-form-field>   
+          <mat-form-field appearance="outline">
+            <mat-label>Lots</mat-label>
+            <input matInput formControlName="Lots"/>
+        </mat-form-field> 
+           </div>   
+    </div>     
+   </form>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <ng-container matColumnDef="lotCode">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            lotCode
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.lotCode}}</td>
+         </ng-container>
+         <ng-container matColumnDef="dateWritten">
+           <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+            dateWritten
+           </th> 
+           <td mat-cell *matCellDef="let element">{{ element.dateWritten}}</td>
+         </ng-container>
+
+         <ng-container matColumnDef="typePWD">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                typePWD
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.typePWD}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="on">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                on
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.on}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="Hand">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Hand
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Hand}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="Allocated">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Allocated
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Allocated}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Committed">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Committed
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Committed}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Damaged">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                Damaged
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.Damaged}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="opt">
+            <th mat-header-cell mat-header-cell  *matHeaderCellDef>
+                opt
+            </th> 
+            <td mat-cell *matCellDef="let element">{{ element.opt}}</td>
+          </ng-container>
+  
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>

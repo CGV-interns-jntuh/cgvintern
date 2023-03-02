@@ -1,0 +1,49 @@
+<button mat-icon-button (click)="closeDialog()" class="closeIcon">           
+    <mat-icon  mat-icon-button color="primary">close</mat-icon>
+  </button>
+          <form [formGroup]="form">
+              <mat-card>
+                <mat-card-header>
+                    <button mat-button (click)="backstorer()">
+                        <mat-icon></mat-icon>
+                        
+                    </button>
+                    
+                  <mat-card-title style="color: rgb(32, 68, 145)"
+                    >Copy Box Content To a New Library</mat-card-title>
+                  
+                </mat-card-header>
+                
+                <mat-card-content> 
+                        
+                  <div class="col">
+                      <mat-form-field appearance="outline">  <mat-label> BoxNumber: </mat-label> 
+                          <input matInput formControlName="BoxNumber" />
+                        </mat-form-field>
+                  </div>
+                  
+            <div class="col">
+                <mat-form-field appearance="outline">  <mat-label> FromLibrary: </mat-label> 
+                    <input matInput formControlName="FromLibrary" />
+                  </mat-form-field>
+            </div>
+                     
+      <div class="col">
+        <mat-form-field appearance="outline">  <mat-label> ToLibrary: </mat-label> 
+            <input matInput formControlName="ToLibrary" />
+          </mat-form-field>
+      
+      
+            <mat-form-field appearance="outline">  <mat-label> Submittobatch: </mat-label> 
+                <input matInput formControlName="Submittobatch" />
+              </mat-form-field>
+            </div>
+            <p style="color: brown;">Press Enter to confirm the copy of this Request and all related data to the new Library</p>
+                   <div >
+                              <button mat-button class="buttonCss" (click)="attributes()">Box</button>
+                          </div>
+                        
+                </mat-card-content>
+              </mat-card>
+            </form>  
+  

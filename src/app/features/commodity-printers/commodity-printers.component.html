@@ -1,0 +1,99 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <button class="backButton" mat-button (click)="addPrinter()"></button>
+      <mat-icon>add</mat-icon>
+
+      Work With Sequenced Commodity Printers</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <div class="formDiv">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Storer</mat-label>
+              <input matInput formControlName="Storer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Commodity</mat-label>
+              <input matInput formControlName="Commodity" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Plant</mat-label>
+              <input matInput formControlName="Plant" />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Type</mat-label>
+              <input matInput formControlName="Type" />
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Storer">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Storer</th>
+          <td mat-cell *matCellDef="let element">{{ element.Storer }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Commodity">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Commodity</th>
+          <td mat-cell *matCellDef="let element">{{ element.Commodity }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Plant">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Plant</th>
+          <td mat-cell *matCellDef="let element">{{ element.Plant }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Type">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Type</th>
+          <td mat-cell *matCellDef="let element">{{ element.Type }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Program">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Program</th>
+          <td mat-cell *matCellDef="let element">{{ element.Program }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Printer">
+          <th mat-header-cell mat-header-cell *matHeaderCellDef>Printer</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.Printer }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell mat-header-cell width="250px" *matHeaderCellDef>
+            Actions
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-select class="mat-select" placeholder="Select Option">
+              <mat-option>
+                <button mat-icon-button (click)="updatePrinter(element)">
+                  <mat-icon mat-icon-button color="primary">edit</mat-icon>
+                  <mat-label>Edit</mat-label>
+                </button>
+              </mat-option>
+              <mat-option>
+                <button mat-icon-button (click)="deletePrinter(element)">
+                  <mat-icon mat-icon-button color="secondary">delete</mat-icon>
+                  <mat-label>Delete</mat-label>
+                </button></mat-option
+              >
+            </mat-select>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <mat-paginator
+      #paginator
+      [pageSizeOptions]="[1, 2]"
+      showFirstLastButtons
+    ></mat-paginator> </mat-card-content
+></mat-card>
