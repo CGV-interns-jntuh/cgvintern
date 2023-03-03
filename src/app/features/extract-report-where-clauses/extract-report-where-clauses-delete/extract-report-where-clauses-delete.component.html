@@ -1,69 +1,41 @@
 <button mat-icon-button (click)="closeDialog()">
-    <mat-icon mat-icon-button color="primary">close</mat-icon>
-  </button>
-  <form [formGroup]="form" fxLayoutAlign="center">
+  <mat-icon mat-icon-button color="primary">close</mat-icon>
+</button>
+
+<form [formGroup]="form">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Modify Report Where Clauses</mat-card-title>
+      <mat-card-title>Delete Report Where Zone</mat-card-title>
+      &nbsp;
     </mat-card-header>
     <mat-card-content>
-     
-        
-        <div class="row">
-         
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>ExtractName</mat-label>
-            <input matInput required formControlName="ExtractName" />
+      <div class="row">
+        <!-- <div class="col"> -->
+          <mat-form-field appearance="outline">
+            <mat-label> ExtractName </mat-label>
+            <input matInput maxlength="3" formControlName="buildingNumber" />
           </mat-form-field>
-        </div>
-  
-        <div class="row">
-           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>FileName</mat-label>
-            <input matInput formControlName="FileName" />
+        <!-- </div> -->
+        <!-- <div class="col"> -->
+          <mat-form-field appearance="outline">
+            <mat-label> ExtractFile</mat-label>
+            <input matInput maxlength="1" formControlName="zone" />
           </mat-form-field>
-        </div>
-        
-        <div class="row">
-           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>WhereClause </mat-label>
-            <input matInput required formControlName="WhereClause" />
+        <!-- </div> -->
+        <!-- <div class="col"> -->
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" />
           </mat-form-field>
-          
-        </div>
-        
-        <!-- <div class="row">
-          
-  
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Carrier Address 2 </mat-label>
-            <input matInput required formControlName="address2" />
-          </mat-form-field>
-        </div>
-        
-        <div class="row">
-          
-  
-          <mat-form-field appearance="outline"  class="full-width">
-            <mat-label>Carrier SCAC Code </mat-label>
-            <input matInput required formControlName="carrierSCACCode" />
-          </mat-form-field>
-        </div>
-        
-        <div class="row">
-         
-          <mat-form-field appearance="outline"  class="full-width">
-            <mat-label>Consolidate References to Carrier</mat-label>
-            <input matInput required />
-          </mat-form-field>
-          
-        </div> -->
+        <!-- </div> -->
         <br />
-        <button mat-button class="buttons removeButton" (click)="deleteReportWhere()">
+        <p>Press Enter to confirm Delete</p>
+
+        <button mat-button class="deleteButton" (click)="delete()">
           <mat-label>Delete</mat-label>
         </button>
         <br /><br />
-     
+      </div>
     </mat-card-content>
   </mat-card>
-  </form>
+</form>

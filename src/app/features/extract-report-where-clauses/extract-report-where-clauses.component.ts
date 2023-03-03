@@ -21,6 +21,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { TallyData } from '../tally-data';
 import { GlobalComponent } from 'src/app/Global-Component';
 import { Router } from '@angular/router';
+import { ExtractReportSortClausesDeleteComponent } from '../extract-report-sort-clauses/extract-report-sort-clauses-delete/extract-report-sort-clauses-delete.component';
+import { ExtractReportWhereClausesDeleteComponent } from './extract-report-where-clauses-delete/extract-report-where-clauses-delete.component';
 
 interface extractreportwhere{
   ExtractName:String,
@@ -91,6 +93,13 @@ export class ExtractReportWhereClausesComponent implements OnInit {
     //   autoFocus: false,
     // });
     this.router.navigateByUrl('main-nav/extractreportwhere/update', { state: element });
+  }
+  deleteExtractReport() {
+    this.matDialog.open(ExtractReportWhereClausesDeleteComponent, {
+      width: '1000px',
+      maxHeight: '80vh',
+      autoFocus: false,
+    });
   }
 
   ngOnInit(): void {}
